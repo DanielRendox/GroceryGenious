@@ -35,6 +35,13 @@
     "isDefault": true
   },
   {
+    "id": "default-product-baguette",
+    "name": "Baguette",
+    "iconId": "baguette.png",
+    "categoryId": "default-category-snacks-and-bakery",
+    "isDefault": true
+  },
+  {
     "id": "default-product-bananas",
     "name": "Bananas",
     "iconId": "bananas.png",
@@ -102,6 +109,13 @@
     "name": "Broccoli",
     "iconId": "broccoli.png",
     "categoryId": "default-category-fruits-and-vegetables",
+    "isDefault": true
+  },
+  {
+    "id": "default-product-buns",
+    "name": "Buns",
+    "iconId": "buns.png",
+    "categoryId": "default-category-snacks-and-bakery",
     "isDefault": true
   },
   {
@@ -217,6 +231,13 @@
     "isDefault": true
   },
   {
+    "id": "default-product-cola",
+    "name": "Cola",
+    "iconId": "can.png",
+    "categoryId": "default-category-drinks",
+    "isDefault": true
+  },
+  {
     "id": "default-product-condoms",
     "name": "Condoms",
     "iconId": "condoms.png",
@@ -235,6 +256,20 @@
     "name": "Cottage Cheese",
     "iconId": "cottage_cheese.png",
     "categoryId": "default-category-dairy-and-eggs",
+    "isDefault": true
+  },
+  {
+    "id": "default-product-cotton-swabs",
+    "name": "Cotton swabs",
+    "iconId": "cotton_swabs.png",
+    "categoryId": "default-category-health-and-beauty",
+    "isDefault": true
+  },
+  {
+    "id": "default-product-cotton-pads",
+    "name": "Cotton pads",
+    "iconId": "cotton_pads.png",
+    "categoryId": "default-category-health-and-beauty",
     "isDefault": true
   },
   {
@@ -455,6 +490,13 @@
     "isDefault": true
   },
   {
+    "id": "default-product-margarine",
+    "name": "Margarine",
+    "iconId": "butter.png",
+    "categoryId": "default-category-dairy-and-eggs",
+    "isDefault": true
+  },
+  {
     "id": "default-product-mayonnaise",
     "name": "Mayonnaise",
     "iconId": "sauce.png",
@@ -602,6 +644,13 @@
     "isDefault": true
   },
   {
+    "id": "default-product-peas",
+    "name": "Peas",
+    "iconId": "peas.png",
+    "categoryId": "default-category-fruits-and-vegetables",
+    "isDefault": true
+  },
+  {
     "id": "default-product-peppercorns",
     "name": "Peppercorns",
     "iconId": "jar_spices.png",
@@ -662,6 +711,13 @@
     "name": "Potatoes",
     "iconId": "potatoes.png",
     "categoryId": "default-category-fruits-and-vegetables",
+    "isDefault": true
+  },
+  {
+    "id": "default-product-pretzels",
+    "name": "Pretzels",
+    "iconId": "pretzels.png",
+    "categoryId": "default-category-snacks-and-bakery",
     "isDefault": true
   },
   {
@@ -770,6 +826,13 @@
     "isDefault": true
   },
   {
+    "id": "default-product-smoothie",
+    "name": "Smoothie",
+    "iconId": "smoothie.png",
+    "categoryId": "default-category-drinks",
+    "isDefault": true
+  },
+  {
     "id": "default-product-snacks",
     "name": "Snacks",
     "iconId": "snacks.png",
@@ -861,6 +924,13 @@
     "isDefault": true
   },
   {
+    "id": "default-product-toast",
+    "name": "Toast",
+    "iconId": "toast.png",
+    "categoryId": "default-category-snacks-and-bakery",
+    "isDefault": true
+  },
+  {
     "id": "default-product-toilet-paper",
     "name": "Toilet paper",
     "iconId": "toilet_paper.png",
@@ -872,6 +942,13 @@
     "name": "Tomatoes",
     "iconId": "tomatoes.png",
     "categoryId": "default-category-fruits-and-vegetables",
+    "isDefault": true
+  },
+  {
+    "id": "default-product-tomato-paste",
+    "name": "Tomato paste",
+    "iconId": "tomato_paste.png",
+    "categoryId": "default-category-sauces-and-spices",
     "isDefault": true
   },
   {

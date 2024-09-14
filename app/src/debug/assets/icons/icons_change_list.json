@@ -38,5 +38,55 @@
     "id": "kiwi.png",
     "changeListVersion": 1,
     "isDeleted": false
+  },
+  {
+    "id": "can.png",
+    "changeListVersion": 2,
+    "isDeleted": false
+  },
+  {
+    "id": "baguette.png",
+    "changeListVersion": 2,
+    "isDeleted": false
+  },
+  {
+    "id": "buns.png",
+    "changeListVersion": 2,
+    "isDeleted": false
+  },
+  {
+    "id": "cotton_swabs.png",
+    "changeListVersion": 2,
+    "isDeleted": false
+  },
+  {
+    "id": "cotton_pads.png",
+    "changeListVersion": 2,
+    "isDeleted": false
+  },
+  {
+    "id": "peas.png",
+    "changeListVersion": 2,
+    "isDeleted": false
+  },
+  {
+    "id": "pretzels.png",
+    "changeListVersion": 2,
+    "isDeleted": false
+  },
+  {
+    "id": "smoothie.png",
+    "changeListVersion": 2,
+    "isDeleted": false
+  },
+  {
+    "id": "toast.png",
+    "changeListVersion": 2,
+    "isDeleted": false
+  },
+  {
+    "id": "tomato_paste.png",
+    "changeListVersion": 2,
+    "isDeleted": false
   }
 ]

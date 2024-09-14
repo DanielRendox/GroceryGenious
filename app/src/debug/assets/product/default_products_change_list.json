@@ -33,5 +33,60 @@
     "id": "default-product-tomatoes",
     "changeListVersion": 2,
     "isDeleted": false
+  },
+  {
+    "id": "default-product-baguette",
+    "changeListVersion": 3,
+    "isDeleted": false
+  },
+  {
+    "id": "default-product-buns",
+    "changeListVersion": 3,
+    "isDeleted": false
+  },
+  {
+    "id": "default-product-cola",
+    "changeListVersion": 3,
+    "isDeleted": false
+  },
+  {
+    "id": "default-product-cotton-swabs",
+    "changeListVersion": 3,
+    "isDeleted": false
+  },
+  {
+    "id": "default-product-cotton-pads",
+    "changeListVersion": 3,
+    "isDeleted": false
+  },
+  {
+    "id": "default-product-margarine",
+    "changeListVersion": 3,
+    "isDeleted": false
+  },
+  {
+    "id": "default-product-peas",
+    "changeListVersion": 3,
+    "isDeleted": false
+  },
+  {
+    "id": "default-product-pretzels",
+    "changeListVersion": 3,
+    "isDeleted": false
+  },
+  {
+    "id": "default-product-smoothie",
+    "changeListVersion": 3,
+    "isDeleted": false
+  },
+  {
+    "id": "default-product-toast",
+    "changeListVersion": 3,
+    "isDeleted": false
+  },
+  {
+    "id": "default-product-tomato-paste",
+    "changeListVersion": 3,
+    "isDeleted": false
   }
 ]

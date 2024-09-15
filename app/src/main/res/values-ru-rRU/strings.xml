@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- GroceryListScreen -->
+    <string name="purchased_groceries_group_title">Недавно использованные</string>
+    <string name="grocery_list_name_text_field_placeholder">Введите имя</string>
+    <string name="shopping_done_title">Покупки сделаны!</string>
+    <string name="empty_grocery_list_title">Добавьте свои первые продукты!</string>
+    <!-- AddGrocery -->
+    <string name="add_grocery_search_field_placeholder_collapsed">Добавьте продукт</string>
+    <string name="add_grocery_search_field_placeholder_expanded">напр. хлеб</string>
+    <string name="add_grocery_search_field_trailing_icon_description">Очистить текст в строке поиска</string>
+    <string name="add_grocery_refine_item_options_title">Уточнить «%s»</string>
+    <string name="add_grocery_edit_item_button_title">Введите детали о товаре</string>
+    <!-- EditGrocery -->
+    <string name="edit_grocery_item_description_placeholder">Количество, описание</string>
+    <string name="edit_grocery_change_icon_button_title">Изменить иконку</string>
+    <string name="edit_grocery_change_category_button_title">Изменить категорию</string>
+    <string name="edit_grocery_remove_item_button_title">Удалить элемент из списка</string>
+    <string name="edit_grocery_delete_grocery_button_title">Удалить свой продукт</string>
+    <string name="select_category_dialog_title">Выберите категорию</string>
+    <string name="select_icon_dialog_title">Выберите иконку</string>
+    <string name="delete_product_dialog_text">Этот элемент будет удален из всех ваших списков продуктов</string>
+    <string name="delete_grocery_list_dialog_text">Вы уверены, что хотите удалить этот список?</string>
+    <!-- GroceryListsDashboardScreen -->
+    <plurals name="dashboard_item_num_of_groceries_title">
+        <item quantity="one">%d товар</item>
+        <item quantity="few">%d товара</item>
+        <item quantity="many">%d товаров</item>
+        <item quantity="other">%d товаров</item>
+    </plurals>
+    <string name="add_grocery_list_button_description">Add new grocery list</string>
+    <!-- SettingsScreen -->
+    <string name="settings_dark_theme_config_system_default">Системная</string>
+    <string name="settings_dark_theme_config_light">Светлая</string>
+    <string name="settings_dark_theme_config_dark">Тёмная</string>
+    <string name="settings_theme">Тема</string>
+    <string name="settings_theme_mode">Режим темы</string>
+    <string name="settings_use_system_accent_color">Использовать цветовую схему системы</string>
+    <string name="settings_preferences">Настройки</string>
+    <string name="settings_open_last_viewed_list">Открывать последний просмотренный список</string>
+    <string name="settings_default_list">Открывать список по умолчанию</string>
+    <string name="settings_default_list_unspecified">None</string>
+    <string name="settings_reorder_categories_title">Сортировать категории</string>
+    <string name="settings_reorder_categories_description">Grocery Genius сортирует товары по их категориям. Вы можете упорядочить их в соответствии с вашим любимым магазином.</string>
+    <string name="settings_dynamic_color_not_supported_message">Ваше устройство не поддерживает динамический цвет</string>
+    <string name="settings_feedback">Обратная связь</string>
+    <string name="github_link_description">View the source code, contribute, report bugs, and request features.</string>
+    <string name="email_link_title">Отправить письмо разработчику</string>
+    <string name="email_link_description">Написать разработчику, чтобы оставить отзыв, предложить что-то или поделиться вашими мыслями.</string>
+    <string name="settings_credits">Благодарности</string>
+    <string name="settings_image_by_freepik_title">Изображение от pch.vector на Freepik</string>
+    <string name="settings_image_by_freepik_description">Изображение на экране списка продуктов создано pch.vector</string>
+    <!-- IconPickerScreen -->
+    <string name="icon_picker_screen_title">Выберите иконку</string>
+    <string name="icon_picker_search_field_placeholder">Искать иконку</string>
+    <!-- OnboardingSyncScreen -->
+    <string name="onboarding_sync_status_running_title">Секунду …</string>
+    <string name="onboarding_sync_status_succeeded_title">Всё готово!</string>
+    <string name="onboarding_sync_status_failed_title">Не удалось выполнить сетевой запрос</string>
+    <string name="onboarding_sync_status_offline_title">Можете подключиться к интернету?</string>
+    <string name="onboarding_sync_description">Нужно скачать некоторые предопределенные продукты, чтобы вам не приходилось создавать их вручную.</string>
+    <string name="onboarding_skip_sync_button_title">Продолжить без загрузки</string>
+    <!-- General -->
+    <string name="done">Готово</string>
+    <string name="delete">Удалить</string>
+    <string name="edit">Редактировать</string>
+    <string name="back">Назад</string>
+    <string name="settings">Настройки</string>
+    <string name="forward">Вперёд</string>
+    <string name="close">Закрыть</string>
+    <string name="reset">Сбросить</string>
+    <string name="retry">Повторить</string>
+    <!-- Components -->
+    <string name="custom_category_title">Custom</string>
+    <string name="toggle_dropdown_menu_visibility">Toggle dropdown menu visibility\n</string>
+    <string name="drag_handle">Элемент для перетаскивания</string>
+    <!-- Notifications -->
+    <string name="sync_work_notification_channel_name">Sync</string>
+    <string name="sync_work_notification_channel_description">Background tasks for Grocery Genius</string>
+    <string name="sync_work_notification_title">Синхронизируем ваши продукты</string>
+</resources>

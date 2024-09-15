@@ -2,7 +2,7 @@
 <resources>
     <!-- GroceryListScreen -->
     <string name="purchased_groceries_group_title">Недавно использованные</string>
-    <string name="grocery_list_name_text_field_placeholder">Введите имя</string>
+    <string name="grocery_list_name_text_field_placeholder">Введите название</string>
     <string name="shopping_done_title">Покупки сделаны!</string>
     <string name="empty_grocery_list_title">Добавьте свои первые продукты!</string>
     <!-- AddGrocery -->
@@ -10,7 +10,7 @@
     <string name="add_grocery_search_field_placeholder_expanded">напр. хлеб</string>
     <string name="add_grocery_search_field_trailing_icon_description">Очистить текст в строке поиска</string>
     <string name="add_grocery_refine_item_options_title">Уточнить «%s»</string>
-    <string name="add_grocery_edit_item_button_title">Введите детали о товаре</string>
+    <string name="add_grocery_edit_item_button_title">Ввести детали о товаре</string>
     <!-- EditGrocery -->
     <string name="edit_grocery_item_description_placeholder">Количество, описание</string>
     <string name="edit_grocery_change_icon_button_title">Изменить иконку</string>
@@ -46,7 +46,7 @@
     <string name="settings_feedback">Обратная связь</string>
     <string name="github_link_description">View the source code, contribute, report bugs, and request features.</string>
     <string name="email_link_title">Отправить письмо разработчику</string>
-    <string name="email_link_description">Написать разработчику, чтобы оставить отзыв, предложить что-то или поделиться вашими мыслями.</string>
+    <string name="email_link_description">Написать разработчику, чтобы оставить отзыв, предложить что-то или поделиться своими мыслями.</string>
     <string name="settings_credits">Благодарности</string>
     <string name="settings_image_by_freepik_title">Изображение от pch.vector на Freepik</string>
     <string name="settings_image_by_freepik_description">Изображение на экране списка продуктов создано pch.vector</string>

@@ -3,3 +3,5 @@ files:
     translation: /app/src/main/res/values-%android_code%/strings.xml
     translate_attributes: 0
     content_segmentation: 0
+  - source: /assets/category/categories_en.json
+    translation: /assets/category/categories_%locale_with_underscore%.json

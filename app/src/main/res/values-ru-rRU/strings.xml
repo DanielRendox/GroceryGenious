@@ -28,7 +28,7 @@
         <item quantity="many">%d товаров</item>
         <item quantity="other">%d товаров</item>
     </plurals>
-    <string name="add_grocery_list_button_description">Add new grocery list</string>
+    <string name="add_grocery_list_button_description">Создать новый список продуктов</string>
     <!-- SettingsScreen -->
     <string name="settings_dark_theme_config_system_default">Системная</string>
     <string name="settings_dark_theme_config_light">Светлая</string>
@@ -39,12 +39,12 @@
     <string name="settings_preferences">Настройки</string>
     <string name="settings_open_last_viewed_list">Открывать последний просмотренный список</string>
     <string name="settings_default_list">Открывать список по умолчанию</string>
-    <string name="settings_default_list_unspecified">None</string>
+    <string name="settings_default_list_unspecified">Не указан</string>
     <string name="settings_reorder_categories_title">Сортировать категории</string>
     <string name="settings_reorder_categories_description">Grocery Genius сортирует товары по их категориям. Вы можете упорядочить их в соответствии с вашим любимым магазином.</string>
     <string name="settings_dynamic_color_not_supported_message">Ваше устройство не поддерживает динамический цвет</string>
     <string name="settings_feedback">Обратная связь</string>
-    <string name="github_link_description">View the source code, contribute, report bugs, and request features.</string>
+    <string name="github_link_description">Посмотреть исходный код, помочь проекту, сообщить об ошибках или предложить функционал.</string>
     <string name="email_link_title">Отправить письмо разработчику</string>
     <string name="email_link_description">Написать разработчику, чтобы оставить отзыв, предложить что-то или поделиться своими мыслями.</string>
     <string name="settings_credits">Благодарности</string>
@@ -71,11 +71,11 @@
     <string name="reset">Сбросить</string>
     <string name="retry">Повторить</string>
     <!-- Components -->
-    <string name="custom_category_title">Custom</string>
-    <string name="toggle_dropdown_menu_visibility">Toggle dropdown menu visibility\n</string>
+    <string name="custom_category_title">Свои товары</string>
+    <string name="toggle_dropdown_menu_visibility">Показать/скрыть выпадающее меню</string>
     <string name="drag_handle">Элемент для перетаскивания</string>
     <!-- Notifications -->
-    <string name="sync_work_notification_channel_name">Sync</string>
-    <string name="sync_work_notification_channel_description">Background tasks for Grocery Genius</string>
+    <string name="sync_work_notification_channel_name">Синхронизация</string>
+    <string name="sync_work_notification_channel_description">Периодическая синхронизация базы продуктов.</string>
     <string name="sync_work_notification_title">Синхронизируем ваши продукты</string>
 </resources>

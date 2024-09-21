@@ -28,7 +28,7 @@
         <item quantity="many">%d товарів</item>
         <item quantity="other">%d товарів</item>
     </plurals>
-    <string name="add_grocery_list_button_description">Add new grocery list</string>
+    <string name="add_grocery_list_button_description">Створити новий список продуктів</string>
     <!-- SettingsScreen -->
     <string name="settings_dark_theme_config_system_default">Система</string>
     <string name="settings_dark_theme_config_light">Світла</string>
@@ -39,12 +39,12 @@
     <string name="settings_preferences">Налаштування</string>
     <string name="settings_open_last_viewed_list">Відкривати останній переглянутий список</string>
     <string name="settings_default_list">Відкривати список за замовчуванням</string>
-    <string name="settings_default_list_unspecified">None</string>
+    <string name="settings_default_list_unspecified">Не вказаний</string>
     <string name="settings_reorder_categories_title">Сортувати категорії</string>
     <string name="settings_reorder_categories_description">Grocery Genius сортує товари за їхніми категоріями. Ви можете впорядкувати їх відповідно до вашого улюбленого магазину.</string>
     <string name="settings_dynamic_color_not_supported_message">Ваш пристрій не підтримує динамічний колір</string>
     <string name="settings_feedback">Зворотній зв\'язок</string>
-    <string name="github_link_description">View the source code, contribute, report bugs, and request features.</string>
+    <string name="github_link_description">Переглянути вихідний код, допомогти проєкту, повідомити про помилки або запропонувати функції.</string>
     <string name="email_link_title">Надіслати листа розробнику</string>
     <string name="email_link_description">Написати розробнику, щоб залишити відгук, запропонувати щось або поділитися своїми думками.</string>
     <string name="settings_credits">Подяки</string>
@@ -71,11 +71,11 @@
     <string name="reset">Скинути</string>
     <string name="retry">Повторити спробу</string>
     <!-- Components -->
-    <string name="custom_category_title">Custom</string>
-    <string name="toggle_dropdown_menu_visibility">Toggle dropdown menu visibility\n</string>
+    <string name="custom_category_title">Власні</string>
+    <string name="toggle_dropdown_menu_visibility">Показати/приховати випадне меню</string>
     <string name="drag_handle">Елемент для перетягування</string>
     <!-- Notifications -->
-    <string name="sync_work_notification_channel_name">Sync</string>
-    <string name="sync_work_notification_channel_description">Background tasks for Grocery Genius</string>
+    <string name="sync_work_notification_channel_name">Синхронізація</string>
+    <string name="sync_work_notification_channel_description">Періодична синхронізація бази продуктів.</string>
     <string name="sync_work_notification_title">Синхронізуємо ваші продукти</string>
 </resources>

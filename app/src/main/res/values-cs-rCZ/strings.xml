@@ -28,7 +28,7 @@
         <item quantity="many">%d items</item>
         <item quantity="other">%d items</item>
     </plurals>
-    <string name="add_grocery_list_button_description">Add new grocery list</string>
+    <string name="add_grocery_list_button_description">Create new grocery list</string>
     <!-- SettingsScreen -->
     <string name="settings_dark_theme_config_system_default">System</string>
     <string name="settings_dark_theme_config_light">Light</string>
@@ -39,12 +39,12 @@
     <string name="settings_preferences">Preferences</string>
     <string name="settings_open_last_viewed_list">Open Last Viewed List</string>
     <string name="settings_default_list">Open Default List</string>
-    <string name="settings_default_list_unspecified">None</string>
+    <string name="settings_default_list_unspecified">Undefined</string>
     <string name="settings_reorder_categories_title">Reorder Categories</string>
     <string name="settings_reorder_categories_description">Grocery Genius sorts items by their categories. You can arrange them to match your favorite store.</string>
     <string name="settings_dynamic_color_not_supported_message">Your device does not support dynamic color</string>
     <string name="settings_feedback">Feedback</string>
-    <string name="github_link_description">View the source code, contribute, report bugs, and request features.</string>
+    <string name="github_link_description">View the source code, contribute, report bugs, and suggest features.</string>
     <string name="email_link_title">Email Developer</string>
     <string name="email_link_description">Reach out to the developer for friendly feedback, suggestions, or any other input you have in mind.</string>
     <string name="settings_credits">Credits</string>
@@ -71,11 +71,11 @@
     <string name="reset">Reset</string>
     <string name="retry">Retry</string>
     <!-- Components -->
-    <string name="custom_category_title">Custom</string>
-    <string name="toggle_dropdown_menu_visibility">Toggle dropdown menu visibility\n</string>
+    <string name="custom_category_title">Custom groceries</string>
+    <string name="toggle_dropdown_menu_visibility">Show/hide dropdown menu</string>
     <string name="drag_handle">Drag handle</string>
     <!-- Notifications -->
-    <string name="sync_work_notification_channel_name">Sync</string>
-    <string name="sync_work_notification_channel_description">Background tasks for Grocery Genius</string>
+    <string name="sync_work_notification_channel_name">Synchronization</string>
+    <string name="sync_work_notification_channel_description">Periodic synchronization of grocery database.</string>
     <string name="sync_work_notification_title">Syncing your groceries</string>
 </resources>

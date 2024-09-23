@@ -14,8 +14,11 @@
 [<img src="images/banners/banner_izzy_on_droid.png"
       alt="Get it on IzzyOnDroid"
       height="80">](https://apt.izzysoft.de/fdroid/index/apk/com.rendox.grocerygenius)
+[<img src="images/banners/banner_google_play.png" 
+      alt="Get it on Google Play"
+      height="80">](https://play.google.com/store/apps/details?id=com.rendox.grocerygenius)
 
-</div>
+</div>М
 
 <br />
 <br />

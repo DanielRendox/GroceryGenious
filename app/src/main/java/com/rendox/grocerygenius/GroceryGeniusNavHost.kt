@@ -38,7 +38,7 @@ fun GroceryGeniusNavHost(
                 }
             },
             navigateToSettingsScreen = {
-                if (navController.currentDestination?.route == GROCERY_LISTS_DASHBOARD_ROUTE) {
+                if (navController.currentDestination?.route == Route) {
                     navController.navigateToSettings()
                 }
             },

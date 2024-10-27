@@ -36,7 +36,7 @@
     <string name="settings_preferences">Preferences</string>
     <string name="settings_open_last_viewed_list">Open Last Viewed List</string>
     <string name="settings_default_list">Open Default List</string>
-    <string name="settings_default_list_unspecified">Unspecified</string>
+    <string name="settings_default_list_unspecified">Undefined</string>
     <string name="settings_reorder_categories_title">Reorder Categories</string>
     <string name="settings_reorder_categories_description">Grocery Genius sorts items by their categories. You can arrange them to match your favorite store.</string>
     <string name="settings_dynamic_color_not_supported_message">Your device does not support dynamic color</string>
@@ -68,11 +68,11 @@
     <string name="reset">Reset</string>
     <string name="retry">Retry</string>
     <!-- Components -->
-    <string name="custom_category_title">Custom</string>
-    <string name="toggle_dropdown_menu_visibility">Show/hide dropdown menu\n</string>
+    <string name="custom_category_title">Custom groceries</string>
+    <string name="toggle_dropdown_menu_visibility">Show/hide dropdown menu</string>
     <string name="drag_handle">Drag handle</string>
     <!-- Notifications -->
     <string name="sync_work_notification_channel_name">Synchronization</string>
-    <string name="sync_work_notification_channel_description"> Periodic synchronization of grocery database.</string>
+    <string name="sync_work_notification_channel_description">Periodic synchronization of grocery database.</string>
     <string name="sync_work_notification_title">Syncing your groceries</string>
 </resources>

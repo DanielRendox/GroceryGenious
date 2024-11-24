@@ -1,0 +1,52 @@
+[
+  {
+    "id": "default-category-dairy-and-eggs",
+    "name": "Молочні продукти та яйця",
+    "sortingPriority": 2
+  },
+  {
+    "id": "default-category-drinks",
+    "name": "Напої",
+    "sortingPriority": 7
+  },
+  {
+    "id": "default-category-fruits-and-vegetables",
+    "name": "Фрукти та овочі",
+    "sortingPriority": 1
+  },
+  {
+    "id": "default-category-grain-products",
+    "name": "Зернові продукти",
+    "sortingPriority": 5
+  },
+  {
+    "id": "default-category-health-and-beauty",
+    "name": "Здоров'я і краса",
+    "sortingPriority": 9
+  },
+  {
+    "id": "default-category-household",
+    "name": "Домашнє господарство",
+    "sortingPriority": 8
+  },
+  {
+    "id": "default-category-meat-and-fish",
+    "name": "М'ясо і риба",
+    "sortingPriority": 3
+  },
+  {
+    "id": "default-category-pet-supplies",
+    "name": "Зоотовари",
+    "sortingPriority": 10
+  },
+  {
+    "id": "default-category-sauces-and-spices",
+    "name": "Соуси та спеції",
+    "sortingPriority": 4
+  },
+  {
+    "id": "default-category-snacks-and-bakery",
+    "name": "Закуски та випічка",
+    "sortingPriority": 6
+  }
+]

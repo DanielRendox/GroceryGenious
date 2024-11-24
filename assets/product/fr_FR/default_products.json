@@ -232,7 +232,7 @@
   },
   {
     "id": "default-product-cola",
-    "name": "Cola",
+    "name": "Coca-Cola",
     "iconId": "can.png",
     "categoryId": "default-category-drinks",
     "isDefault": true
@@ -904,7 +904,7 @@
   },
   {
     "id": "default-product-sweets",
-    "name": "Bonbons",
+    "name": "Friandises",
     "iconId": "sweets.png",
     "categoryId": "default-category-snacks-and-bakery",
     "isDefault": true

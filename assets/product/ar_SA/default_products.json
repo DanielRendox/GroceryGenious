@@ -1,266 +1,266 @@
 [
   {
     "id": "default-product-almonds",
-    "name": "Almonds",
+    "name": "لوز",
     "iconId": "nuts.png",
     "categoryId": "default-category-snacks-and-bakery",
     "isDefault": true
   },
   {
     "id": "default-product-apple",
-    "name": "Apples",
+    "name": "تفاح",
     "iconId": "apple.png",
     "categoryId": "default-category-fruits-and-vegetables",
     "isDefault": true
   },
   {
     "id": "default-product-apricots",
-    "name": "Apricots",
+    "name": "مشمش",
     "iconId": "apricots.png",
     "categoryId": "default-category-fruits-and-vegetables",
     "isDefault": true
   },
   {
     "id": "default-product-avocado",
-    "name": "Avocado",
+    "name": "أفوكادو",
     "iconId": "avocado.png",
     "categoryId": "default-category-fruits-and-vegetables",
     "isDefault": true
   },
   {
     "id": "default-product-bacon",
-    "name": "Bacon",
+    "name": "لحم مقدد",
     "iconId": "bacon.png",
     "categoryId": "default-category-meat-and-fish",
     "isDefault": true
   },
   {
     "id": "default-product-baguette",
-    "name": "Baguette",
+    "name": "خبز الباجيت",
     "iconId": "baguette.png",
     "categoryId": "default-category-snacks-and-bakery",
     "isDefault": true
   },
   {
     "id": "default-product-bananas",
-    "name": "Bananas",
+    "name": "موز",
     "iconId": "bananas.png",
     "categoryId": "default-category-fruits-and-vegetables",
     "isDefault": true
   },
   {
     "id": "default-product-soap-bar",
-    "name": "Bar soap",
+    "name": "صابون صلب",
     "iconId": "soap_bar.png",
     "categoryId": "default-category-household",
     "isDefault": true
   },
   {
     "id": "default-product-batteries",
-    "name": "Batteries",
+    "name": "بطاريات",
     "iconId": "batteries.png",
     "categoryId": "default-category-household",
     "isDefault": true
   },
   {
     "id": "default-product-beef",
-    "name": "Beef",
+    "name": "لحم بقر",
     "iconId": "cow.png",
     "categoryId": "default-category-meat-and-fish",
     "isDefault": true
   },
   {
     "id": "default-product-beer",
-    "name": "Beer",
+    "name": "بيرة",
     "iconId": "beer.png",
     "categoryId": "default-category-drinks",
     "isDefault": true
   },
   {
     "id": "default-product-beet",
-    "name": "Beet",
+    "name": "شمندر",
     "iconId": "beet.png",
     "categoryId": "default-category-fruits-and-vegetables",
     "isDefault": true
   },
   {
     "id": "default-product-pepper",
-    "name": "Bell pepper",
+    "name": "فلفل حلو",
     "iconId": "pepper.png",
     "categoryId": "default-category-fruits-and-vegetables",
     "isDefault": true
   },
   {
     "id": "default-product-berries",
-    "name": "Berries",
+    "name": "توت",
     "iconId": "berries.png",
     "categoryId": "default-category-fruits-and-vegetables",
     "isDefault": true
   },
   {
     "id": "default-product-bread",
-    "name": "Bread",
+    "name": "خبز",
     "iconId": "bread.png",
     "categoryId": "default-category-snacks-and-bakery",
     "isDefault": true
   },
   {
     "id": "default-product-broccoli",
-    "name": "Broccoli",
+    "name": "بروكلي",
     "iconId": "broccoli.png",
     "categoryId": "default-category-fruits-and-vegetables",
     "isDefault": true
   },
   {
     "id": "default-product-buns",
-    "name": "Buns",
+    "name": "خبز البرغر",
     "iconId": "buns.png",
     "categoryId": "default-category-snacks-and-bakery",
     "isDefault": true
   },
   {
     "id": "default-product-butter",
-    "name": "Butter",
+    "name": "زبدة",
     "iconId": "butter.png",
     "categoryId": "default-category-dairy-and-eggs",
     "isDefault": true
   },
   {
     "id": "default-product-cabbage",
-    "name": "Cabbage",
+    "name": "ملفوف",
     "iconId": "cabbage.png",
     "categoryId": "default-category-fruits-and-vegetables",
     "isDefault": true
   },
   {
     "id": "default-product-cake",
-    "name": "Cake",
+    "name": "كعك",
     "iconId": "cake.png",
     "categoryId": "default-category-snacks-and-bakery",
     "isDefault": true
   },
   {
     "id": "default-product-carrots",
-    "name": "Carrots",
+    "name": "جزر",
     "iconId": "carrots.png",
     "categoryId": "default-category-fruits-and-vegetables",
     "isDefault": true
   },
   {
     "id": "default-product-cat-food",
-    "name": "Cat food",
+    "name": "طعام القطط",
     "iconId": "cat.png",
     "categoryId": "default-category-pet-supplies",
     "isDefault": true
   },
   {
     "id": "default-product-cat-litter",
-    "name": "Cat litter",
+    "name": "رمل قطط",
     "iconId": "cat.png",
     "categoryId": "default-category-pet-supplies",
     "isDefault": true
   },
   {
     "id": "default-product-cat-treats",
-    "name": "Cat treats",
+    "name": "بسكويت القطط",
     "iconId": "cat.png",
     "categoryId": "default-category-pet-supplies",
     "isDefault": true
   },
   {
     "id": "default-product-cereal",
-    "name": "Cereal",
+    "name": "رقائق الذرة",
     "iconId": "cereal.png",
     "categoryId": "default-category-grain-products",
     "isDefault": true
   },
   {
     "id": "default-product-cheese",
-    "name": "Cheese",
+    "name": "جبن",
     "iconId": "cheese.png",
     "categoryId": "default-category-dairy-and-eggs",
     "isDefault": true
   },
   {
     "id": "default-product-cherries",
-    "name": "Cherries",
+    "name": "كرز",
     "iconId": "cherries.png",
     "categoryId": "default-category-fruits-and-vegetables",
     "isDefault": true
   },
   {
     "id": "default-product-chicken",
-    "name": "Chicken",
+    "name": "دجاج",
     "iconId": "chicken.png",
     "categoryId": "default-category-meat-and-fish",
     "isDefault": true
   },
   {
     "id": "default-product-chicken-legs",
-    "name": "Chicken Legs",
+    "name": "سيقان الدجاج",
     "iconId": "chicken_legs.png",
     "categoryId": "default-category-meat-and-fish",
     "isDefault": true
   },
   {
     "id": "default-product-chips",
-    "name": "Chips",
+    "name": "رقائق",
     "iconId": "chips.png",
     "categoryId": "default-category-snacks-and-bakery",
     "isDefault": true
   },
   {
     "id": "default-product-chocolate",
-    "name": "Chocolate",
+    "name": "شوكولاتة",
     "iconId": "chocolate.png",
     "categoryId": "default-category-snacks-and-bakery",
     "isDefault": true
   },
   {
     "id": "default-product-cinnamon",
-    "name": "Cinnamon",
+    "name": "قرفة",
     "iconId": "cinnamon.png",
     "categoryId": "default-category-sauces-and-spices",
     "isDefault": true
   },
   {
     "id": "default-product-cleaner-spray",
-    "name": "Cleaner Spray",
+    "name": "رذاذ منظف",
     "iconId": "cleaner_spray.png",
     "categoryId": "default-category-household",
     "isDefault": true
   },
   {
     "id": "default-product-cola",
-    "name": "Cola",
+    "name": "كولا",
     "iconId": "can.png",
     "categoryId": "default-category-drinks",
     "isDefault": true
   },
   {
     "id": "default-product-condoms",
-    "name": "Condoms",
+    "name": "عازل ذكري",
     "iconId": "condoms.png",
     "categoryId": "default-category-health-and-beauty",
     "isDefault": true
   },
   {
     "id": "default-product-cookies",
-    "name": "Cookies",
+    "name": "الكعكات",
     "iconId": "cookies.png",
     "categoryId": "default-category-snacks-and-bakery",
     "isDefault": true
   },
   {
     "id": "default-product-cottage-cheese",
-    "name": "Cottage Cheese",
+    "name": "جبن طري",
     "iconId": "cottage_cheese.png",
     "categoryId": "default-category-dairy-and-eggs",
     "isDefault": true
   },
   {
     "id": "default-product-cotton-swabs",
-    "name": "Cotton swabs",
+    "name": "أعواد قطنية",
     "iconId": "cotton_swabs.png",
     "categoryId": "default-category-health-and-beauty",
     "isDefault": true
@@ -274,133 +274,133 @@
   },
   {
     "id": "default-product-cream",
-    "name": "Cream",
+    "name": "كريم",
     "iconId": "tube.png",
     "categoryId": "default-category-health-and-beauty",
     "isDefault": true
   },
   {
     "id": "default-product-cucumber",
-    "name": "Cucumber",
+    "name": "خيار",
     "iconId": "cucumber.png",
     "categoryId": "default-category-fruits-and-vegetables",
     "isDefault": true
   },
   {
     "id": "default-product-deodorant",
-    "name": "Deodorant",
+    "name": "مزيل العرق",
     "iconId": "deodorant.png",
     "categoryId": "default-category-health-and-beauty",
     "isDefault": true
   },
   {
     "id": "default-product-dishwashing-liquid",
-    "name": "Dishwashing liquid",
+    "name": "سائل غسيل الصحون",
     "iconId": "washing_liquid.png",
     "categoryId": "default-category-health-and-beauty",
     "isDefault": true
   },
   {
     "id": "default-product-dog-food",
-    "name": "Dog food",
+    "name": "طعام الكلاب",
     "iconId": "dog.png",
     "categoryId": "default-category-pet-supplies",
     "isDefault": true
   },
   {
     "id": "default-product-dog-treats",
-    "name": "Dog treats",
+    "name": "بسكويت الكلاب",
     "iconId": "dog.png",
     "categoryId": "default-category-pet-supplies",
     "isDefault": true
   },
   {
     "id": "default-product-drinks",
-    "name": "Drinks",
+    "name": "مشروبات",
     "iconId": "drinks.png",
     "categoryId": "default-category-drinks",
     "isDefault": true
   },
   {
     "id": "default-product-eggplant",
-    "name": "Eggplant",
+    "name": "باذنجان",
     "iconId": "eggplant.png",
     "categoryId": "default-category-fruits-and-vegetables",
     "isDefault": true
   },
   {
     "id": "default-product-eggs",
-    "name": "Eggs",
+    "name": "بيض",
     "iconId": "eggs.png",
     "categoryId": "default-category-dairy-and-eggs",
     "isDefault": true
   },
   {
     "id": "default-product-energy-drink",
-    "name": "Energy drink",
+    "name": "مشروب الطاقة",
     "iconId": "can.png",
     "categoryId": "default-category-drinks",
     "isDefault": true
   },
   {
     "id": "default-product-fish",
-    "name": "Fish",
+    "name": "سمك",
     "iconId": "fish.png",
     "categoryId": "default-category-meat-and-fish",
     "isDefault": true
   },
   {
     "id": "default-product-flour",
-    "name": "Flour",
+    "name": "طحين",
     "iconId": "flour.png",
     "categoryId": "default-category-sauces-and-spices",
     "isDefault": true
   },
   {
     "id": "default-product-fruits",
-    "name": "Fruits",
+    "name": "فواكه",
     "iconId": "fruits.png",
     "categoryId": "default-category-fruits-and-vegetables",
     "isDefault": true
   },
   {
     "id": "default-product-garlic",
-    "name": "Garlic",
+    "name": "ثوم",
     "iconId": "garlic.png",
     "categoryId": "default-category-fruits-and-vegetables",
     "isDefault": true
   },
   {
     "id": "default-product-gift",
-    "name": "Gift",
+    "name": "هدية",
     "iconId": "gift.png",
     "categoryId": "default-category-household",
     "isDefault": true
   },
   {
     "id": "default-product-grain",
-    "name": "Grain",
+    "name": "قمح",
     "iconId": "grain.png",
     "categoryId": "default-category-grain-products",
     "isDefault": true
   },
   {
     "id": "default-product-grapes",
-    "name": "Grapes",
+    "name": "عنب",
     "iconId": "grapes.png",
     "categoryId": "default-category-fruits-and-vegetables",
     "isDefault": true
   },
   {
     "id": "default-product-minced-meat",
-    "name": "Minced meat",
+    "name": "لحم مفروم",
     "iconId": "minced_meat.png",
     "categoryId": "default-category-meat-and-fish",
     "isDefault": true
   },
   {
     "id": "default-product-hair-gel",
-    "name": "Hair gel",
+    "name": "جل الشعر",
     "iconId": "cream.png",
     "categoryId": "default-category-health-and-beauty",
     "isDefault": true
@@ -414,42 +414,42 @@
   },
   {
     "id": "default-product-honey",
-    "name": "Honey",
+    "name": "عسل",
     "iconId": "honey.png",
     "categoryId": "default-category-sauces-and-spices",
     "isDefault": true
   },
   {
     "id": "default-product-ice-cream",
-    "name": "Ice Cream",
+    "name": "أيس كريم",
     "iconId": "ice_cream.png",
     "categoryId": "default-category-snacks-and-bakery",
     "isDefault": true
   },
   {
     "id": "default-product-jam",
-    "name": "Jam",
+    "name": "مربى",
     "iconId": "jam.png",
     "categoryId": "default-category-sauces-and-spices",
     "isDefault": true
   },
   {
     "id": "default-product-juice",
-    "name": "Juice",
+    "name": "عصير",
     "iconId": "juice.png",
     "categoryId": "default-category-drinks",
     "isDefault": true
   },
   {
     "id": "default-product-ketchup",
-    "name": "Ketchup",
+    "name": "كاتشب",
     "iconId": "ketchup.png",
     "categoryId": "default-category-sauces-and-spices",
     "isDefault": true
   },
   {
     "id": "default-product-kiwi",
-    "name": "Kiwi",
+    "name": "كيوي",
     "iconId": "kiwi.png",
     "categoryId": "default-category-fruits-and-vegetables",
     "isDefault": true
@@ -463,56 +463,56 @@
   },
   {
     "id": "default-product-lemon",
-    "name": "Lemon",
+    "name": "ليمون",
     "iconId": "lemon.png",
     "categoryId": "default-category-fruits-and-vegetables",
     "isDefault": true
   },
   {
     "id": "default-product-lipstick",
-    "name": "Lipstick",
+    "name": "أحمر شفاه",
     "iconId": "lipstick.png",
     "categoryId": "default-category-health-and-beauty",
     "isDefault": true
   },
   {
     "id": "default-product-soap-liquid",
-    "name": "Liquid soap",
+    "name": "صابون سائل",
     "iconId": "washing_liquid.png",
     "categoryId": "default-category-household",
     "isDefault": true
   },
   {
     "id": "default-product-mandarins",
-    "name": "Mandarins",
+    "name": "المندرين",
     "iconId": "mandarins.png",
     "categoryId": "default-category-fruits-and-vegetables",
     "isDefault": true
   },
   {
     "id": "default-product-margarine",
-    "name": "Margarine",
+    "name": "سمن نباتي",
     "iconId": "butter.png",
     "categoryId": "default-category-dairy-and-eggs",
     "isDefault": true
   },
   {
     "id": "default-product-mayonnaise",
-    "name": "Mayonnaise",
+    "name": "مايونيز",
     "iconId": "sauce.png",
     "categoryId": "default-category-sauces-and-spices",
     "isDefault": true
   },
   {
     "id": "default-product-meat",
-    "name": "Meat",
+    "name": "لحم",
     "iconId": "meat.png",
     "categoryId": "default-category-meat-and-fish",
     "isDefault": true
   },
   {
     "id": "default-product-milk",
-    "name": "Milk",
+    "name": "حليب",
     "iconId": "milk.png",
     "categoryId": "default-category-dairy-and-eggs",
     "isDefault": true
@@ -526,126 +526,126 @@
   },
   {
     "id": "default-product-mushroom",
-    "name": "Mushroom",
+    "name": "فطر",
     "iconId": "mushroom.png",
     "categoryId": "default-category-fruits-and-vegetables",
     "isDefault": true
   },
   {
     "id": "default-product-mustard",
-    "name": "Mustard",
+    "name": "خردل",
     "iconId": "cream.png",
     "categoryId": "default-category-sauces-and-spices",
     "isDefault": true
   },
   {
     "id": "default-product-napkins",
-    "name": "Napkins",
+    "name": "مناديل",
     "iconId": "napkins.png",
     "categoryId": "default-category-household",
     "isDefault": true
   },
   {
     "id": "default-product-noodles",
-    "name": "Noodles",
+    "name": "نودلز",
     "iconId": "pasta.png",
     "categoryId": "default-category-grain-products",
     "isDefault": true
   },
   {
     "id": "default-product-nuts",
-    "name": "Nuts",
+    "name": "مكسرات",
     "iconId": "nuts.png",
     "categoryId": "default-category-snacks-and-bakery",
     "isDefault": true
   },
   {
     "id": "default-product-oats",
-    "name": "Oats",
+    "name": "الشوفان",
     "iconId": "oats.png",
     "categoryId": "default-category-grain-products",
     "isDefault": true
   },
   {
     "id": "default-product-oil",
-    "name": "Oil",
+    "name": "زيت",
     "iconId": "bottle_narrow.png",
     "categoryId": "default-category-sauces-and-spices",
     "isDefault": true
   },
   {
     "id": "default-product-onions",
-    "name": "Onions",
+    "name": "بصل",
     "iconId": "onion.png",
     "categoryId": "default-category-fruits-and-vegetables",
     "isDefault": true
   },
   {
     "id": "default-product-orange",
-    "name": "Orange",
+    "name": "برتقال",
     "iconId": "orange.png",
     "categoryId": "default-category-fruits-and-vegetables",
     "isDefault": true
   },
   {
     "id": "default-product-pads",
-    "name": "Pads",
+    "name": "مناديل صحية",
     "iconId": "pads.png",
     "categoryId": "default-category-health-and-beauty",
     "isDefault": true
   },
   {
     "id": "default-product-paper-towels",
-    "name": "Paper towels",
+    "name": "مناشف ورقية",
     "iconId": "toilet_paper.png",
     "categoryId": "default-category-household",
     "isDefault": true
   },
   {
     "id": "default-product-paprika",
-    "name": "Paprika",
+    "name": "فلفل أحمر",
     "iconId": "jar_spices.png",
     "categoryId": "default-category-fruits-and-vegetables",
     "isDefault": true
   },
   {
     "id": "default-product-parsley",
-    "name": "Parsley",
+    "name": "بقدونس",
     "iconId": "parsley.png",
     "categoryId": "default-category-fruits-and-vegetables",
     "isDefault": true
   },
   {
     "id": "default-product-pasta",
-    "name": "Pasta",
+    "name": "معكرونة",
     "iconId": "pasta.png",
     "categoryId": "default-category-grain-products",
     "isDefault": true
   },
   {
     "id": "default-product-peach",
-    "name": "Peaches",
+    "name": "خوخ",
     "iconId": "peach.png",
     "categoryId": "default-category-fruits-and-vegetables",
     "isDefault": true
   },
   {
     "id": "default-product-peanuts",
-    "name": "Peanuts",
+    "name": "فول سوداني",
     "iconId": "nuts.png",
     "categoryId": "default-category-snacks-and-bakery",
     "isDefault": true
   },
   {
     "id": "default-product-pear",
-    "name": "Pear",
+    "name": "إجاص",
     "iconId": "pear.png",
     "categoryId": "default-category-fruits-and-vegetables",
     "isDefault": true
   },
   {
     "id": "default-product-peas",
-    "name": "Peas",
+    "name": "بازلاء",
     "iconId": "peas.png",
     "categoryId": "default-category-fruits-and-vegetables",
     "isDefault": true
@@ -659,7 +659,7 @@
   },
   {
     "id": "default-product-perfume",
-    "name": "Perfume",
+    "name": "عطر",
     "iconId": "perfume.png",
     "categoryId": "default-category-health-and-beauty",
     "isDefault": true
@@ -673,28 +673,28 @@
   },
   {
     "id": "default-product-pineapple",
-    "name": "Pineapple",
+    "name": "أناناس",
     "iconId": "pineapple.png",
     "categoryId": "default-category-fruits-and-vegetables",
     "isDefault": true
   },
   {
     "id": "default-product-pizza",
-    "name": "Pizza",
+    "name": "بيتزا",
     "iconId": "pizza.png",
     "categoryId": "default-category-snacks-and-bakery",
     "isDefault": true
   },
   {
     "id": "default-product-plums",
-    "name": "Plums",
+    "name": "برقوق",
     "iconId": "plums.png",
     "categoryId": "default-category-fruits-and-vegetables",
     "isDefault": true
   },
   {
     "id": "default-product-popcorn",
-    "name": "Popcorn",
+    "name": "فشار",
     "iconId": "popcorn.png",
     "categoryId": "default-category-snacks-and-bakery",
     "isDefault": true
@@ -708,7 +708,7 @@
   },
   {
     "id": "default-product-potatoes",
-    "name": "Potatoes",
+    "name": "بطاطس",
     "iconId": "potatoes.png",
     "categoryId": "default-category-fruits-and-vegetables",
     "isDefault": true
@@ -722,35 +722,35 @@
   },
   {
     "id": "default-product-pumpkin",
-    "name": "Pumpkin",
+    "name": "يقطين",
     "iconId": "pumpkin.png",
     "categoryId": "default-category-fruits-and-vegetables",
     "isDefault": true
   },
   {
     "id": "default-product-raspberry",
-    "name": "Raspberry",
+    "name": "توت العليق",
     "iconId": "raspberry.png",
     "categoryId": "default-category-fruits-and-vegetables",
     "isDefault": true
   },
   {
     "id": "default-product-razor",
-    "name": "Razor",
+    "name": "شفرة حلاقة",
     "iconId": "razor.png",
     "categoryId": "default-category-health-and-beauty",
     "isDefault": true
   },
   {
     "id": "default-product-rice",
-    "name": "Rice",
+    "name": "الأرز",
     "iconId": "rice.png",
     "categoryId": "default-category-grain-products",
     "isDefault": true
   },
   {
     "id": "default-product-rubbish-sacks",
-    "name": "Rubbish sacks",
+    "name": "أكياس قمامة",
     "iconId": "rubbish_sacks.png",
     "categoryId": "default-category-household",
     "isDefault": true
@@ -764,63 +764,63 @@
   },
   {
     "id": "default-product-salmon",
-    "name": "Salmon",
+    "name": "سلمون",
     "iconId": "fish.png",
     "categoryId": "default-category-meat-and-fish",
     "isDefault": true
   },
   {
     "id": "default-product-salt",
-    "name": "Salt",
+    "name": "ملح",
     "iconId": "salt.png",
     "categoryId": "default-category-sauces-and-spices",
     "isDefault": true
   },
   {
     "id": "default-product-sauce",
-    "name": "Sauce",
+    "name": "صلصة",
     "iconId": "ketchup.png",
     "categoryId": "default-category-sauces-and-spices",
     "isDefault": true
   },
   {
     "id": "default-product-sausages",
-    "name": "Sausages",
+    "name": "نقانق",
     "iconId": "sausages.png",
     "categoryId": "default-category-meat-and-fish",
     "isDefault": true
   },
   {
     "id": "default-product-shampoo",
-    "name": "Shampoo",
+    "name": "شامبو",
     "iconId": "washing_liquid.png",
     "categoryId": "default-category-health-and-beauty",
     "isDefault": true
   },
   {
     "id": "default-product-shaving-cream",
-    "name": "Shaving cream",
+    "name": "كريم حلاقة",
     "iconId": "tube.png",
     "categoryId": "default-category-health-and-beauty",
     "isDefault": true
   },
   {
     "id": "default-product-shopping-bag",
-    "name": "Shopping bag",
+    "name": "أكياس تسوق",
     "iconId": "shopping_bag.png",
     "categoryId": "default-category-household",
     "isDefault": true
   },
   {
     "id": "default-product-shower-gel",
-    "name": "Shower gel",
+    "name": "جيل الإستحمام",
     "iconId": "washing_liquid.png",
     "categoryId": "default-category-health-and-beauty",
     "isDefault": true
   },
   {
     "id": "default-product-shrimp",
-    "name": "Shrimp",
+    "name": "روبيان",
     "iconId": "shrimp.png",
     "categoryId": "default-category-meat-and-fish",
     "isDefault": true
@@ -834,203 +834,203 @@
   },
   {
     "id": "default-product-snacks",
-    "name": "Snacks",
+    "name": "وجبات خفيفة",
     "iconId": "snacks.png",
     "categoryId": "default-category-snacks-and-bakery",
     "isDefault": true
   },
   {
     "id": "default-product-soda",
-    "name": "Soda",
+    "name": "صودا",
     "iconId": "can.png",
     "categoryId": "default-category-drinks",
     "isDefault": true
   },
   {
     "id": "default-product-sour-cream",
-    "name": "Sour cream",
+    "name": "كريمة حامضة",
     "iconId": "sauce.png",
     "categoryId": "default-category-dairy-and-eggs",
     "isDefault": true
   },
   {
     "id": "default-product-soy-sauce",
-    "name": "Soy Sauce",
+    "name": "صلصة الصويا",
     "iconId": "bottle_narrow.png",
     "categoryId": "default-category-sauces-and-spices",
     "isDefault": true
   },
   {
     "id": "default-product-spaghetti",
-    "name": "Spaghetti",
+    "name": "معكرونة",
     "iconId": "pasta.png",
     "categoryId": "default-category-grain-products",
     "isDefault": true
   },
   {
     "id": "default-product-spices",
-    "name": "Spices",
+    "name": "توابل",
     "iconId": "spices.png",
     "categoryId": "default-category-sauces-and-spices",
     "isDefault": true
   },
   {
     "id": "default-product-sponge",
-    "name": "Sponge",
+    "name": "إسفنجة",
     "iconId": "sponge.png",
     "categoryId": "default-category-household",
     "isDefault": true
   },
   {
     "id": "default-product-strawberry",
-    "name": "Strawberry",
+    "name": "فراولة",
     "iconId": "strawberry.png",
     "categoryId": "default-category-fruits-and-vegetables",
     "isDefault": true
   },
   {
     "id": "default-product-sugar",
-    "name": "Sugar",
+    "name": "سكر",
     "iconId": "sugar_cubes.png",
     "categoryId": "default-category-sauces-and-spices",
     "isDefault": true
   },
   {
     "id": "default-product-sweet-corn",
-    "name": "Sweet corn",
+    "name": "ذرة حلوة",
     "iconId": "sweet_corn.png",
     "categoryId": "default-category-fruits-and-vegetables",
     "isDefault": true
   },
   {
     "id": "default-product-sweets",
-    "name": "Sweets",
+    "name": "حلويات",
     "iconId": "sweets.png",
     "categoryId": "default-category-snacks-and-bakery",
     "isDefault": true
   },
   {
     "id": "default-product-tangerines",
-    "name": "Tangerines",
+    "name": "اليوسفي",
     "iconId": "tangerines.png",
     "categoryId": "default-category-fruits-and-vegetables",
     "isDefault": true
   },
   {
     "id": "default-product-tea",
-    "name": "Tea",
+    "name": "شاي",
     "iconId": "tea.png",
     "categoryId": "default-category-drinks",
     "isDefault": true
   },
   {
     "id": "default-product-toast",
-    "name": "Toast",
+    "name": "خبز محمص",
     "iconId": "toast.png",
     "categoryId": "default-category-snacks-and-bakery",
     "isDefault": true
   },
   {
     "id": "default-product-toilet-paper",
-    "name": "Toilet paper",
+    "name": "ورق حمام",
     "iconId": "toilet_paper.png",
     "categoryId": "default-category-health-and-beauty",
     "isDefault": true
   },
   {
     "id": "default-product-tomatoes",
-    "name": "Tomatoes",
+    "name": "طماطم",
     "iconId": "tomatoes.png",
     "categoryId": "default-category-fruits-and-vegetables",
     "isDefault": true
   },
   {
     "id": "default-product-tomato-paste",
-    "name": "Tomato paste",
+    "name": "معجون الطماطم",
     "iconId": "tomato_paste.png",
     "categoryId": "default-category-sauces-and-spices",
     "isDefault": true
   },
   {
     "id": "default-product-toothbrush",
-    "name": "Toothbrush",
+    "name": "فرشاة أسنان",
     "iconId": "toothbrush.png",
     "categoryId": "default-category-health-and-beauty",
     "isDefault": true
   },
   {
     "id": "default-product-toothpaste",
-    "name": "Toothpaste",
+    "name": "معجون أسنان",
     "iconId": "tube.png",
     "categoryId": "default-category-health-and-beauty",
     "isDefault": true
   },
   {
     "id": "default-product-trout",
-    "name": "Trout",
+    "name": "سمك السلمون المرقط",
     "iconId": "fish.png",
     "categoryId": "default-category-meat-and-fish",
     "isDefault": true
   },
   {
     "id": "default-product-tuna",
-    "name": "Tuna",
+    "name": "تونة",
     "iconId": "fish.png",
     "categoryId": "default-category-meat-and-fish",
     "isDefault": true
   },
   {
     "id": "default-product-vegetables",
-    "name": "Vegetables",
+    "name": "خضروات",
     "iconId": "vegetables.png",
     "categoryId": "default-category-fruits-and-vegetables",
     "isDefault": true
   },
   {
     "id": "default-product-vinegar",
-    "name": "Vinegar",
+    "name": "خل",
     "iconId": "bottle_narrow.png",
     "categoryId": "default-category-sauces-and-spices",
     "isDefault": true
   },
   {
     "id": "default-product-walnuts",
-    "name": "Walnuts",
+    "name": "جوز",
     "iconId": "walnuts.png",
     "categoryId": "default-category-snacks-and-bakery",
     "isDefault": true
   },
   {
     "id": "default-product-water",
-    "name": "Water",
+    "name": "مياه",
     "iconId": "bottle_plastic.png",
     "categoryId": "default-category-drinks",
     "isDefault": true
   },
   {
     "id": "default-product-watermelon",
-    "name": "Watermelon",
+    "name": "بطيخ أحمر",
     "iconId": "watermelon.png",
     "categoryId": "default-category-fruits-and-vegetables",
     "isDefault": true
   },
   {
     "id": "default-product-wine",
-    "name": "Wine",
+    "name": "نبيذ",
     "iconId": "wine.png",
     "categoryId": "default-category-drinks",
     "isDefault": true
   },
   {
     "id": "default-product-yogurt",
-    "name": "Yogurt",
+    "name": "زبادي",
     "iconId": "bottle_small.png",
     "categoryId": "default-category-dairy-and-eggs",
     "isDefault": true
   },
   {
     "id": "default-product-zucchini",
-    "name": "Zucchini",
+    "name": "كوسى",
     "iconId": "zucchini.png",
     "categoryId": "default-category-fruits-and-vegetables",
     "isDefault": true

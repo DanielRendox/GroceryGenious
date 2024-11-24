@@ -330,28 +330,28 @@
   },
   {
     "id": "default-product-eggs",
-    "name": "Eggs",
+    "name": "Ägg",
     "iconId": "eggs.png",
     "categoryId": "default-category-dairy-and-eggs",
     "isDefault": true
   },
   {
     "id": "default-product-energy-drink",
-    "name": "Energy drink",
+    "name": "Energidryck",
     "iconId": "can.png",
     "categoryId": "default-category-drinks",
     "isDefault": true
   },
   {
     "id": "default-product-fish",
-    "name": "Fish",
+    "name": "Fisk",
     "iconId": "fish.png",
     "categoryId": "default-category-meat-and-fish",
     "isDefault": true
   },
   {
     "id": "default-product-flour",
-    "name": "Flour",
+    "name": "Mjöl",
     "iconId": "flour.png",
     "categoryId": "default-category-sauces-and-spices",
     "isDefault": true
@@ -365,7 +365,7 @@
   },
   {
     "id": "default-product-garlic",
-    "name": "Garlic",
+    "name": "Vitlök",
     "iconId": "garlic.png",
     "categoryId": "default-category-fruits-and-vegetables",
     "isDefault": true
@@ -414,14 +414,14 @@
   },
   {
     "id": "default-product-honey",
-    "name": "Honey",
+    "name": "Honung",
     "iconId": "honey.png",
     "categoryId": "default-category-sauces-and-spices",
     "isDefault": true
   },
   {
     "id": "default-product-ice-cream",
-    "name": "Ice Cream",
+    "name": "Glass",
     "iconId": "ice_cream.png",
     "categoryId": "default-category-snacks-and-bakery",
     "isDefault": true
@@ -456,14 +456,14 @@
   },
   {
     "id": "default-product-lamb",
-    "name": "Lamb",
+    "name": "Lamm",
     "iconId": "sheep.png",
     "categoryId": "default-category-meat-and-fish",
     "isDefault": true
   },
   {
     "id": "default-product-lemon",
-    "name": "Lemon",
+    "name": "Citron",
     "iconId": "lemon.png",
     "categoryId": "default-category-fruits-and-vegetables",
     "isDefault": true
@@ -505,14 +505,14 @@
   },
   {
     "id": "default-product-meat",
-    "name": "Meat",
+    "name": "Kött",
     "iconId": "meat.png",
     "categoryId": "default-category-meat-and-fish",
     "isDefault": true
   },
   {
     "id": "default-product-milk",
-    "name": "Milk",
+    "name": "Mjölk",
     "iconId": "milk.png",
     "categoryId": "default-category-dairy-and-eggs",
     "isDefault": true
@@ -533,7 +533,7 @@
   },
   {
     "id": "default-product-mustard",
-    "name": "Mustard",
+    "name": "Senap",
     "iconId": "cream.png",
     "categoryId": "default-category-sauces-and-spices",
     "isDefault": true
@@ -547,14 +547,14 @@
   },
   {
     "id": "default-product-noodles",
-    "name": "Noodles",
+    "name": "Nudlar",
     "iconId": "pasta.png",
     "categoryId": "default-category-grain-products",
     "isDefault": true
   },
   {
     "id": "default-product-nuts",
-    "name": "Nuts",
+    "name": "Nötter",
     "iconId": "nuts.png",
     "categoryId": "default-category-snacks-and-bakery",
     "isDefault": true
@@ -673,7 +673,7 @@
   },
   {
     "id": "default-product-pineapple",
-    "name": "Pineapple",
+    "name": "Ananas",
     "iconId": "pineapple.png",
     "categoryId": "default-category-fruits-and-vegetables",
     "isDefault": true
@@ -687,7 +687,7 @@
   },
   {
     "id": "default-product-plums",
-    "name": "Plums",
+    "name": "Plommon",
     "iconId": "plums.png",
     "categoryId": "default-category-fruits-and-vegetables",
     "isDefault": true
@@ -708,7 +708,7 @@
   },
   {
     "id": "default-product-potatoes",
-    "name": "Potatoes",
+    "name": "Potatis",
     "iconId": "potatoes.png",
     "categoryId": "default-category-fruits-and-vegetables",
     "isDefault": true
@@ -722,14 +722,14 @@
   },
   {
     "id": "default-product-pumpkin",
-    "name": "Pumpkin",
+    "name": "Pumpa",
     "iconId": "pumpkin.png",
     "categoryId": "default-category-fruits-and-vegetables",
     "isDefault": true
   },
   {
     "id": "default-product-raspberry",
-    "name": "Raspberry",
+    "name": "Hallon",
     "iconId": "raspberry.png",
     "categoryId": "default-category-fruits-and-vegetables",
     "isDefault": true
@@ -743,7 +743,7 @@
   },
   {
     "id": "default-product-rice",
-    "name": "Rice",
+    "name": "Ris",
     "iconId": "rice.png",
     "categoryId": "default-category-grain-products",
     "isDefault": true
@@ -764,7 +764,7 @@
   },
   {
     "id": "default-product-salmon",
-    "name": "Salmon",
+    "name": "Lax",
     "iconId": "fish.png",
     "categoryId": "default-category-meat-and-fish",
     "isDefault": true
@@ -778,14 +778,14 @@
   },
   {
     "id": "default-product-sauce",
-    "name": "Sauce",
+    "name": "Sås",
     "iconId": "ketchup.png",
     "categoryId": "default-category-sauces-and-spices",
     "isDefault": true
   },
   {
     "id": "default-product-sausages",
-    "name": "Sausages",
+    "name": "Korvar",
     "iconId": "sausages.png",
     "categoryId": "default-category-meat-and-fish",
     "isDefault": true
@@ -890,7 +890,7 @@
   },
   {
     "id": "default-product-sugar",
-    "name": "Sugar",
+    "name": "Socker",
     "iconId": "sugar_cubes.png",
     "categoryId": "default-category-sauces-and-spices",
     "isDefault": true
@@ -953,14 +953,14 @@
   },
   {
     "id": "default-product-toothbrush",
-    "name": "Toothbrush",
+    "name": "Tandborste",
     "iconId": "toothbrush.png",
     "categoryId": "default-category-health-and-beauty",
     "isDefault": true
   },
   {
     "id": "default-product-toothpaste",
-    "name": "Toothpaste",
+    "name": "Tandkräm",
     "iconId": "tube.png",
     "categoryId": "default-category-health-and-beauty",
     "isDefault": true
@@ -974,42 +974,42 @@
   },
   {
     "id": "default-product-tuna",
-    "name": "Tuna",
+    "name": "Tonfisk",
     "iconId": "fish.png",
     "categoryId": "default-category-meat-and-fish",
     "isDefault": true
   },
   {
     "id": "default-product-vegetables",
-    "name": "Vegetables",
+    "name": "Grönsaker",
     "iconId": "vegetables.png",
     "categoryId": "default-category-fruits-and-vegetables",
     "isDefault": true
   },
   {
     "id": "default-product-vinegar",
-    "name": "Vinegar",
+    "name": "Vinäger",
     "iconId": "bottle_narrow.png",
     "categoryId": "default-category-sauces-and-spices",
     "isDefault": true
   },
   {
     "id": "default-product-walnuts",
-    "name": "Walnuts",
+    "name": "Valnötter",
     "iconId": "walnuts.png",
     "categoryId": "default-category-snacks-and-bakery",
     "isDefault": true
   },
   {
     "id": "default-product-water",
-    "name": "Water",
+    "name": "Vatten",
     "iconId": "bottle_plastic.png",
     "categoryId": "default-category-drinks",
     "isDefault": true
   },
   {
     "id": "default-product-watermelon",
-    "name": "Watermelon",
+    "name": "Vattenmelon",
     "iconId": "watermelon.png",
     "categoryId": "default-category-fruits-and-vegetables",
     "isDefault": true

@@ -1,79 +1,79 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- GroceryListScreen -->
-    <string name="purchased_groceries_group_title">Recently used</string>
-    <string name="grocery_list_name_text_field_placeholder">Enter a name</string>
-    <string name="shopping_done_title">Shopping done!</string>
-    <string name="empty_grocery_list_title">Add your first groceries!</string>
+    <string name="purchased_groceries_group_title">Recentemente usado</string>
+    <string name="grocery_list_name_text_field_placeholder">Insira um nome</string>
+    <string name="shopping_done_title">Compras concluídas!</string>
+    <string name="empty_grocery_list_title">Adicione suas primeiras compras!</string>
     <!-- AddGrocery -->
-    <string name="add_grocery_search_field_placeholder_collapsed">Add a grocery</string>
-    <string name="add_grocery_search_field_placeholder_expanded">e.g. bread</string>
-    <string name="add_grocery_search_field_trailing_icon_description">Clear text in search bar</string>
-    <string name="add_grocery_refine_item_options_title">Refine «%s»</string>
-    <string name="add_grocery_edit_item_button_title">Enter item details</string>
+    <string name="add_grocery_search_field_placeholder_collapsed">Adicionar um item</string>
+    <string name="add_grocery_search_field_placeholder_expanded">ex. pão</string>
+    <string name="add_grocery_search_field_trailing_icon_description">Limpar texto na barra de pesquisa</string>
+    <string name="add_grocery_refine_item_options_title">Refinar «%s»</string>
+    <string name="add_grocery_edit_item_button_title">Insira os detalhes do item</string>
     <!-- EditGrocery -->
-    <string name="edit_grocery_item_description_placeholder">Quantity, description</string>
-    <string name="edit_grocery_change_icon_button_title">Change icon</string>
-    <string name="edit_grocery_change_category_button_title">Change category</string>
-    <string name="edit_grocery_remove_item_button_title">Remove item from the list</string>
-    <string name="edit_grocery_delete_grocery_button_title">Delete custom grocery</string>
-    <string name="select_category_dialog_title">Choose category</string>
-    <string name="select_icon_dialog_title">Choose icon</string>
-    <string name="delete_product_dialog_text">This item will be removed from all your grocery lists</string>
-    <string name="delete_grocery_list_dialog_text">Are you sure you want to delete this list?</string>
+    <string name="edit_grocery_item_description_placeholder">Quantidade, descrição</string>
+    <string name="edit_grocery_change_icon_button_title">Alterar ícone</string>
+    <string name="edit_grocery_change_category_button_title">Alterar categoria</string>
+    <string name="edit_grocery_remove_item_button_title">Remover item da lista</string>
+    <string name="edit_grocery_delete_grocery_button_title">Excluir item personalizado</string>
+    <string name="select_category_dialog_title">Escolha a categoria</string>
+    <string name="select_icon_dialog_title">Escolha um ícone</string>
+    <string name="delete_product_dialog_text">Este item será removido de todas as suas listas de compras</string>
+    <string name="delete_grocery_list_dialog_text">Você tem certeza que deseja excluir esta lista?</string>
     <!-- GroceryListsDashboardScreen -->
     <plurals name="dashboard_item_num_of_groceries_title">
         <item quantity="one">%d item</item>
-        <item quantity="other">%d items</item>
+        <item quantity="other">%d itens</item>
     </plurals>
-    <string name="add_grocery_list_button_description">Create new grocery list</string>
+    <string name="add_grocery_list_button_description">Add new grocery list</string>
     <!-- SettingsScreen -->
-    <string name="settings_dark_theme_config_system_default">System</string>
-    <string name="settings_dark_theme_config_light">Light</string>
-    <string name="settings_dark_theme_config_dark">Dark</string>
-    <string name="settings_theme">Theme</string>
-    <string name="settings_theme_mode">Theme Mode</string>
-    <string name="settings_use_system_accent_color">Use System Accent Color</string>
-    <string name="settings_preferences">Preferences</string>
-    <string name="settings_open_last_viewed_list">Open Last Viewed List</string>
-    <string name="settings_default_list">Open Default List</string>
-    <string name="settings_default_list_unspecified">Undefined</string>
-    <string name="settings_reorder_categories_title">Reorder Categories</string>
-    <string name="settings_reorder_categories_description">Grocery Genius sorts items by their categories. You can arrange them to match your favorite store.</string>
-    <string name="settings_dynamic_color_not_supported_message">Your device does not support dynamic color</string>
-    <string name="settings_feedback">Feedback</string>
-    <string name="github_link_description">View the source code, contribute, report bugs, and suggest features.</string>
-    <string name="email_link_title">Email Developer</string>
-    <string name="email_link_description">Reach out to the developer for friendly feedback, suggestions, or any other input you have in mind.</string>
-    <string name="settings_credits">Credits</string>
-    <string name="settings_image_by_freepik_title">Image by pch.vector on Freepik</string>
-    <string name="settings_image_by_freepik_description">The image displayed on grocery list screen was created by pch.vector</string>
+    <string name="settings_dark_theme_config_system_default">Sistema</string>
+    <string name="settings_dark_theme_config_light">Claro</string>
+    <string name="settings_dark_theme_config_dark">Escuro</string>
+    <string name="settings_theme">Tema</string>
+    <string name="settings_theme_mode">Modo de Tema</string>
+    <string name="settings_use_system_accent_color">Usar modo de cor padrão do sistema</string>
+    <string name="settings_preferences">Preferências</string>
+    <string name="settings_open_last_viewed_list">Abrir a última lista visualizada</string>
+    <string name="settings_default_list">Abrir Lista Padrão</string>
+    <string name="settings_default_list_unspecified">Unspecified</string>
+    <string name="settings_reorder_categories_title">Reordenar Categorias</string>
+    <string name="settings_reorder_categories_description">O Gênio das Compras organiza os itens por suas categorias. Você pode ajustá-los para corresponder ao seu mercado favorito.</string>
+    <string name="settings_dynamic_color_not_supported_message">Seu dispositivo não suporta cor dinâmica</string>
+    <string name="settings_feedback">Dê sua opinião</string>
+    <string name="github_link_description">View the source code, contribute, report bugs, and request features.</string>
+    <string name="email_link_title">Email do desenvolvedor</string>
+    <string name="email_link_description">Entre em contato com o desenvolvedor para receber comentários amigáveis, sugestões ou qualquer outra entrada que você tenha em mente.</string>
+    <string name="settings_credits">Créditos</string>
+    <string name="settings_image_by_freepik_title">Imagem de pch.vector em Freepik</string>
+    <string name="settings_image_by_freepik_description">A imagem exibida na tela de lista de compras foi criada por pch.vector.</string>
     <!-- IconPickerScreen -->
-    <string name="icon_picker_screen_title">Choose icon</string>
-    <string name="icon_picker_search_field_placeholder">Search an icon</string>
+    <string name="icon_picker_screen_title">Escolher ícone</string>
+    <string name="icon_picker_search_field_placeholder">Procurar um ícone</string>
     <!-- OnboardingSyncScreen -->
-    <string name="onboarding_sync_status_running_title">Just a second …</string>
-    <string name="onboarding_sync_status_succeeded_title">All set!</string>
-    <string name="onboarding_sync_status_failed_title">Network request failed</string>
-    <string name="onboarding_sync_status_offline_title">Can you connect to the internet?</string>
-    <string name="onboarding_sync_description">We need to download some predefined groceries so you don\'t have to create them manually.</string>
-    <string name="onboarding_skip_sync_button_title">Continue Without Fetching</string>
+    <string name="onboarding_sync_status_running_title">Um segundo …</string>
+    <string name="onboarding_sync_status_succeeded_title">Tudo pronto!</string>
+    <string name="onboarding_sync_status_failed_title">Falha na solicitação de rede</string>
+    <string name="onboarding_sync_status_offline_title">Você consegue se conectar à Internet?</string>
+    <string name="onboarding_sync_description">Precisamos baixar alguns itens de compras predefinidos para que você não precise criá-los manualmente.</string>
+    <string name="onboarding_skip_sync_button_title">Continuar sem buscar</string>
     <!-- General -->
-    <string name="done">Done</string>
-    <string name="delete">Delete</string>
-    <string name="edit">Edit</string>
-    <string name="back">Back</string>
-    <string name="settings">Settings</string>
-    <string name="forward">Forward</string>
-    <string name="close">Close</string>
-    <string name="reset">Reset</string>
-    <string name="retry">Retry</string>
+    <string name="done">Concluído</string>
+    <string name="delete">Apagar</string>
+    <string name="edit">Editar</string>
+    <string name="back">Voltar</string>
+    <string name="settings">Configurações</string>
+    <string name="forward">Avançar</string>
+    <string name="close">Fechar</string>
+    <string name="reset">Redefinir</string>
+    <string name="retry">Tentar de novo</string>
     <!-- Components -->
-    <string name="custom_category_title">Custom groceries</string>
-    <string name="toggle_dropdown_menu_visibility">Show/hide dropdown menu</string>
-    <string name="drag_handle">Drag handle</string>
+    <string name="custom_category_title">Custom</string>
+    <string name="toggle_dropdown_menu_visibility">Show/hide dropdown menu\n</string>
+    <string name="drag_handle">Alça de arrastar</string>
     <!-- Notifications -->
-    <string name="sync_work_notification_channel_name">Synchronization</string>
-    <string name="sync_work_notification_channel_description">Periodic synchronization of grocery database.</string>
-    <string name="sync_work_notification_title">Syncing your groceries</string>
+    <string name="sync_work_notification_channel_name">Sync</string>
+    <string name="sync_work_notification_channel_description"> Periodic synchronization of grocery database.</string>
+    <string name="sync_work_notification_title">Sincronizando suas compras</string>
 </resources>

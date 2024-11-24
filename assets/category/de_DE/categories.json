@@ -1,52 +1,52 @@
 [
   {
     "id": "default-category-dairy-and-eggs",
-    "name": "Dairy & Eggs",
+    "name": "Milchprodukte & Eier",
     "sortingPriority": 2
   },
   {
     "id": "default-category-drinks",
-    "name": "Drinks",
+    "name": "Getränke",
     "sortingPriority": 7
   },
   {
     "id": "default-category-fruits-and-vegetables",
-    "name": "Fruits & Vegetables",
+    "name": "Obst & Gemüse",
     "sortingPriority": 1
   },
   {
     "id": "default-category-grain-products",
-    "name": "Grain Products",
+    "name": "Getreideprodukte",
     "sortingPriority": 5
   },
   {
     "id": "default-category-health-and-beauty",
-    "name": "Health & Beauty",
+    "name": "Gesundheit & Kosmetik",
     "sortingPriority": 9
   },
   {
     "id": "default-category-household",
-    "name": "Household",
+    "name": "Haushalt",
     "sortingPriority": 8
   },
   {
     "id": "default-category-meat-and-fish",
-    "name": "Meat & Fish",
+    "name": "Fleisch & Fisch",
     "sortingPriority": 3
   },
   {
     "id": "default-category-pet-supplies",
-    "name": "Pet Supplies",
+    "name": "Haustierbedarf",
     "sortingPriority": 10
   },
   {
     "id": "default-category-sauces-and-spices",
-    "name": "Sauces & Spices",
+    "name": "Soßen & Gewürze",
     "sortingPriority": 4
   },
   {
     "id": "default-category-snacks-and-bakery",
-    "name": "Snacks & Bakery",
+    "name": "Snacks & Backwaren",
     "sortingPriority": 6
   }
 ]

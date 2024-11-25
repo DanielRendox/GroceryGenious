@@ -21,7 +21,7 @@
   },
   {
     "id": "default-category-health-and-beauty",
-    "name": "Santé et cosmétique",
+    "name": "Santé et beauté",
     "sortingPriority": 9
   },
   {
@@ -41,12 +41,12 @@
   },
   {
     "id": "default-category-sauces-and-spices",
-    "name": "Sauces & épices",
+    "name": "Sauces et épices",
     "sortingPriority": 4
   },
   {
     "id": "default-category-snacks-and-bakery",
-    "name": "Grignotage et boulangerie",
+    "name": "Snacks et boulangerie",
     "sortingPriority": 6
   }
 ]

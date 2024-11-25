@@ -30,7 +30,7 @@
         <item quantity="many">%d عناصر</item>
         <item quantity="other">%d عناصر</item>
     </plurals>
-    <string name="add_grocery_list_button_description">Add new grocery list</string>
+    <string name="add_grocery_list_button_description">إنشاء قائمة بقالة جديدة</string>
     <!-- SettingsScreen -->
     <string name="settings_dark_theme_config_system_default">النظام</string>
     <string name="settings_dark_theme_config_light">فاتح</string>
@@ -41,12 +41,12 @@
     <string name="settings_preferences">التفضيلات</string>
     <string name="settings_open_last_viewed_list">فتح قائمة آخر العناصر المعروضة</string>
     <string name="settings_default_list">فتح القائمة الافتراضية</string>
-    <string name="settings_default_list_unspecified">Unspecified</string>
+    <string name="settings_default_list_unspecified">غير محدد</string>
     <string name="settings_reorder_categories_title">إعادة ترتيب الفئات</string>
     <string name="settings_reorder_categories_description">يقوم Grocery Genius بترتيب العناصر حسب فئاتها. يمكنك ترتيبها لتتناسب مع متجرك المفضل</string>
     <string name="settings_dynamic_color_not_supported_message">جهازك لا يدعم اللون الديناميكي</string>
     <string name="settings_feedback">ملاحظات</string>
-    <string name="github_link_description">View the source code, contribute, report bugs, and request features.</string>
+    <string name="github_link_description">عرض رمز المصدر، والمساهمة، والإبلاغ عن الأخطاء، واقتراح الميزات.</string>
     <string name="email_link_title">إرسال بريد إلى المطور</string>
     <string name="email_link_description">تواصل مع المطور لإعطاء ملاحظات ودية أو اقتراحات أو أي مدخلات أخرى في ذهنك.</string>
     <string name="settings_credits">المساهمون</string>
@@ -73,11 +73,11 @@
     <string name="reset">إعادة الضبط</string>
     <string name="retry">إعادة المحاولة</string>
     <!-- Components -->
-    <string name="custom_category_title">Custom</string>
-    <string name="toggle_dropdown_menu_visibility">Show/hide dropdown menu\n</string>
+    <string name="custom_category_title">بقالة مخصصة</string>
+    <string name="toggle_dropdown_menu_visibility">إظهار/إخفاء القائمة</string>
     <string name="drag_handle">مقبض</string>
     <!-- Notifications -->
-    <string name="sync_work_notification_channel_name">Sync</string>
-    <string name="sync_work_notification_channel_description"> Periodic synchronization of grocery database.</string>
+    <string name="sync_work_notification_channel_name">مزامنة</string>
+    <string name="sync_work_notification_channel_description">تزامن دوري لقاعدة بيانات البقالة.</string>
     <string name="sync_work_notification_title">مزامنة بقالتك</string>
 </resources>

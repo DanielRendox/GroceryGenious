@@ -50,7 +50,7 @@
   },
   {
     "id": "default-product-soap-bar",
-    "name": "Savon",
+    "name": "Savon solide",
     "iconId": "soap_bar.png",
     "categoryId": "default-category-household",
     "isDefault": true
@@ -113,7 +113,7 @@
   },
   {
     "id": "default-product-buns",
-    "name": "Pain burger",
+    "name": "Petits pains",
     "iconId": "buns.png",
     "categoryId": "default-category-snacks-and-bakery",
     "isDefault": true
@@ -127,7 +127,7 @@
   },
   {
     "id": "default-product-cabbage",
-    "name": "Choux",
+    "name": "Chou",
     "iconId": "cabbage.png",
     "categoryId": "default-category-fruits-and-vegetables",
     "isDefault": true
@@ -148,7 +148,7 @@
   },
   {
     "id": "default-product-cat-food",
-    "name": "Aliment pour chat",
+    "name": "Nourriture chat",
     "iconId": "cat.png",
     "categoryId": "default-category-pet-supplies",
     "isDefault": true
@@ -204,7 +204,7 @@
   },
   {
     "id": "default-product-chips",
-    "name": "Frites",
+    "name": "Chips",
     "iconId": "chips.png",
     "categoryId": "default-category-snacks-and-bakery",
     "isDefault": true
@@ -267,7 +267,7 @@
   },
   {
     "id": "default-product-cotton-pads",
-    "name": "Coton démaquillant",
+    "name": "Disques de coton",
     "iconId": "cotton_pads.png",
     "categoryId": "default-category-health-and-beauty",
     "isDefault": true
@@ -435,7 +435,7 @@
   },
   {
     "id": "default-product-juice",
-    "name": "Jus de fruits",
+    "name": "Jus",
     "iconId": "juice.png",
     "categoryId": "default-category-drinks",
     "isDefault": true
@@ -540,7 +540,7 @@
   },
   {
     "id": "default-product-napkins",
-    "name": "Serviettes papier",
+    "name": "Serviettes",
     "iconId": "napkins.png",
     "categoryId": "default-category-household",
     "isDefault": true
@@ -554,7 +554,7 @@
   },
   {
     "id": "default-product-nuts",
-    "name": "Noisettes",
+    "name": "Noix",
     "iconId": "nuts.png",
     "categoryId": "default-category-snacks-and-bakery",
     "isDefault": true
@@ -596,7 +596,7 @@
   },
   {
     "id": "default-product-paper-towels",
-    "name": "Papier toilette",
+    "name": "Serviettes papier",
     "iconId": "toilet_paper.png",
     "categoryId": "default-category-household",
     "isDefault": true
@@ -652,7 +652,7 @@
   },
   {
     "id": "default-product-peppercorns",
-    "name": "Poivre",
+    "name": "Poivre en grains",
     "iconId": "jar_spices.png",
     "categoryId": "default-category-sauces-and-spices",
     "isDefault": true
@@ -666,7 +666,7 @@
   },
   {
     "id": "default-product-pills",
-    "name": "Pillules",
+    "name": "Pilules",
     "iconId": "pills.png",
     "categoryId": "default-category-health-and-beauty",
     "isDefault": true
@@ -792,21 +792,21 @@
   },
   {
     "id": "default-product-shampoo",
-    "name": "Shampoing",
+    "name": "Shampooing",
     "iconId": "washing_liquid.png",
     "categoryId": "default-category-health-and-beauty",
     "isDefault": true
   },
   {
     "id": "default-product-shaving-cream",
-    "name": "Savon à raser",
+    "name": "Crème rasage",
     "iconId": "tube.png",
     "categoryId": "default-category-health-and-beauty",
     "isDefault": true
   },
   {
     "id": "default-product-shopping-bag",
-    "name": "Sac de courses",
+    "name": "Sac de course",
     "iconId": "shopping_bag.png",
     "categoryId": "default-category-household",
     "isDefault": true
@@ -848,7 +848,7 @@
   },
   {
     "id": "default-product-sour-cream",
-    "name": "Crème fraiche",
+    "name": "Crème aigre",
     "iconId": "sauce.png",
     "categoryId": "default-category-dairy-and-eggs",
     "isDefault": true
@@ -862,7 +862,7 @@
   },
   {
     "id": "default-product-spaghetti",
-    "name": "Spaghettis",
+    "name": "Spaghetti",
     "iconId": "pasta.png",
     "categoryId": "default-category-grain-products",
     "isDefault": true
@@ -876,7 +876,7 @@
   },
   {
     "id": "default-product-sponge",
-    "name": "Éponges",
+    "name": "Éponge",
     "iconId": "sponge.png",
     "categoryId": "default-category-household",
     "isDefault": true
@@ -904,7 +904,7 @@
   },
   {
     "id": "default-product-sweets",
-    "name": "Friandises",
+    "name": "Bonbons",
     "iconId": "sweets.png",
     "categoryId": "default-category-snacks-and-bakery",
     "isDefault": true
@@ -1023,7 +1023,7 @@
   },
   {
     "id": "default-product-yogurt",
-    "name": "Yahourt",
+    "name": "Yaourt",
     "iconId": "bottle_small.png",
     "categoryId": "default-category-dairy-and-eggs",
     "isDefault": true

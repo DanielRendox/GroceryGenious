@@ -26,7 +26,7 @@
         <item quantity="one">artículo</item>
         <item quantity="other">artículos</item>
     </plurals>
-    <string name="add_grocery_list_button_description">Add new grocery list</string>
+    <string name="add_grocery_list_button_description">Crear nueva lista de supermercados</string>
     <!-- SettingsScreen -->
     <string name="settings_dark_theme_config_system_default">Sistema</string>
     <string name="settings_dark_theme_config_light">Claro</string>
@@ -37,12 +37,12 @@
     <string name="settings_preferences">Preferencias</string>
     <string name="settings_open_last_viewed_list">Abrir la última lista utilizada</string>
     <string name="settings_default_list">Abrir lista por defecto</string>
-    <string name="settings_default_list_unspecified">Unspecified</string>
+    <string name="settings_default_list_unspecified">Sin definir</string>
     <string name="settings_reorder_categories_title">Reordenar categorías</string>
     <string name="settings_reorder_categories_description">Grocery Genius ordena artículos por sus categorías. Puedes organizarlos para que coincidan con tu tienda favorita</string>
     <string name="settings_dynamic_color_not_supported_message">Tu dispositivo no soporta color dinámico</string>
     <string name="settings_feedback">Comentarios</string>
-    <string name="github_link_description">View the source code, contribute, report bugs, and request features.</string>
+    <string name="github_link_description">Ver el código fuente, contribuir, reportar fallos o sugerir características</string>
     <string name="email_link_title">Correo del desarrollador</string>
     <string name="email_link_description">Ponte en contacto con el desarrollador para hacerle llegar tus comentarios, sugerencias o cualquier otra aportación.</string>
     <string name="settings_credits">Créditos</string>
@@ -69,11 +69,11 @@
     <string name="reset">Restaurar</string>
     <string name="retry">Reintentar</string>
     <!-- Components -->
-    <string name="custom_category_title">Custom</string>
-    <string name="toggle_dropdown_menu_visibility">Show/hide dropdown menu\n</string>
+    <string name="custom_category_title">Tienda personalizada</string>
+    <string name="toggle_dropdown_menu_visibility">Mostrar/Ocultar menú desplegable</string>
     <string name="drag_handle">Cambiar tamaño</string>
     <!-- Notifications -->
-    <string name="sync_work_notification_channel_name">Sync</string>
-    <string name="sync_work_notification_channel_description"> Periodic synchronization of grocery database.</string>
+    <string name="sync_work_notification_channel_name">Sincronización</string>
+    <string name="sync_work_notification_channel_description">Sincronización periódica de la base de datos de supermercados</string>
     <string name="sync_work_notification_title">Sincronizando los supermercados</string>
 </resources>

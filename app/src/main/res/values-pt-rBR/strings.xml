@@ -26,7 +26,7 @@
         <item quantity="one">%d item</item>
         <item quantity="other">%d itens</item>
     </plurals>
-    <string name="add_grocery_list_button_description">Add new grocery list</string>
+    <string name="add_grocery_list_button_description">Criar nova lista de compras</string>
     <!-- SettingsScreen -->
     <string name="settings_dark_theme_config_system_default">Sistema</string>
     <string name="settings_dark_theme_config_light">Claro</string>
@@ -37,22 +37,22 @@
     <string name="settings_preferences">Preferências</string>
     <string name="settings_open_last_viewed_list">Abrir a última lista visualizada</string>
     <string name="settings_default_list">Abrir Lista Padrão</string>
-    <string name="settings_default_list_unspecified">Unspecified</string>
+    <string name="settings_default_list_unspecified">Não definido</string>
     <string name="settings_reorder_categories_title">Reordenar Categorias</string>
     <string name="settings_reorder_categories_description">O Gênio das Compras organiza os itens por suas categorias. Você pode ajustá-los para corresponder ao seu mercado favorito.</string>
     <string name="settings_dynamic_color_not_supported_message">Seu dispositivo não suporta cor dinâmica</string>
     <string name="settings_feedback">Dê sua opinião</string>
-    <string name="github_link_description">View the source code, contribute, report bugs, and request features.</string>
+    <string name="github_link_description">Ver o código-fonte, contribuir, reportar bugs e sugerir recursos.</string>
     <string name="email_link_title">Email do desenvolvedor</string>
     <string name="email_link_description">Entre em contato com o desenvolvedor para receber comentários amigáveis, sugestões ou qualquer outra entrada que você tenha em mente.</string>
     <string name="settings_credits">Créditos</string>
     <string name="settings_image_by_freepik_title">Imagem de pch.vector em Freepik</string>
-    <string name="settings_image_by_freepik_description">A imagem exibida na tela de lista de compras foi criada por pch.vector.</string>
+    <string name="settings_image_by_freepik_description">A imagem exibida na tela de lista de compras foi criada por pch.vector</string>
     <!-- IconPickerScreen -->
     <string name="icon_picker_screen_title">Escolher ícone</string>
     <string name="icon_picker_search_field_placeholder">Procurar um ícone</string>
     <!-- OnboardingSyncScreen -->
-    <string name="onboarding_sync_status_running_title">Um segundo …</string>
+    <string name="onboarding_sync_status_running_title">Um segundo…</string>
     <string name="onboarding_sync_status_succeeded_title">Tudo pronto!</string>
     <string name="onboarding_sync_status_failed_title">Falha na solicitação de rede</string>
     <string name="onboarding_sync_status_offline_title">Você consegue se conectar à Internet?</string>
@@ -69,11 +69,11 @@
     <string name="reset">Redefinir</string>
     <string name="retry">Tentar de novo</string>
     <!-- Components -->
-    <string name="custom_category_title">Custom</string>
-    <string name="toggle_dropdown_menu_visibility">Show/hide dropdown menu\n</string>
+    <string name="custom_category_title">Itens de compras personalizados</string>
+    <string name="toggle_dropdown_menu_visibility">Mostrar/ocultar menu suspenso</string>
     <string name="drag_handle">Alça de arrastar</string>
     <!-- Notifications -->
-    <string name="sync_work_notification_channel_name">Sync</string>
-    <string name="sync_work_notification_channel_description"> Periodic synchronization of grocery database.</string>
+    <string name="sync_work_notification_channel_name">Sincronização</string>
+    <string name="sync_work_notification_channel_description">Sincronização periódica do banco de dados de compras.</string>
     <string name="sync_work_notification_title">Sincronizando suas compras</string>
 </resources>

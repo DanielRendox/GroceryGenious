@@ -26,7 +26,7 @@
         <item quantity="one">%d Eintrag</item>
         <item quantity="other">%d Einträge</item>
     </plurals>
-    <string name="add_grocery_list_button_description">Add new grocery list</string>
+    <string name="add_grocery_list_button_description">Neue Einkaufsliste erstellen</string>
     <!-- SettingsScreen -->
     <string name="settings_dark_theme_config_system_default">System</string>
     <string name="settings_dark_theme_config_light">Hell</string>
@@ -39,10 +39,10 @@
     <string name="settings_default_list">Standardliste öffnen</string>
     <string name="settings_default_list_unspecified">Undefiniert</string>
     <string name="settings_reorder_categories_title">Kategorien neu sortieren</string>
-    <string name="settings_reorder_categories_description">Grocery Genius sortiert Artikel nach ihren Kategorien. Du kannst sie so ordnen, dass sie deinem Lieblingsgeschäft entsprechen.</string>
+    <string name="settings_reorder_categories_description">Grocery Genius sortiert Artikel nach ihren Kategorien. Sie können sie so ordnen, dass sie Ihrem Lieblingsgeschäft entsprechen.</string>
     <string name="settings_dynamic_color_not_supported_message">Dein Gerät unterstützt keine dynamischen Farben</string>
     <string name="settings_feedback">Feedback</string>
-    <string name="github_link_description">View the source code, contribute, report bugs, and request features.</string>
+    <string name="github_link_description">Sieh dir den Quellcode an, trage bei, melde Fehler und schlage neue Funktionen vor.</string>
     <string name="email_link_title">Entwickler kontaktieren</string>
     <string name="email_link_description">Kontaktieren den Entwickler für freundliche Rückmeldungen, Vorschläge oder alle anderen Ideen, die du im Kopf hast.</string>
     <string name="settings_credits">Credits</string>
@@ -69,7 +69,7 @@
     <string name="reset">Zurücksetzen</string>
     <string name="retry">Wiederholen</string>
     <!-- Components -->
-    <string name="custom_category_title">Custom</string>
+    <string name="custom_category_title">Benutzerdefinierte Lebensmittel</string>
     <string name="toggle_dropdown_menu_visibility">Dropdown-Menü ein-/ausblenden</string>
     <string name="drag_handle">Griff ziehen</string>
     <!-- Notifications -->

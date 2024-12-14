@@ -5,6 +5,7 @@ plugins {
     alias(libs.plugins.roomPlugin)
     kotlin("kapt")
     alias(libs.plugins.baselineprofile)
+    alias(libs.plugins.ktlint)
 }
 
 android {

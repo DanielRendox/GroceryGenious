@@ -27,8 +27,7 @@ fun GroceryGeniusNavHost(
 ) {
     val navController = rememberNavController()
     NavHost(
-        modifier = modifier.fillMaxSize(),
-        navController = navController,
+        modifier = modifier.fillMaxSize(), navController = navController,
         startDestination = startDestination
     ) {
         groceryListsDashboardScreen(

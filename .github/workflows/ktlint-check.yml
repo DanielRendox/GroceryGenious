@@ -33,8 +33,5 @@ jobs:
       - name: Ensure gradlew is executable
         run: chmod +x ./gradlew
 
-      - name: Setup Gradle Environment
-        uses: ./.github/workflows/setup-gradle.yml
-
       - name: Run Ktlint Check
         run: ./gradlew ktlintCheck

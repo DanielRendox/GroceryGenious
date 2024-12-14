@@ -11,18 +11,18 @@ import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.ui.platform.LocalContext
 import com.rendox.grocerygenius.model.DEFAULT_USER_PREFERENCES
 import com.rendox.grocerygenius.model.GroceryGeniusColorScheme
-import com.rendox.grocerygenius.ui.theme.color_schemes.BeigeDarkColorScheme
-import com.rendox.grocerygenius.ui.theme.color_schemes.BeigeLightColorScheme
-import com.rendox.grocerygenius.ui.theme.color_schemes.CyanDarkColorScheme
-import com.rendox.grocerygenius.ui.theme.color_schemes.CyanLightColorScheme
-import com.rendox.grocerygenius.ui.theme.color_schemes.GreenDarkColorScheme
-import com.rendox.grocerygenius.ui.theme.color_schemes.GreenLightColorScheme
-import com.rendox.grocerygenius.ui.theme.color_schemes.PinkDarkColorScheme
-import com.rendox.grocerygenius.ui.theme.color_schemes.PinkLightColorScheme
-import com.rendox.grocerygenius.ui.theme.color_schemes.PurpleDarkColorScheme
-import com.rendox.grocerygenius.ui.theme.color_schemes.PurpleLightColorScheme
-import com.rendox.grocerygenius.ui.theme.color_schemes.YellowDarkColorScheme
-import com.rendox.grocerygenius.ui.theme.color_schemes.YellowLightColorScheme
+import com.rendox.grocerygenius.ui.theme.colorschemes.BeigeDarkColorScheme
+import com.rendox.grocerygenius.ui.theme.colorschemes.BeigeLightColorScheme
+import com.rendox.grocerygenius.ui.theme.colorschemes.CyanDarkColorScheme
+import com.rendox.grocerygenius.ui.theme.colorschemes.CyanLightColorScheme
+import com.rendox.grocerygenius.ui.theme.colorschemes.GreenDarkColorScheme
+import com.rendox.grocerygenius.ui.theme.colorschemes.GreenLightColorScheme
+import com.rendox.grocerygenius.ui.theme.colorschemes.PinkDarkColorScheme
+import com.rendox.grocerygenius.ui.theme.colorschemes.PinkLightColorScheme
+import com.rendox.grocerygenius.ui.theme.colorschemes.PurpleDarkColorScheme
+import com.rendox.grocerygenius.ui.theme.colorschemes.PurpleLightColorScheme
+import com.rendox.grocerygenius.ui.theme.colorschemes.YellowDarkColorScheme
+import com.rendox.grocerygenius.ui.theme.colorschemes.YellowLightColorScheme
 
 @Composable
 fun GroceryGeniusTheme(

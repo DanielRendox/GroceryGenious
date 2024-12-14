@@ -5,10 +5,10 @@ import android.util.Log
 import com.rendox.grocerygenius.data.Synchronizer
 import com.rendox.grocerygenius.data.changeListSync
 import com.rendox.grocerygenius.data.model.asEntity
-import com.rendox.grocerygenius.database.grocery_icon.IconDao
+import com.rendox.grocerygenius.database.groceryicon.IconDao
 import com.rendox.grocerygenius.model.Category
 import com.rendox.grocerygenius.model.IconReference
-import com.rendox.grocerygenius.network.data_sources.IconNetworkDataSource
+import com.rendox.grocerygenius.network.data.sources.IconNetworkDataSource
 import dagger.hilt.android.qualifiers.ApplicationContext
 import java.io.File
 import java.io.IOException
@@ -21,13 +21,10 @@ class IconRepositoryImpl @Inject constructor(
     private val iconNetworkDataSource: IconNetworkDataSource
 ) : IconRepository {
 
-    override fun getIconsGroupedByCategory(): Flow<Map<Category, List<IconReference>>> {
-        return iconDao.getIconsGroupedByCategory()
-    }
+    override fun getIconsGroupedByCategory(): Flow<Map<Category, List<IconReference>>> =
+        iconDao.getIconsGroupedByCategory()
 
-    override suspend fun getGroceryIconsByName(name: String): List<IconReference> {
-        return iconDao.getGroceryIconsByName(name)
-    }
+    override suspend fun getGroceryIconsByName(name: String): List<IconReference> = iconDao.getGroceryIconsByName(name)
 
     override suspend fun syncWith(synchronizer: Synchronizer) = synchronizer.changeListSync(
         prepopulateWithInitialData = {

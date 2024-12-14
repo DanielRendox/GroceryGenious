@@ -3,8 +3,8 @@ package com.rendox.grocerygenius.feature.settings
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.rendox.grocerygenius.data.category.CategoryRepository
-import com.rendox.grocerygenius.data.grocery_list.GroceryListRepository
-import com.rendox.grocerygenius.data.user_preferences.UserPreferencesRepository
+import com.rendox.grocerygenius.data.grocerylist.GroceryListRepository
+import com.rendox.grocerygenius.data.userpreferences.UserPreferencesRepository
 import com.rendox.grocerygenius.ui.helpers.UiEvent
 import com.rendox.grocerygenius.ui.theme.dynamicColorIsSupported
 import dagger.hilt.android.lifecycle.HiltViewModel

@@ -3,7 +3,7 @@ package com.rendox.grocerygenius.database.grocery
 import androidx.room.Entity
 import androidx.room.ForeignKey
 import androidx.room.Index
-import com.rendox.grocerygenius.database.grocery_list.GroceryListEntity
+import com.rendox.grocerygenius.database.grocerylist.GroceryListEntity
 import com.rendox.grocerygenius.database.product.ProductEntity
 
 @Entity(

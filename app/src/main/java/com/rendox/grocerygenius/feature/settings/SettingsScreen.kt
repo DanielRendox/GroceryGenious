@@ -81,10 +81,10 @@ import com.rendox.grocerygenius.ui.components.CustomIconSetting
 import com.rendox.grocerygenius.ui.components.DropDownMenuToggleIcon
 import com.rendox.grocerygenius.ui.components.LazyDropdownMenu
 import com.rendox.grocerygenius.ui.components.TonalDataInput
-import com.rendox.grocerygenius.ui.components.collapsing_toolbar.CollapsingToolbar
-import com.rendox.grocerygenius.ui.components.collapsing_toolbar.CollapsingToolbarScaffoldScrollableState
-import com.rendox.grocerygenius.ui.components.collapsing_toolbar.scroll_behavior.CollapsingToolbarNestedScrollConnection
-import com.rendox.grocerygenius.ui.components.collapsing_toolbar.scroll_behavior.rememberExitUntilCollapsedToolbarState
+import com.rendox.grocerygenius.ui.components.collapsingtoolbar.CollapsingToolbar
+import com.rendox.grocerygenius.ui.components.collapsingtoolbar.CollapsingToolbarScaffoldScrollableState
+import com.rendox.grocerygenius.ui.components.collapsingtoolbar.scrollbehavior.CollapsingToolbarNestedScrollConnection
+import com.rendox.grocerygenius.ui.components.collapsingtoolbar.scrollbehavior.rememberExitUntilCollapsedToolbarState
 import com.rendox.grocerygenius.ui.helpers.ObserveUiEvent
 import com.rendox.grocerygenius.ui.helpers.UiEvent
 import com.rendox.grocerygenius.ui.theme.GroceryGeniusTheme
@@ -99,7 +99,8 @@ fun SettingsRoute(
     navigateBack: () -> Unit = {}
 ) {
     val uiState by viewModel.uiStateFlow.collectAsStateWithLifecycle()
-    val showDynamicColorNotSupportedMessage by viewModel.showDynamicColorNotSupportedMessage.collectAsStateWithLifecycle()
+    val showDynamicColorNotSupportedMessage by viewModel.showDynamicColorNotSupportedMessage
+        .collectAsStateWithLifecycle()
     SettingsScreen(
         modifier = Modifier.fillMaxSize(),
         uiState = uiState,
@@ -683,6 +684,9 @@ private fun EmailLink(modifier: Modifier = Modifier) {
     )
 }
 
+private const val FREEPIK_ATTRIBUTION_LINK = "https://www.freepik.com/free-vector/" +
+    "tiny-family-grocery-bag-with-healthy-food-parents-kids-fresh-vegetables-flat-illustration_12291304.htm"
+
 @Composable
 private fun FreepikAttribution(modifier: Modifier = Modifier) {
     val uriHandler = LocalUriHandler.current
@@ -690,9 +694,7 @@ private fun FreepikAttribution(modifier: Modifier = Modifier) {
         modifier = modifier
             .padding(top = 16.dp)
             .clickable {
-                uriHandler.openUri(
-                    "https://www.freepik.com/free-vector/tiny-family-grocery-bag-with-healthy-food-parents-kids-fresh-vegetables-flat-illustration_12291304.htm"
-                )
+                uriHandler.openUri(FREEPIK_ATTRIBUTION_LINK)
             },
         title = stringResource(R.string.settings_image_by_freepik_title),
         description = stringResource(R.string.settings_image_by_freepik_description),

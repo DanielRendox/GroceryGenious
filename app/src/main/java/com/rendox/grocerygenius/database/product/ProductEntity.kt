@@ -5,7 +5,7 @@ import androidx.room.ForeignKey
 import androidx.room.Index
 import androidx.room.PrimaryKey
 import com.rendox.grocerygenius.database.category.CategoryEntity
-import com.rendox.grocerygenius.database.grocery_icon.IconEntity
+import com.rendox.grocerygenius.database.groceryicon.IconEntity
 
 @Entity(
     foreignKeys = [

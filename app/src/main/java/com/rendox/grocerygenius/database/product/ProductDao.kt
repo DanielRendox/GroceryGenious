@@ -6,7 +6,7 @@ import androidx.room.Query
 import androidx.room.RawQuery
 import androidx.room.Upsert
 import androidx.sqlite.db.SimpleSQLiteQuery
-import com.rendox.grocerygenius.database.grocery_icon.IconEntity
+import com.rendox.grocerygenius.database.groceryicon.IconEntity
 import kotlinx.coroutines.flow.Flow
 
 @Dao

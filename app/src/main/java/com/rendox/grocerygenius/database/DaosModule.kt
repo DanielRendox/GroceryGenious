@@ -2,8 +2,8 @@ package com.rendox.grocerygenius.database
 
 import com.rendox.grocerygenius.database.category.CategoryDao
 import com.rendox.grocerygenius.database.grocery.GroceryDao
-import com.rendox.grocerygenius.database.grocery_icon.IconDao
-import com.rendox.grocerygenius.database.grocery_list.GroceryListDao
+import com.rendox.grocerygenius.database.groceryicon.IconDao
+import com.rendox.grocerygenius.database.grocerylist.GroceryListDao
 import com.rendox.grocerygenius.database.product.ProductDao
 import dagger.Module
 import dagger.Provides

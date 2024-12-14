@@ -6,7 +6,7 @@ import com.rendox.grocerygenius.data.model.asEntity
 import com.rendox.grocerygenius.data.model.asExternalModel
 import com.rendox.grocerygenius.database.product.ProductDao
 import com.rendox.grocerygenius.model.Product
-import com.rendox.grocerygenius.network.data_sources.ProductNetworkDataSource
+import com.rendox.grocerygenius.network.data.sources.ProductNetworkDataSource
 import javax.inject.Inject
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
@@ -19,21 +19,19 @@ class ProductRepositoryImpl @Inject constructor(
         productDao.insertProduct(product.asEntity())
     }
 
-    override fun getProductById(productId: String): Flow<Product?> {
-        return productDao.getProductById(productId).map { it?.asExternalModel() }
+    override fun getProductById(productId: String): Flow<Product?> = productDao.getProductById(productId).map {
+        it?.asExternalModel()
     }
 
-    override fun getProductsByCategory(categoryId: String?): Flow<List<Product>> {
-        return productDao.getProductsByCategory(categoryId).map { products ->
+    override fun getProductsByCategory(categoryId: String?): Flow<List<Product>> =
+        productDao.getProductsByCategory(categoryId).map { products ->
             products.map { it.asExternalModel() }
         }
-    }
 
-    override suspend fun getProductsByName(name: String): List<Product> {
-        return productDao.getProductsByName(name).map { combinedProduct ->
+    override suspend fun getProductsByName(name: String): List<Product> =
+        productDao.getProductsByName(name).map { combinedProduct ->
             combinedProduct.asExternalModel()
         }
-    }
 
     override suspend fun updateProductCategory(
         productId: String,
@@ -53,9 +51,10 @@ class ProductRepositoryImpl @Inject constructor(
         productDao.deleteProductById(productId)
     }
 
-    override suspend fun getProductsByKeywords(keywords: List<String>): List<Product> {
-        return productDao.getProductsByKeywords(keywords).map { it.asExternalModel() }
-    }
+    override suspend fun getProductsByKeywords(keywords: List<String>): List<Product> =
+        productDao.getProductsByKeywords(keywords).map {
+            it.asExternalModel()
+        }
 
     override suspend fun syncWith(synchronizer: Synchronizer) = synchronizer.changeListSync(
         prepopulateWithInitialData = {

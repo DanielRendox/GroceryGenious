@@ -6,7 +6,7 @@ import com.rendox.grocerygenius.data.model.asEntity
 import com.rendox.grocerygenius.data.model.asExternalModel
 import com.rendox.grocerygenius.database.category.CategoryDao
 import com.rendox.grocerygenius.model.Category
-import com.rendox.grocerygenius.network.data_sources.CategoryNetworkDataSource
+import com.rendox.grocerygenius.network.data.sources.CategoryNetworkDataSource
 import javax.inject.Inject
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
@@ -16,18 +16,14 @@ class CategoryRepositoryImpl @Inject constructor(
     private val categoryNetworkDataSource: CategoryNetworkDataSource
 ) : CategoryRepository {
 
-    override fun getAllCategories(): Flow<List<Category>> {
-        return categoryDao.getAllCategories().map { categories ->
-            categories.map { categoryEntity ->
-                categoryEntity.asExternalModel()
-            }
+    override fun getAllCategories(): Flow<List<Category>> = categoryDao.getAllCategories().map { categories ->
+        categories.map { categoryEntity ->
+            categoryEntity.asExternalModel()
         }
     }
 
-    override fun getCategoryById(id: String): Flow<Category?> {
-        return categoryDao.getCategoryById(id).map { categoryEntity ->
-            categoryEntity?.asExternalModel()
-        }
+    override fun getCategoryById(id: String): Flow<Category?> = categoryDao.getCategoryById(id).map { categoryEntity ->
+        categoryEntity?.asExternalModel()
     }
 
     override suspend fun updateCategories(categories: List<Category>) {

@@ -6,7 +6,6 @@ import com.rendox.grocerygenius.filestorage.AssetToFileSaver
 import com.rendox.grocerygenius.filestorage.JsonAssetDecoder
 import com.rendox.grocerygenius.filestorage.UnzipUtils
 import com.rendox.grocerygenius.model.IconReference
-import com.rendox.grocerygenius.network.data_sources.IconNetworkDataSource
 import com.rendox.grocerygenius.network.di.Dispatcher
 import com.rendox.grocerygenius.network.di.GroceryGeniusDispatchers
 import com.rendox.grocerygenius.network.listAdapter
@@ -65,10 +64,8 @@ class FakeIconNetworkDataSource @Inject constructor(
         }
     }
 
-    override suspend fun getIconChangeList(after: Int): List<NetworkChangeList> {
-        return jsonAssetDecoder.decodeFromFile(
-            adapter = moshi.listAdapter<NetworkChangeList>(),
-            fileName = "icons/icons_change_list.json"
-        )?.filter { it.changeListVersion > after } ?: emptyList()
-    }
+    override suspend fun getIconChangeList(after: Int): List<NetworkChangeList> = jsonAssetDecoder.decodeFromFile(
+        adapter = moshi.listAdapter<NetworkChangeList>(),
+        fileName = "icons/icons_change_list.json"
+    )?.filter { it.changeListVersion > after } ?: emptyList()
 }

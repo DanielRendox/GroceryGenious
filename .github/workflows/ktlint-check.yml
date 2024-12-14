@@ -7,7 +7,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  ktlint-format:
+  ktlint-check:
     runs-on: ubuntu-latest
 
     steps:

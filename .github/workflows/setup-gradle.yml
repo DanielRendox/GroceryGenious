@@ -4,7 +4,7 @@ on:
   workflow_call:
 
 jobs:
-  setup:
+  setup-gradle-enviorment:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout

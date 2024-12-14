@@ -1,0 +1,38 @@
+name: ktlint-format
+
+on:
+  pull_request:
+    branches: [ develop, production ]
+
+  workflow_dispatch:
+
+jobs:
+  ktlint-format:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Setup Gradle Environment
+        uses: ./.github/workflows/setup-gradle.yml
+
+      - name: Run Ktlint Format
+        run: ./gradlew ktlintFormat
+
+      - name: Check for changes
+        run: |
+          if [ -n "$(git status --porcelain)" ]; then
+            echo "Changes detected after running ktlintFormat."
+          else
+            echo "No changes detected."
+            exit 0
+          fi
+
+      - name: Configure Git
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Commit and Push Changes
+        run: |
+          git add .
+          git commit -m "style: auto-format using ktlint"
+          git push origin HEAD:${{ github.head_ref }}

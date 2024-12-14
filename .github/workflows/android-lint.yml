@@ -1,0 +1,26 @@
+name: android-lint
+
+on:
+  push:
+    branches: [ develop, production ]
+  pull_request:
+    branches: [ develop, production ]
+
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Setup Gradle Environment
+        uses: ./.github/workflows/setup-gradle.yml
+
+      - name: Debug lint
+        run: ./gradlew lintDebug
+
+      - name: Upload lint report
+        uses: actions/upload-artifact@v4
+        with:
+          name: lint-reports
+          path: '**/build/reports/lint-results-debug.html'

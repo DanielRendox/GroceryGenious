@@ -1,0 +1,18 @@
+name: ktlint-check
+
+on:
+  push:
+    branches: [ develop, production ]
+
+  workflow_dispatch:
+
+jobs:
+  ktlint-format:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Setup Gradle Environment
+        uses: ./.github/workflows/setup-gradle.yml
+
+      - name: Run Ktlint Check
+        run: ./gradlew ktlintCheck

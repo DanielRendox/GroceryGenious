@@ -51,7 +51,9 @@ jobs:
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
 
       - name: Commit and Push Changes
+        env:
+          GITHUB_TOKEN: ${{ secrets.ACTIONS_PUSH }}
         run: |
           git add .
-          git commit -m "style: auto-format using ktlint"
-          git push origin HEAD:${{ github.head_ref }}
+          git commit -m "Apply ktlint format"
+          git push https://x-access-token:${{ secrets.ACTIONS_PUSH }}@github.com/${{ github.repository }} HEAD:$(git rev-parse --abbrev-ref HEAD)

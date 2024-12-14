@@ -5,7 +5,6 @@ on:
     branches: [ develop, production ]
   pull_request:
     branches: [ develop, production ]
-
   workflow_dispatch:
 
 jobs:
@@ -13,6 +12,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
       - name: Setup Gradle Environment
         uses: ./.github/workflows/setup-gradle.yml
 
@@ -27,4 +29,3 @@ jobs:
         with:
           name: test-reports
           path: '**/build/reports/tests/'
-

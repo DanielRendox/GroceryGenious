@@ -31,7 +31,6 @@ import com.rendox.grocerygenius.R
 import com.rendox.grocerygenius.ui.components.scrollbar.DraggableScrollbar
 import com.rendox.grocerygenius.ui.components.scrollbar.rememberDraggableScroller
 import com.rendox.grocerygenius.ui.components.scrollbar.scrollbarState
-import com.rendox.grocerygenius.ui.theme.CornerRoundingDefault
 import com.rendox.grocerygenius.ui.theme.GroceryGeniusTheme
 
 @Composable
@@ -41,36 +40,36 @@ fun IconPickerDialog(
     onIconSelected: (Int) -> Unit,
     icon: @Composable (Int) -> Unit,
     title: (Int) -> String,
-    onDismissRequest: () -> Unit,
+    onDismissRequest: () -> Unit
 ) {
     PickerDialog(
         title = stringResource(R.string.select_icon_dialog_title),
-        onDismissRequest = onDismissRequest,
+        onDismissRequest = onDismissRequest
     ) {
         Box(modifier = modifier.weight(1F).padding(vertical = 16.dp)) {
             val lazyGridState = rememberLazyGridState()
             val scrollbarState = lazyGridState.scrollbarState(
-                itemsAvailable = numOfIcons,
+                itemsAvailable = numOfIcons
             )
             LazyVerticalGrid(
                 modifier = Modifier.padding(horizontal = 16.dp),
                 columns = GridCells.Adaptive(88.dp),
                 verticalArrangement = Arrangement.spacedBy(2.dp),
                 horizontalArrangement = Arrangement.spacedBy(8.dp),
-                state = lazyGridState,
+                state = lazyGridState
             ) {
                 items(
                     count = numOfIcons,
-                    key = { it },
+                    key = { it }
                 ) { index ->
                     Surface(
                         onClick = { onIconSelected(index) },
-                        modifier = Modifier.aspectRatio(1F),
+                        modifier = Modifier.aspectRatio(1F)
                     ) {
                         Column(
                             modifier = Modifier.padding(4.dp),
                             horizontalAlignment = Alignment.CenterHorizontally,
-                            verticalArrangement = Arrangement.SpaceEvenly,
+                            verticalArrangement = Arrangement.SpaceEvenly
                         ) {
                             Box(modifier = Modifier.weight(1F)) {
                                 icon(index)
@@ -81,7 +80,7 @@ fun IconPickerDialog(
                                 style = MaterialTheme.typography.bodySmall,
                                 maxLines = 1,
                                 textAlign = TextAlign.Center,
-                                overflow = TextOverflow.Ellipsis,
+                                overflow = TextOverflow.Ellipsis
                             )
                         }
                     }
@@ -95,8 +94,8 @@ fun IconPickerDialog(
                 state = scrollbarState,
                 orientation = Orientation.Vertical,
                 onThumbMoved = lazyGridState.rememberDraggableScroller(
-                    itemsAvailable = numOfIcons,
-                ),
+                    itemsAvailable = numOfIcons
+                )
             )
         }
     }
@@ -116,12 +115,12 @@ private fun IconPickerDialogContentPreview() {
                     Icon(
                         modifier = Modifier.fillMaxSize(),
                         imageVector = Icons.Default.Favorite,
-                        contentDescription = null,
+                        contentDescription = null
                     )
                 },
                 title = { "Icon $it" },
                 onIconSelected = {},
-                onDismissRequest = {},
+                onDismissRequest = {}
             )
         }
     }

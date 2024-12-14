@@ -3,5 +3,4 @@ package com.rendox.grocerygenius.ui.components.collapsing_toolbar.scroll_behavio
 abstract class FixedScrollFlagState(heightRange: IntRange) : ScrollFlagState(heightRange) {
 
     final override val offset: Float = 0f
-
 }

@@ -9,13 +9,13 @@ import javax.inject.Inject
 
 class FakeProductNetworkDataSource @Inject constructor(
     private val jsonAssetDecoder: JsonAssetDecoder,
-    private val moshi: Moshi,
-): ProductNetworkDataSource {
+    private val moshi: Moshi
+) : ProductNetworkDataSource {
 
     override suspend fun getAllProducts(): List<ProductNetwork> {
         return jsonAssetDecoder.decodeFromFile(
             adapter = moshi.listAdapter<ProductNetwork>(),
-            fileName = "product/default_products_en.json",
+            fileName = "product/default_products_en.json"
         ) ?: emptyList()
     }
 
@@ -25,7 +25,7 @@ class FakeProductNetworkDataSource @Inject constructor(
     override suspend fun getProductChangeList(after: Int): List<NetworkChangeList> {
         return jsonAssetDecoder.decodeFromFile(
             adapter = moshi.listAdapter<NetworkChangeList>(),
-            fileName = "product/default_products_change_list.json",
+            fileName = "product/default_products_change_list.json"
         )?.filter { it.changeListVersion > after } ?: emptyList()
     }
 }

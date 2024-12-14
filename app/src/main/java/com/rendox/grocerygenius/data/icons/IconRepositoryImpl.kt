@@ -10,15 +10,15 @@ import com.rendox.grocerygenius.model.Category
 import com.rendox.grocerygenius.model.IconReference
 import com.rendox.grocerygenius.network.data_sources.IconNetworkDataSource
 import dagger.hilt.android.qualifiers.ApplicationContext
-import kotlinx.coroutines.flow.Flow
 import java.io.File
 import java.io.IOException
 import javax.inject.Inject
+import kotlinx.coroutines.flow.Flow
 
 class IconRepositoryImpl @Inject constructor(
     @ApplicationContext private val appContext: Context,
     private val iconDao: IconDao,
-    private val iconNetworkDataSource: IconNetworkDataSource,
+    private val iconNetworkDataSource: IconNetworkDataSource
 ) : IconRepository {
 
     override fun getIconsGroupedByCategory(): Flow<Map<Category, List<IconReference>>> {
@@ -50,7 +50,7 @@ class IconRepositoryImpl @Inject constructor(
                 } catch (e: IOException) {
                     Log.w(
                         "IconRepository",
-                        "Failed to delete icon: ${iconFile.absolutePath}; ${e.message}",
+                        "Failed to delete icon: ${iconFile.absolutePath}; ${e.message}"
                     )
                 }
             }
@@ -58,6 +58,6 @@ class IconRepositoryImpl @Inject constructor(
         modelUpdater = { changedIds ->
             val networkIcons = iconNetworkDataSource.downloadIconsByIds(ids = changedIds)
             iconDao.upsertGroceryIcons(networkIcons.map { it.asEntity() })
-        },
+        }
     )
 }

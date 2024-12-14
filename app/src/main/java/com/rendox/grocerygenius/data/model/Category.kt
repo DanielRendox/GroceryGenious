@@ -8,19 +8,19 @@ fun CategoryEntity.asExternalModel() = Category(
     id = id,
     name = name,
     sortingPriority = sortingPriority,
-    defaultSortingPriority = defaultSortingPriority,
+    defaultSortingPriority = defaultSortingPriority
 )
 
 fun Category.asEntity() = CategoryEntity(
     id = id,
     name = name,
     sortingPriority = sortingPriority,
-    defaultSortingPriority = defaultSortingPriority,
+    defaultSortingPriority = defaultSortingPriority
 )
 
 fun CategoryNetwork.asEntity() = CategoryEntity(
     id = id,
     name = name,
     sortingPriority = sortingPriority,
-    defaultSortingPriority = sortingPriority,
+    defaultSortingPriority = sortingPriority
 )

@@ -16,17 +16,15 @@ const val ICON_PICKER_ROUTE_WITH_ARGS = "$ICON_PICKER_ROUTE/{$PRODUCT_ID_ARG}/{$
 fun NavController.navigateToIconPicker(
     editProductId: String,
     groceryListId: String,
-    navOptions: (NavOptionsBuilder.() -> Unit) = {},
+    navOptions: (NavOptionsBuilder.() -> Unit) = {}
 ) {
     this.navigate(
         route = "$ICON_PICKER_ROUTE/$editProductId/$groceryListId",
-        builder = navOptions,
+        builder = navOptions
     )
 }
 
-fun NavGraphBuilder.iconPickerScreen(
-    navigateBack: () -> Unit,
-) {
+fun NavGraphBuilder.iconPickerScreen(navigateBack: () -> Unit) {
     composable(
         route = ICON_PICKER_ROUTE_WITH_ARGS,
         enterTransition = { GroceryGeniusTransition.SlideInVertically },
@@ -37,11 +35,11 @@ fun NavGraphBuilder.iconPickerScreen(
             },
             navArgument(ICON_PICKER_GROCERY_LIST_ID_ARG) {
                 type = NavType.StringType
-            },
-        ),
+            }
+        )
     ) {
         IconPickerRoute(
-            navigateBack = navigateBack,
+            navigateBack = navigateBack
         )
     }
 }

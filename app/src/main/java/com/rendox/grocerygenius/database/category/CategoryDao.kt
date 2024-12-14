@@ -28,7 +28,7 @@ interface CategoryDao {
         """
             DELETE FROM CategoryEntity
             WHERE id in (:ids)
-        """,
+        """
     )
     suspend fun deleteCategories(ids: List<String>)
 }

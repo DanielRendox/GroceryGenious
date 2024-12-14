@@ -52,7 +52,7 @@ fun GroupedLazyGroceryGrid(
     groceryListPurchaseState: GroceryListPurchaseState,
     numOfAdditionalItems: Int = 0,
     groceryItem: @Composable (Grocery) -> Unit,
-    additionalItems: LazyGridScope.() -> Unit = {},
+    additionalItems: LazyGridScope.() -> Unit = {}
 ) {
     val itemsAvailable = remember(groceryGroups, numOfAdditionalItems) {
         val numOfGroceries = groceryGroups.sumOf { it.groceries.size }
@@ -64,7 +64,7 @@ fun GroupedLazyGroceryGrid(
         numOfGroceries + numOfTitles + numOfDummies + numOfAdditionalItems
     }
     val scrollbarState = lazyGridState.scrollbarState(
-        itemsAvailable = itemsAvailable,
+        itemsAvailable = itemsAvailable
     )
 
     BoxWithConstraints(modifier = modifier) {
@@ -80,35 +80,35 @@ fun GroupedLazyGroceryGrid(
             contentPadding = contentPadding,
             columns = GridCells.Adaptive(104.dp),
             horizontalArrangement = horizontalArrangement,
-            verticalArrangement = Arrangement.spacedBy(4.dp),
+            verticalArrangement = Arrangement.spacedBy(4.dp)
         ) {
-            when(groceryListPurchaseState) {
+            when (groceryListPurchaseState) {
                 GroceryListPurchaseState.SHOPPING_DONE,
                 GroceryListPurchaseState.LIST_IS_EMPTY -> item(
                     key = "EmptyListImage",
                     span = { GridItemSpan(maxLineSpan) },
-                    contentType = "EmptyListImage",
+                    contentType = "EmptyListImage"
                 ) {
                     Column(
                         modifier = Modifier.fillMaxWidth(),
-                        horizontalAlignment = Alignment.CenterHorizontally,
+                        horizontalAlignment = Alignment.CenterHorizontally
                     ) {
                         Image(
                             modifier = Modifier.width(280.dp),
                             painter = painterResource(R.drawable.empty_grocery_list_illustration),
-                            contentDescription = null,
+                            contentDescription = null
                         )
                         Text(
                             modifier = Modifier.padding(16.dp),
                             text = stringResource(
-                                id = when(groceryListPurchaseState) {
+                                id = when (groceryListPurchaseState) {
                                     GroceryListPurchaseState.SHOPPING_DONE -> R.string.shopping_done_title
                                     GroceryListPurchaseState.LIST_IS_EMPTY -> R.string.empty_grocery_list_title
                                     else -> throw IllegalStateException()
-                                },
+                                }
                             ),
                             style = MaterialTheme.typography.titleLarge,
-                            fontWeight = FontWeight.SemiBold,
+                            fontWeight = FontWeight.SemiBold
                         )
                     }
                 }
@@ -120,7 +120,7 @@ fun GroupedLazyGroceryGrid(
             item(
                 key = "Dummy",
                 span = { GridItemSpan(maxLineSpan) },
-                contentType = "Dummy",
+                contentType = "Dummy"
             ) {
                 Spacer(modifier = Modifier.height(0.dp))
             }
@@ -130,7 +130,7 @@ fun GroupedLazyGroceryGrid(
                     item(
                         key = "Title$groupIndex",
                         span = { GridItemSpan(maxLineSpan) },
-                        contentType = "Title",
+                        contentType = "Title"
                     ) {
                         Text(
                             modifier = Modifier
@@ -139,14 +139,14 @@ fun GroupedLazyGroceryGrid(
                             text = stringResource(id = R.string.purchased_groceries_group_title),
                             style = MaterialTheme.typography.titleMedium.copy(fontSize = 18.sp),
                             maxLines = 1,
-                            overflow = TextOverflow.Ellipsis,
+                            overflow = TextOverflow.Ellipsis
                         )
                     }
                 }
                 items(
                     count = group.groceries.size,
                     key = { index -> group.groceries[index].productId },
-                    contentType = { "Grocery" },
+                    contentType = { "Grocery" }
                 ) { index ->
                     BoxWithConstraints(
                         modifier = Modifier
@@ -161,7 +161,7 @@ fun GroupedLazyGroceryGrid(
                             modifier = Modifier.groceryGridItemCornerRounding(
                                 itemIndex = index,
                                 numOfColumns = numOfColumns,
-                                lastIndex = group.groceries.lastIndex,
+                                lastIndex = group.groceries.lastIndex
                             )
                         ) {
                             groceryItem(group.groceries[index])
@@ -178,7 +178,7 @@ fun GroupedLazyGroceryGrid(
                 .padding(horizontal = 2.dp)
                 .align(Alignment.CenterEnd),
             state = scrollbarState,
-            orientation = Orientation.Vertical,
+            orientation = Orientation.Vertical
         )
     }
 }

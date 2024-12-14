@@ -6,5 +6,5 @@ data class GroceryList(
     val id: String = UUID.randomUUID().toString(),
     val name: String,
     val sortingPriority: Long = System.currentTimeMillis(),
-    val numOfGroceries: Int = 0,
+    val numOfGroceries: Int = 0
 )

@@ -38,7 +38,7 @@ import com.rendox.grocerygenius.ui.theme.GroceryGeniusTheme
 @Composable
 fun OnboardingSyncRoute(
     viewModel: OnboardingViewModel = hiltViewModel(),
-    closeOnboarding: () -> Unit,
+    closeOnboarding: () -> Unit
 ) {
     val syncStatus by viewModel.syncStatusFlow.collectAsStateWithLifecycle()
 
@@ -51,7 +51,7 @@ fun OnboardingSyncRoute(
     OnboardingSyncScreen(
         syncStatus = syncStatus,
         onRetrySync = viewModel::onRetrySync,
-        closeOnboarding = closeOnboarding,
+        closeOnboarding = closeOnboarding
     )
 }
 
@@ -59,15 +59,15 @@ fun OnboardingSyncRoute(
 private fun OnboardingSyncScreen(
     syncStatus: SyncStatus,
     onRetrySync: () -> Unit,
-    closeOnboarding: () -> Unit,
+    closeOnboarding: () -> Unit
 ) {
     Box(
         modifier = Modifier.fillMaxSize(),
-        contentAlignment = Alignment.Center,
+        contentAlignment = Alignment.Center
     ) {
         Column(
             modifier = Modifier.fillMaxWidth(),
-            horizontalAlignment = Alignment.CenterHorizontally,
+            horizontalAlignment = Alignment.CenterHorizontally
         ) {
             Text(
                 modifier = Modifier.padding(16.dp),
@@ -78,7 +78,7 @@ private fun OnboardingSyncScreen(
                     SyncStatus.OFFLINE -> stringResource(R.string.onboarding_sync_status_offline_title)
                 },
                 style = MaterialTheme.typography.headlineSmall,
-                textAlign = TextAlign.Center,
+                textAlign = TextAlign.Center
             )
 
             Box(
@@ -86,7 +86,7 @@ private fun OnboardingSyncScreen(
                     .fillMaxWidth()
                     .padding(8.dp)
                     .height(72.dp),
-                contentAlignment = Alignment.Center,
+                contentAlignment = Alignment.Center
             ) {
                 when (syncStatus) {
                     SyncStatus.RUNNING -> {
@@ -97,7 +97,7 @@ private fun OnboardingSyncScreen(
                         Icon(
                             modifier = Modifier.fillMaxSize(),
                             painter = painterResource(R.drawable.checkmark_circle),
-                            contentDescription = null,
+                            contentDescription = null
                         )
                     }
 
@@ -105,7 +105,7 @@ private fun OnboardingSyncScreen(
                         Icon(
                             modifier = Modifier.fillMaxSize(),
                             painter = painterResource(R.drawable.cloud_off),
-                            contentDescription = null,
+                            contentDescription = null
                         )
                     }
 
@@ -113,7 +113,7 @@ private fun OnboardingSyncScreen(
                         Icon(
                             modifier = Modifier.fillMaxSize(),
                             painter = painterResource(R.drawable.cancel_circle),
-                            contentDescription = null,
+                            contentDescription = null
                         )
                     }
                 }
@@ -124,7 +124,7 @@ private fun OnboardingSyncScreen(
                     .padding(horizontal = 32.dp, vertical = 16.dp),
                 text = stringResource(R.string.onboarding_sync_description),
                 fontSize = 15.sp,
-                textAlign = TextAlign.Center,
+                textAlign = TextAlign.Center
             )
 
             Column(
@@ -138,14 +138,14 @@ private fun OnboardingSyncScreen(
                             .fillMaxWidth()
                             .padding(vertical = 8.dp),
                         onClick = onRetrySync,
-                        enabled = syncStatus == SyncStatus.FAILED,
+                        enabled = syncStatus == SyncStatus.FAILED
                     ) {
                         Text(text = stringResource(R.string.retry))
                     }
                 }
                 FilledTonalButton(
                     modifier = Modifier.fillMaxWidth(),
-                    onClick = closeOnboarding,
+                    onClick = closeOnboarding
                 ) {
                     Text(
                         text = stringResource(R.string.onboarding_skip_sync_button_title)
@@ -171,7 +171,7 @@ private fun OnboardingSyncScreenPreview(
             OnboardingSyncScreen(
                 syncStatus = syncStatus,
                 onRetrySync = {},
-                closeOnboarding = {},
+                closeOnboarding = {}
             )
         }
     }

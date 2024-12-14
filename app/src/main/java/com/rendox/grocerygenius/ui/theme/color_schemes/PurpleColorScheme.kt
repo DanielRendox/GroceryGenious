@@ -33,7 +33,7 @@ val PurpleLightColorScheme = lightColorScheme(
     inversePrimary = Color(0xFFC6C0FF),
     surfaceTint = Color(0xFF5B53A8),
     outlineVariant = Color(0xFFC8C5D0),
-    scrim = Color(0xFF000000),
+    scrim = Color(0xFF000000)
 )
 
 val PurpleDarkColorScheme = darkColorScheme(
@@ -65,5 +65,5 @@ val PurpleDarkColorScheme = darkColorScheme(
     inversePrimary = Color(0xFF5B53A8),
     surfaceTint = Color(0xFFC6C0FF),
     outlineVariant = Color(0xFF47464F),
-    scrim = Color(0xFF000000),
+    scrim = Color(0xFF000000)
 )

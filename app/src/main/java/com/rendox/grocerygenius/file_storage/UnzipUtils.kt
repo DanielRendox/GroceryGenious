@@ -16,7 +16,6 @@ package com.rendox.grocerygenius.file_storage
 import java.io.*
 import java.util.zip.ZipFile
 
-
 /**
  * UnzipUtils class extracts files and sub-directories of a standard zip file to
  * a destination directory.
@@ -30,7 +29,10 @@ object UnzipUtils {
      * @return List of extracted files
      */
     @Throws(IOException::class)
-    fun unzip(zipFilePath: File, destDirectory: String): List<File> {
+    fun unzip(
+        zipFilePath: File,
+        destDirectory: String
+    ): List<File> {
         val extractedFiles = mutableListOf<File>()
         File(destDirectory).run {
             if (!exists()) {
@@ -64,7 +66,10 @@ object UnzipUtils {
      * @throws IOException
      */
     @Throws(IOException::class)
-    private fun extractFile(inputStream: InputStream, destFilePath: String) {
+    private fun extractFile(
+        inputStream: InputStream,
+        destFilePath: String
+    ) {
         val bos = BufferedOutputStream(FileOutputStream(destFilePath))
         val bytesIn = ByteArray(BUFFER_SIZE)
         var read: Int

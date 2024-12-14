@@ -26,33 +26,23 @@ abstract class DataModule {
 
     @Binds
     @Singleton
-    abstract fun bindCategoryRepository(
-        categoryRepositoryImpl: CategoryRepositoryImpl
-    ): CategoryRepository
+    abstract fun bindCategoryRepository(categoryRepositoryImpl: CategoryRepositoryImpl): CategoryRepository
 
     @Binds
     @Singleton
-    abstract fun groceryRepository(
-        groceryRepositoryImpl: GroceryRepositoryImpl
-    ): GroceryRepository
+    abstract fun groceryRepository(groceryRepositoryImpl: GroceryRepositoryImpl): GroceryRepository
 
     @Binds
     @Singleton
-    abstract fun bindGroceryListRepository(
-        groceryListRepositoryImpl: GroceryListRepositoryImpl
-    ): GroceryListRepository
+    abstract fun bindGroceryListRepository(groceryListRepositoryImpl: GroceryListRepositoryImpl): GroceryListRepository
 
     @Binds
     @Singleton
-    abstract fun bindProductRepository(
-        productRepositoryImpl: ProductRepositoryImpl
-    ): ProductRepository
+    abstract fun bindProductRepository(productRepositoryImpl: ProductRepositoryImpl): ProductRepository
 
     @Binds
     @Singleton
-    abstract fun bindIconRepository(
-        iconRepositoryImpl: IconRepositoryImpl
-    ): IconRepository
+    abstract fun bindIconRepository(iconRepositoryImpl: IconRepositoryImpl): IconRepository
 
     @Binds
     @Singleton
@@ -62,7 +52,5 @@ abstract class DataModule {
 
     @Binds
     @Singleton
-    abstract fun bindNetworkMonitor(
-        networkMonitor: ConnectivityManagerNetworkMonitor
-    ): NetworkMonitor
+    abstract fun bindNetworkMonitor(networkMonitor: ConnectivityManagerNetworkMonitor): NetworkMonitor
 }

@@ -14,27 +14,17 @@ import dagger.hilt.components.SingletonComponent
 @InstallIn(SingletonComponent::class)
 object DaosModule {
     @Provides
-    fun providesCategoryDao(
-        appDatabase: AppDatabase
-    ): CategoryDao = appDatabase.categoryDao()
+    fun providesCategoryDao(appDatabase: AppDatabase): CategoryDao = appDatabase.categoryDao()
 
     @Provides
-    fun providesGroceryDao(
-        appDatabase: AppDatabase
-    ): GroceryDao = appDatabase.groceryDao()
+    fun providesGroceryDao(appDatabase: AppDatabase): GroceryDao = appDatabase.groceryDao()
 
     @Provides
-    fun providesGroceryListDao(
-        appDatabase: AppDatabase
-    ): GroceryListDao = appDatabase.groceryListDao()
+    fun providesGroceryListDao(appDatabase: AppDatabase): GroceryListDao = appDatabase.groceryListDao()
 
     @Provides
-    fun providesProductDao(
-        appDatabase: AppDatabase
-    ): ProductDao = appDatabase.productDao()
+    fun providesProductDao(appDatabase: AppDatabase): ProductDao = appDatabase.productDao()
 
     @Provides
-    fun providesIconDao(
-        appDatabase: AppDatabase
-    ): IconDao = appDatabase.iconDao()
+    fun providesIconDao(appDatabase: AppDatabase): IconDao = appDatabase.iconDao()
 }

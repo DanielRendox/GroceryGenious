@@ -10,5 +10,5 @@ data class MainActivityUiState(
     val startDestinationRoute: String = GROCERY_LISTS_DASHBOARD_ROUTE,
     val darkThemeConfig: DarkThemeConfig = DEFAULT_USER_PREFERENCES.darkThemeConfig,
     val useSystemAccentColor: Boolean = DEFAULT_USER_PREFERENCES.useSystemAccentColor,
-    val selectedTheme: GroceryGeniusColorScheme = DEFAULT_USER_PREFERENCES.selectedTheme,
+    val selectedTheme: GroceryGeniusColorScheme = DEFAULT_USER_PREFERENCES.selectedTheme
 )

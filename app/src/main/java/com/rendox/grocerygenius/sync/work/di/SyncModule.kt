@@ -11,7 +11,5 @@ import dagger.hilt.components.SingletonComponent
 @InstallIn(SingletonComponent::class)
 abstract class SyncModule {
     @Binds
-    internal abstract fun bindsSyncStatusMonitor(
-        syncStatusMonitor: WorkManagerSyncManager,
-    ): SyncManager
+    internal abstract fun bindsSyncStatusMonitor(syncStatusMonitor: WorkManagerSyncManager): SyncManager
 }

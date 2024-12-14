@@ -6,5 +6,5 @@ import com.rendox.grocerygenius.model.GroceryList
 fun GroceryList.asEntity() = GroceryListEntity(
     id = id,
     name = name,
-    sortingPriority = sortingPriority,
+    sortingPriority = sortingPriority
 )

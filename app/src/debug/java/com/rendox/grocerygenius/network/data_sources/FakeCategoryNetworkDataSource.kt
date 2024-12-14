@@ -9,12 +9,12 @@ import javax.inject.Inject
 
 class FakeCategoryNetworkDataSource @Inject constructor(
     private val jsonAssetDecoder: JsonAssetDecoder,
-    private val moshi: Moshi,
+    private val moshi: Moshi
 ) : CategoryNetworkDataSource {
     override suspend fun getAllCategories(): List<CategoryNetwork> {
         return jsonAssetDecoder.decodeFromFile(
             adapter = moshi.listAdapter<CategoryNetwork>(),
-            fileName = "category/categories_en.json",
+            fileName = "category/categories_en.json"
         ) ?: emptyList()
     }
 
@@ -25,7 +25,7 @@ class FakeCategoryNetworkDataSource @Inject constructor(
     override suspend fun getCategoryChangeList(after: Int): List<NetworkChangeList> {
         return jsonAssetDecoder.decodeFromFile(
             adapter = moshi.listAdapter<NetworkChangeList>(),
-            fileName = "category/categories_change_list.json",
+            fileName = "category/categories_change_list.json"
         )?.filter { it.changeListVersion > after } ?: emptyList()
     }
 }

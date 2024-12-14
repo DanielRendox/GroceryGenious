@@ -40,7 +40,7 @@ fun LazyDropdownMenu(
     DropdownMenu(
         modifier = modifier,
         expanded = expanded,
-        onDismissRequest = onDismissRequest,
+        onDismissRequest = onDismissRequest
     ) {
         val lazyListState = rememberLazyListState()
         val scrollbarState = lazyListState.scrollbarState(itemsAvailable = options.size)
@@ -67,7 +67,7 @@ fun LazyDropdownMenu(
                     .padding(horizontal = 4.dp)
                     .align(Alignment.CenterEnd),
                 state = scrollbarState,
-                orientation = Orientation.Vertical,
+                orientation = Orientation.Vertical
             )
         }
     }
@@ -78,13 +78,13 @@ fun DropDownMenuToggleIcon(expanded: Boolean) {
     val iconRotation by animateFloatAsState(
         targetValue = if (expanded) 180f else 0f,
         label = "animateFloatAsState",
-        animationSpec = spring(stiffness = Spring.StiffnessMediumLow),
+        animationSpec = spring(stiffness = Spring.StiffnessMediumLow)
     )
     Icon(
         modifier = Modifier
             .padding(start = 8.dp)
             .graphicsLayer { rotationZ = iconRotation },
         imageVector = Icons.Default.ArrowDropDown,
-        contentDescription = stringResource(R.string.toggle_dropdown_menu_visibility),
+        contentDescription = stringResource(R.string.toggle_dropdown_menu_visibility)
     )
 }

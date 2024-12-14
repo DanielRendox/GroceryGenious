@@ -53,7 +53,7 @@ abstract class IconDao {
         """
             DELETE FROM IconEntity
             WHERE uniqueFileName in (:ids)
-        """,
+        """
     )
     abstract suspend fun deleteIcons(ids: List<String>)
 }

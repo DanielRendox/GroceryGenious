@@ -31,7 +31,7 @@ suspend fun <T> suspendRunCatching(block: suspend () -> T): Result<T> = try {
     Log.e(
         "suspendRunCatching",
         "Failed to evaluate a suspendRunCatchingBlock. Returning failure Result",
-        exception,
+        exception
     )
     Result.failure(exception)
 }
@@ -53,7 +53,7 @@ suspend fun Synchronizer.changeListSync(
     changeListFetcher: suspend (Int) -> List<NetworkChangeList>,
     versionUpdater: ChangeListVersions.(Int) -> ChangeListVersions,
     modelDeleter: suspend (List<String>) -> Unit,
-    modelUpdater: suspend (List<String>) -> Unit,
+    modelUpdater: suspend (List<String>) -> Unit
 ): Boolean = suspendRunCatching {
     val localVersion = versionReader(getChangeListVersions())
     val networkChangeList = changeListFetcher(localVersion)

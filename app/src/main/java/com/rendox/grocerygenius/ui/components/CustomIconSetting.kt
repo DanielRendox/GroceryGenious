@@ -26,14 +26,14 @@ fun CustomIconSetting(
     title: String,
     description: String? = null,
     icon: @Composable (() -> Unit)? = null,
-    trailingComponent: @Composable (() -> Unit)? = null,
+    trailingComponent: @Composable (() -> Unit)? = null
 ) {
     Column(modifier = modifier) {
         Row(
             modifier = Modifier
                 .padding(start = 16.dp, end = 16.dp)
                 .fillMaxWidth(),
-            verticalAlignment = Alignment.CenterVertically,
+            verticalAlignment = Alignment.CenterVertically
         ) {
             if (icon != null) {
                 Box(
@@ -47,7 +47,7 @@ fun CustomIconSetting(
             Column(
                 modifier = Modifier
                     .weight(1f)
-                    .padding(end = 16.dp),
+                    .padding(end = 16.dp)
             ) {
                 Text(text = title)
                 description?.let {
@@ -55,7 +55,7 @@ fun CustomIconSetting(
                         modifier = Modifier.padding(top = 4.dp),
                         text = it,
                         style = MaterialTheme.typography.bodySmall,
-                        color = MaterialTheme.colorScheme.onSurfaceVariant,
+                        color = MaterialTheme.colorScheme.onSurfaceVariant
                     )
                 }
             }
@@ -75,12 +75,12 @@ private fun CustomIconSettingPreview() {
             icon = {
                 Icon(
                     imageVector = Icons.Default.Lock,
-                    contentDescription = null,
+                    contentDescription = null
                 )
             },
             trailingComponent = {
                 Switch(checked = true, onCheckedChange = {})
-            },
+            }
         )
     }
 }

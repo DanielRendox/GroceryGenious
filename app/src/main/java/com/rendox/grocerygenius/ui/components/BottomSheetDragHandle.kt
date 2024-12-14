@@ -20,7 +20,7 @@ fun BottomSheetDragHandle(modifier: Modifier = Modifier) {
         Box(
             Modifier.size(
                 width = 32.dp,
-                height = 4.dp,
+                height = 4.dp
             )
         )
     }

@@ -83,12 +83,12 @@ class MainActivity : ComponentActivity() {
                     enableEdgeToEdge(
                         statusBarStyle = SystemBarStyle.auto(
                             Color.TRANSPARENT,
-                            Color.TRANSPARENT,
+                            Color.TRANSPARENT
                         ) { useDarkTheme },
                         navigationBarStyle = SystemBarStyle.auto(
                             navBarLightScrim,
-                            navBarDarkScrim,
-                        ) { useDarkTheme },
+                            navBarDarkScrim
+                        ) { useDarkTheme }
                     )
                 }
                 onDispose {}
@@ -109,16 +109,16 @@ class MainActivity : ComponentActivity() {
                 GroceryGeniusTheme(
                     useDarkTheme = useDarkTheme,
                     disableDynamicColor = !uiState.useSystemAccentColor,
-                    requestedColorScheme = uiState.selectedTheme,
+                    requestedColorScheme = uiState.selectedTheme
                 ) {
                     Surface(
                         modifier = Modifier.fillMaxSize(),
-                        color = MaterialTheme.colorScheme.background,
+                        color = MaterialTheme.colorScheme.background
                     ) {
                         GroceryGeniusNavHost(
                             modifier = Modifier.semantics { testTagsAsResourceId = true },
                             startDestination = uiState.startDestinationRoute,
-                            defaultGroceryListId = uiState.defaultListId,
+                            defaultGroceryListId = uiState.defaultListId
                         )
                     }
                 }
@@ -128,9 +128,7 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-private fun shouldUseDarkTheme(
-    uiState: MainActivityUiState?,
-): Boolean = when (uiState) {
+private fun shouldUseDarkTheme(uiState: MainActivityUiState?): Boolean = when (uiState) {
     null -> isSystemInDarkTheme()
     else -> when (uiState.darkThemeConfig) {
         DarkThemeConfig.FOLLOW_SYSTEM -> isSystemInDarkTheme()

@@ -8,5 +8,5 @@ data class CategoryEntity(
     @PrimaryKey val id: String,
     val name: String,
     val defaultSortingPriority: Long,
-    val sortingPriority: Long,
+    val sortingPriority: Long
 )

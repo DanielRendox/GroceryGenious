@@ -3,11 +3,11 @@ package com.rendox.grocerygenius.data.grocery_list
 import com.rendox.grocerygenius.data.model.asEntity
 import com.rendox.grocerygenius.database.grocery_list.GroceryListDao
 import com.rendox.grocerygenius.model.GroceryList
-import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
+import kotlinx.coroutines.flow.Flow
 
 class GroceryListRepositoryImpl @Inject constructor(
-    private val groceryListDao: GroceryListDao,
+    private val groceryListDao: GroceryListDao
 ) : GroceryListRepository {
     override suspend fun insertGroceryList(groceryList: GroceryList) {
         groceryListDao.insertGroceryList(groceryList.asEntity())
@@ -21,7 +21,10 @@ class GroceryListRepositoryImpl @Inject constructor(
         return groceryListDao.getAllGroceryLists()
     }
 
-    override suspend fun updateGroceryListName(listId: String, name: String) {
+    override suspend fun updateGroceryListName(
+        listId: String,
+        name: String
+    ) {
         groceryListDao.updateGroceryListName(listId, name)
     }
 

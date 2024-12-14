@@ -30,7 +30,7 @@ object Sync {
             enqueueUniqueWork(
                 SYNC_WORK_NAME,
                 ExistingWorkPolicy.REPLACE,
-                SyncWorker.startUpSyncWork(),
+                SyncWorker.startUpSyncWork()
             )
         }
     }

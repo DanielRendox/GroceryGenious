@@ -43,13 +43,13 @@ fun CollapsingToolbar(
     expandedTitleFontSize: TextUnit,
     titleBottomPadding: Dp,
     navigationIcon: (@Composable () -> Unit)? = null,
-    actions: (@Composable RowScope.() -> Unit)? = null,
+    actions: (@Composable RowScope.() -> Unit)? = null
 ) {
     val toolbarColor = MaterialTheme.colorScheme.surfaceColorAtElevation(
         elevation = lerp(
             start = 3.dp,
             stop = 0.dp,
-            fraction = toolbarState.progress,
+            fraction = toolbarState.progress
         )
     )
 
@@ -71,14 +71,13 @@ fun CollapsingToolbar(
         CollapsingTextLayout(
             progress = toolbarState.progress,
             textCompressionRatio = textCompressionRatio,
-            titleBottomPadding = titleBottomPadding,
+            titleBottomPadding = titleBottomPadding
         ) {
-
             val textSizeWithoutCompression = 1F
             val textSize: Float = lerp(
                 start = textCompressionRatio,
                 stop = textSizeWithoutCompression,
-                fraction = toolbarState.progress,
+                fraction = toolbarState.progress
             )
 
             val textDefaultEndPadding = 16.dp
@@ -90,28 +89,32 @@ fun CollapsingToolbar(
             val textEndPadding: Dp = lerp(
                 start = textCompressedEndPadding,
                 stop = textDefaultEndPadding,
-                fraction = toolbarState.progress,
+                fraction = toolbarState.progress
             )
 
             val titleStartPadding = 16.dp
 
-            val textStartPadding = if (navigationIcon == null) titleStartPadding else lerp(
-                start = 0.dp,
-                stop = titleStartPadding,
-                fraction = toolbarState.progress,
-            )
+            val textStartPadding = if (navigationIcon == null) {
+                titleStartPadding
+            } else {
+                lerp(
+                    start = 0.dp,
+                    stop = titleStartPadding,
+                    fraction = toolbarState.progress
+                )
+            }
 
             Box(
                 modifier = Modifier
                     .padding(
                         end = textEndPadding,
-                        start = textStartPadding,
+                        start = textStartPadding
                     )
                     .graphicsLayer(
                         scaleX = textSize,
                         scaleY = textSize,
-                        transformOrigin = TransformOrigin(0F, 0F),
-                    ),
+                        transformOrigin = TransformOrigin(0F, 0F)
+                    )
             ) {
                 titleExpanded()
             }
@@ -125,7 +128,7 @@ fun CollapsingToolbar(
                     modifier = Modifier
                         .padding(horizontal = 4.dp)
                         .height(collapsedHeight),
-                    contentAlignment = Alignment.CenterStart,
+                    contentAlignment = Alignment.CenterStart
                 ) {
                     navigationIcon()
                 }
@@ -138,7 +141,7 @@ fun CollapsingToolbar(
                     modifier = Modifier
                         .height(collapsedHeight)
                         .fillMaxWidth(),
-                    contentAlignment = Alignment.CenterEnd,
+                    contentAlignment = Alignment.CenterEnd
                 ) {
                     Row(
                         modifier = Modifier.padding(end = TopAppBarActionsHorizontalPadding),
@@ -158,11 +161,11 @@ private fun CollapsingTextLayout(
     progress: Float,
     titleBottomPadding: Dp,
     textCompressionRatio: Float,
-    content: @Composable () -> Unit,
+    content: @Composable () -> Unit
 ) {
     Layout(
         modifier = modifier,
-        content = content,
+        content = content
     ) { measurables, constraints ->
         val placeables = measurables.map {
             it.measure(constraints)
@@ -170,7 +173,7 @@ private fun CollapsingTextLayout(
 
         layout(
             width = constraints.maxWidth,
-            height = constraints.maxHeight,
+            height = constraints.maxHeight
         ) {
             val title = placeables[0]
             val navigationIcon = placeables[1]
@@ -185,23 +188,23 @@ private fun CollapsingTextLayout(
                 x = lerp(
                     start = navigationIcon.width,
                     stop = 0,
-                    fraction = progress,
+                    fraction = progress
                 ),
                 y = lerp(
                     start = centeredTitlePosition,
                     stop = bottomTitlePosition,
-                    fraction = progress,
-                ),
+                    fraction = progress
+                )
             )
 
             navigationIcon.placeRelative(
                 x = 0,
-                y = 0,
+                y = 0
             )
 
             actions.placeRelative(
                 x = 0,
-                y = 0,
+                y = 0
             )
         }
     }

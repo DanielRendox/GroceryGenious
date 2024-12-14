@@ -11,6 +11,7 @@ import com.rendox.grocerygenius.data.product.ProductRepository
 import com.rendox.grocerygenius.model.Grocery
 import com.rendox.grocerygenius.model.Product
 import dagger.hilt.android.lifecycle.HiltViewModel
+import javax.inject.Inject
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
@@ -21,13 +22,12 @@ import kotlinx.coroutines.flow.flatMapLatest
 import kotlinx.coroutines.flow.flowOf
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
-import javax.inject.Inject
 
 @OptIn(ExperimentalCoroutinesApi::class)
 @HiltViewModel
 class AddGroceryViewModel @Inject constructor(
     private val productRepository: ProductRepository,
-    private val groceryRepository: GroceryRepository,
+    private val groceryRepository: GroceryRepository
 ) : ViewModel() {
     private val _uiStateFlow = MutableStateFlow(AddGroceryUiState())
     val uiStateFlow = _uiStateFlow.asStateFlow()
@@ -56,7 +56,7 @@ class AddGroceryViewModel @Inject constructor(
                     _uiStateFlow.update {
                         it.copy(
                             grocerySearchResults = emptyList(),
-                            customProducts = emptyList(),
+                            customProducts = emptyList()
                         )
                     }
                 }
@@ -71,13 +71,15 @@ class AddGroceryViewModel @Inject constructor(
                     if (previouslyAddedGroceryId != null && groceryListId != null) {
                         groceryRepository.getGroceryById(
                             productId = previouslyAddedGroceryId,
-                            listId = groceryListId,
+                            listId = groceryListId
                         )
-                    } else flowOf(null)
+                    } else {
+                        flowOf(null)
+                    }
                 }
                 .collectLatest { previousGrocery ->
                     val displayingEditGroceryUi = _uiStateFlow.value.bottomSheetContentType ==
-                            AddGroceryBottomSheetContentType.RefineItemOptions
+                        AddGroceryBottomSheetContentType.RefineItemOptions
                     val butTheGroceryIsNotInListAnymore = previousGrocery == null
                     if (displayingEditGroceryUi && butTheGroceryIsNotInListAnymore) {
                         _uiStateFlow.update {
@@ -135,7 +137,7 @@ class AddGroceryViewModel @Inject constructor(
                     category = product.category,
                     purchasedLastModified = correspondingGroceryInTheList?.purchasedLastModified
                         ?: System.currentTimeMillis(),
-                    icon = product.icon,
+                    icon = product.icon
                 )
             }
 
@@ -148,21 +150,25 @@ class AddGroceryViewModel @Inject constructor(
             // "sauce" in the database, but the user searches for "tomato sauce", which is not
             // there. In this case, the custom product "tomato sauce" will get the icon
             // and category of the existing product "sauce".
-            val derivedProduct = if (isPerfectMatch) null else productRepository
-                .getProductsByKeywords(keywords = searchQuery.split(" "))
-                .firstOrNull() // assuming that the best matching result is first
-                ?.let { product ->
-                    Product(
-                        name = searchQuery,
-                        category = product.category,
-                        icon = product.icon,
-                    )
-                }
+            val derivedProduct = if (isPerfectMatch) {
+                null
+            } else {
+                productRepository
+                    .getProductsByKeywords(keywords = searchQuery.split(" "))
+                    .firstOrNull() // assuming that the best matching result is first
+                    ?.let { product ->
+                        Product(
+                            name = searchQuery,
+                            category = product.category,
+                            icon = product.icon
+                        )
+                    }
+            }
 
             _uiStateFlow.update { uiState ->
                 uiState.copy(
                     customProducts = listOf(derivedProduct, customProduct).mapNotNull { it },
-                    grocerySearchResults = newResults,
+                    grocerySearchResults = newResults
                 )
             }
         }
@@ -177,20 +183,20 @@ class AddGroceryViewModel @Inject constructor(
                 groceryRepository.updatePurchased(
                     productId = grocery.productId,
                     listId = groceryListId,
-                    purchased = !grocery.purchased,
+                    purchased = !grocery.purchased
                 )
             } else {
                 groceryRepository.addGroceryToList(
                     productId = grocery.productId,
                     listId = groceryListId,
                     description = grocery.description,
-                    purchased = !grocery.purchased,
+                    purchased = !grocery.purchased
                 )
             }
             _uiStateFlow.update {
                 it.copy(
                     previouslyAddedGrocery = grocery,
-                    bottomSheetContentType = AddGroceryBottomSheetContentType.RefineItemOptions,
+                    bottomSheetContentType = AddGroceryBottomSheetContentType.RefineItemOptions
                 )
             }
         }
@@ -208,7 +214,7 @@ class AddGroceryViewModel @Inject constructor(
                 groceryListId = groceryListId,
                 description = null,
                 purchased = purchased,
-                iconId = customProduct.icon?.uniqueFileName,
+                iconId = customProduct.icon?.uniqueFileName
             )
             _uiStateFlow.update {
                 it.copy(
@@ -217,9 +223,9 @@ class AddGroceryViewModel @Inject constructor(
                         name = customProduct.name,
                         description = null,
                         category = customProduct.category,
-                        purchased = purchased,
+                        purchased = purchased
                     ),
-                    bottomSheetContentType = AddGroceryBottomSheetContentType.RefineItemOptions,
+                    bottomSheetContentType = AddGroceryBottomSheetContentType.RefineItemOptions
                 )
             }
         }

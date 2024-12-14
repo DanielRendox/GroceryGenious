@@ -11,6 +11,8 @@ import com.rendox.grocerygenius.data.grocery.GroceryRepository
 import com.rendox.grocerygenius.data.icons.IconRepository
 import com.rendox.grocerygenius.data.product.ProductRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
+import java.util.UUID
+import javax.inject.Inject
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
@@ -21,8 +23,6 @@ import kotlinx.coroutines.flow.flatMapLatest
 import kotlinx.coroutines.flow.mapNotNull
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
-import java.util.UUID
-import javax.inject.Inject
 
 @OptIn(ExperimentalCoroutinesApi::class)
 @HiltViewModel
@@ -30,12 +30,12 @@ class IconPickerViewModel @Inject constructor(
     private val savedStateHandle: SavedStateHandle,
     iconRepository: IconRepository,
     private val productRepository: ProductRepository,
-    private val groceryRepository: GroceryRepository,
+    private val groceryRepository: GroceryRepository
 ) : ViewModel() {
 
     private val editProductIdFlow: StateFlow<String?> = savedStateHandle.getStateFlow(
         key = PRODUCT_ID_ARG,
-        initialValue = null,
+        initialValue = null
     )
     private val groceryListId: String =
         checkNotNull(savedStateHandle[ICON_PICKER_GROCERY_LIST_ID_ARG])
@@ -54,7 +54,7 @@ class IconPickerViewModel @Inject constructor(
                 _uiStateFlow.update { uiState ->
                     uiState.copy(
                         clearSearchQueryButtonIsShown = query.isNotEmpty(),
-                        searchResultsShown = trimmedQuery.isNotEmpty(),
+                        searchResultsShown = trimmedQuery.isNotEmpty()
                     )
                 }
                 val searchResults = iconRepository.getGroceryIconsByName("%$trimmedQuery%")
@@ -105,7 +105,7 @@ class IconPickerViewModel @Inject constructor(
         val editProductId = editProductIdFlow.value ?: return
         val grocery = groceryRepository.getGroceryById(
             productId = editProductId,
-            listId = groceryListId,
+            listId = groceryListId
         ).first() ?: return
 
         if (grocery.productIsDefault) {
@@ -120,19 +120,18 @@ class IconPickerViewModel @Inject constructor(
                 description = grocery.description,
                 purchased = grocery.purchased,
                 purchasedLastModified = grocery.purchasedLastModified,
-                isDefault = false,
+                isDefault = false
             )
             groceryRepository.removeGroceryFromList(
                 productId = editProductId,
-                listId = groceryListId,
+                listId = groceryListId
             )
             savedStateHandle[PRODUCT_ID_ARG] = newProductId
         } else {
             productRepository.updateProductIcon(
                 productId = editProductId,
-                iconId = iconId,
+                iconId = iconId
             )
         }
     }
 }
-

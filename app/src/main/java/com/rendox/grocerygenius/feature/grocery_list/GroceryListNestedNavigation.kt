@@ -25,11 +25,11 @@ const val GROCERY_LIST_CATEGORY_NESTED_NAV_ROUTE_WITH_ARGS =
 
 fun NavController.navigateToGroceryList(
     groceryListId: String,
-    navOptions: NavOptionsBuilder.() -> Unit = {},
+    navOptions: NavOptionsBuilder.() -> Unit = {}
 ) {
     this.navigate(
         route = "$GROCERY_LIST_CATEGORY_NESTED_NAV_ROUTE/$groceryListId",
-        builder = navOptions,
+        builder = navOptions
     )
 }
 
@@ -37,7 +37,7 @@ fun NavGraphBuilder.groceryListNestedNavigation(
     navController: NavController,
     defaultGroceryListId: String?,
     navigateBack: () -> Unit,
-    navigateToIconPicker: (String, String) -> Unit,
+    navigateToIconPicker: (String, String) -> Unit
 ) = navigation(
     startDestination = GROCERY_LIST_ROUTE,
     route = GROCERY_LIST_CATEGORY_NESTED_NAV_ROUTE_WITH_ARGS,
@@ -45,7 +45,7 @@ fun NavGraphBuilder.groceryListNestedNavigation(
         navArgument(GROCERY_LIST_ID_ARG) {
             type = NavType.StringType
         }
-    ),
+    )
 ) {
     composable(
         route = GROCERY_LIST_ROUTE,
@@ -62,15 +62,16 @@ fun NavGraphBuilder.groceryListNestedNavigation(
                 GROCERY_LISTS_DASHBOARD_ROUTE -> GroceryGeniusTransition.SlideOutHorizontallyExitForward
                 else -> ExitTransition.None
             }
-        },
+        }
     ) { backStackEntry ->
         GroceryListRoute(
             navigateBack = navigateBack,
             groceryListViewModel = backStackEntry.groceryListCategorySharedViewModel(
-                navController, defaultGroceryListId
+                navController,
+                defaultGroceryListId
             ),
             navigateToCategoryScreen = { navController.navigate(CATEGORY_ROUTE) },
-            navigateToIconPicker = navigateToIconPicker,
+            navigateToIconPicker = navigateToIconPicker
         )
     }
 
@@ -81,13 +82,14 @@ fun NavGraphBuilder.groceryListNestedNavigation(
         },
         exitTransition = {
             GroceryGeniusTransition.SlideOutHorizontallyExitForward
-        },
+        }
     ) { backStackEntry ->
         CategoryRoute(
             navigateBack = { navController.popBackStack() },
             viewModel = backStackEntry.groceryListCategorySharedViewModel(
-                navController, defaultGroceryListId
-            ),
+                navController,
+                defaultGroceryListId
+            )
         )
     }
 }
@@ -95,7 +97,7 @@ fun NavGraphBuilder.groceryListNestedNavigation(
 @Composable
 fun NavBackStackEntry.groceryListCategorySharedViewModel(
     navController: NavController,
-    defaultGroceryListId: String?,
+    defaultGroceryListId: String?
 ): GroceryListViewModel {
     val navGraphRoute = destination.parent?.route ?: return hiltViewModel()
     val parentEntry = remember(this) {

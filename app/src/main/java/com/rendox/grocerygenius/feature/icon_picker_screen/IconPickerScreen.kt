@@ -58,7 +58,7 @@ import java.io.File
 @Composable
 fun IconPickerRoute(
     viewModel: IconPickerViewModel = hiltViewModel(),
-    navigateBack: () -> Unit,
+    navigateBack: () -> Unit
 ) {
     val uiState by viewModel.uiStateFlow.collectAsStateWithLifecycle()
     Surface {
@@ -66,7 +66,7 @@ fun IconPickerRoute(
             searchQuery = viewModel.searchQuery,
             uiState = uiState,
             onIntent = viewModel::onIntent,
-            navigateBack = navigateBack,
+            navigateBack = navigateBack
         )
     }
 }
@@ -76,12 +76,12 @@ fun IconPickerScreen(
     searchQuery: String,
     uiState: IconPickerUiState,
     onIntent: (IconPickerIntent) -> Unit,
-    navigateBack: () -> Unit,
+    navigateBack: () -> Unit
 ) {
     Column(
         modifier = Modifier
             .fillMaxSize()
-            .systemBarsPadding(),
+            .systemBarsPadding()
     ) {
         val gridCells = GridCells.Adaptive(104.dp)
         val horizontalArrangement = Arrangement.spacedBy(8.dp)
@@ -94,7 +94,7 @@ fun IconPickerScreen(
         IconPickerTopAppBar(
             modifier = Modifier.fillMaxWidth(),
             onLeadingIconClick = navigateBack,
-            onTrailingIconClick = { onIntent(IconPickerIntent.OnRemoveIcon) },
+            onTrailingIconClick = { onIntent(IconPickerIntent.OnRemoveIcon) }
         )
         uiState.product?.let { product ->
             IconPickerItem(
@@ -104,7 +104,7 @@ fun IconPickerScreen(
                     .align(Alignment.CenterHorizontally),
                 iconRef = product.icon,
                 iconName = product.name,
-                isSelected = true,
+                isSelected = true
             )
         }
         IconPickerSearchField(
@@ -116,7 +116,7 @@ fun IconPickerScreen(
             },
             onClearSearchQuery = {
                 onIntent(IconPickerIntent.OnClearSearchQuery)
-            },
+            }
         )
         IconGrid(
             modifier = Modifier.fillMaxSize(),
@@ -124,7 +124,7 @@ fun IconPickerScreen(
             onIntent = onIntent,
             gridCells = gridCells,
             horizontalArrangement = horizontalArrangement,
-            lazyGridState = lazyGridState,
+            lazyGridState = lazyGridState
         )
     }
 }
@@ -133,38 +133,38 @@ fun IconPickerScreen(
 private fun IconPickerTopAppBar(
     modifier: Modifier = Modifier,
     onLeadingIconClick: () -> Unit,
-    onTrailingIconClick: () -> Unit,
+    onTrailingIconClick: () -> Unit
 ) {
     Box(
         modifier = modifier
             .fillMaxWidth()
-            .height(TopAppBarSmallHeight),
+            .height(TopAppBarSmallHeight)
     ) {
         IconButton(
             modifier = Modifier
                 .padding(start = TopAppBarActionsHorizontalPadding)
                 .align(Alignment.CenterStart),
-            onClick = onLeadingIconClick,
+            onClick = onLeadingIconClick
         ) {
             Icon(
                 imageVector = Icons.Default.Close,
-                contentDescription = stringResource(R.string.close),
+                contentDescription = stringResource(R.string.close)
             )
         }
         Text(
             modifier = Modifier.align(Alignment.Center),
             text = stringResource(id = R.string.icon_picker_screen_title),
-            style = MaterialTheme.typography.titleLarge,
+            style = MaterialTheme.typography.titleLarge
         )
         IconButton(
             modifier = Modifier
                 .padding(end = TopAppBarActionsHorizontalPadding)
                 .align(Alignment.CenterEnd),
-            onClick = onTrailingIconClick,
+            onClick = onTrailingIconClick
         ) {
             Icon(
                 imageVector = Icons.Default.Delete,
-                contentDescription = stringResource(R.string.delete),
+                contentDescription = stringResource(R.string.delete)
             )
         }
     }
@@ -179,7 +179,7 @@ private fun IconGrid(
     gridCells: GridCells,
     verticalArrangement: Arrangement.Vertical = Arrangement.spacedBy(8.dp),
     horizontalArrangement: Arrangement.Horizontal = Arrangement.spacedBy(8.dp),
-    onIntent: (IconPickerIntent) -> Unit,
+    onIntent: (IconPickerIntent) -> Unit
 ) {
     Box(modifier = modifier) {
         val itemsAvailable = remember(uiState.groupedIcons) {
@@ -194,13 +194,13 @@ private fun IconGrid(
             columns = gridCells,
             verticalArrangement = verticalArrangement,
             horizontalArrangement = horizontalArrangement,
-            contentPadding = PaddingValues(bottom = 16.dp),
+            contentPadding = PaddingValues(bottom = 16.dp)
         ) {
             if (uiState.searchResultsShown) {
                 items(
                     items = uiState.searchResults,
                     key = { "GroceryIcon-${it.uniqueFileName}" },
-                    contentType = { "GroceryIcon" },
+                    contentType = { "GroceryIcon" }
                 ) { iconRef ->
                     IconPickerItem(
                         modifier = Modifier.aspectRatio(1F),
@@ -208,7 +208,7 @@ private fun IconGrid(
                         onIconClick = { icon ->
                             if (icon != null) onIntent(IconPickerIntent.OnPickIcon(icon))
                         },
-                        isSelected = iconRef.uniqueFileName == uiState.product?.icon?.uniqueFileName,
+                        isSelected = iconRef.uniqueFileName == uiState.product?.icon?.uniqueFileName
                     )
                 }
             } else {
@@ -216,7 +216,7 @@ private fun IconGrid(
                     item(
                         key = "Title-${category.id}",
                         span = { GridItemSpan(maxLineSpan) },
-                        contentType = "Title",
+                        contentType = "Title"
                     ) {
                         Text(
                             modifier = Modifier
@@ -225,13 +225,13 @@ private fun IconGrid(
                             text = category.name,
                             style = MaterialTheme.typography.titleMedium.copy(fontSize = 18.sp),
                             maxLines = 1,
-                            overflow = TextOverflow.Ellipsis,
+                            overflow = TextOverflow.Ellipsis
                         )
                     }
                     items(
                         items = icons,
                         key = { "SearchResult-${it.uniqueFileName}" },
-                        contentType = { "GroceryIcon" },
+                        contentType = { "GroceryIcon" }
                     ) { iconRef ->
                         IconPickerItem(
                             modifier = Modifier.aspectRatio(1F),
@@ -239,7 +239,7 @@ private fun IconGrid(
                             onIconClick = { icon ->
                                 if (icon != null) onIntent(IconPickerIntent.OnPickIcon(icon))
                             },
-                            isSelected = iconRef.uniqueFileName == uiState.product?.icon?.uniqueFileName,
+                            isSelected = iconRef.uniqueFileName == uiState.product?.icon?.uniqueFileName
                         )
                     }
                 }
@@ -251,7 +251,7 @@ private fun IconGrid(
                 .padding(horizontal = 2.dp)
                 .align(Alignment.CenterEnd),
             state = scrollbarState,
-            orientation = Orientation.Vertical,
+            orientation = Orientation.Vertical
         )
     }
 }
@@ -262,7 +262,7 @@ private fun IconPickerSearchField(
     searchQuery: String,
     clearSearchQueryButtonIsShown: Boolean,
     onSearchQueryChanged: (String) -> Unit,
-    onClearSearchQuery: () -> Unit,
+    onClearSearchQuery: () -> Unit
 ) {
     SearchField(
         modifier = modifier.fillMaxWidth(),
@@ -276,7 +276,7 @@ private fun IconPickerSearchField(
         leadingIcon = {
             Icon(
                 imageVector = Icons.Default.Search,
-                contentDescription = null,
+                contentDescription = null
             )
         }
     )
@@ -288,7 +288,7 @@ private fun IconPickerItem(
     iconRef: IconReference?,
     iconName: String = iconRef?.name ?: "",
     isSelected: Boolean,
-    onIconClick: (IconReference?) -> Unit = {},
+    onIconClick: (IconReference?) -> Unit = {}
 ) {
     val context = LocalContext.current
     Surface(
@@ -299,14 +299,14 @@ private fun IconPickerItem(
             MaterialTheme.colorScheme.surfaceContainer
         },
         shape = RoundedCornerShape(GroceryItemRounding),
-        onClick = { onIconClick(iconRef) },
+        onClick = { onIconClick(iconRef) }
     ) {
         Column(
             modifier = Modifier
                 .fillMaxSize()
                 .padding(4.dp),
             horizontalAlignment = Alignment.CenterHorizontally,
-            verticalArrangement = Arrangement.SpaceEvenly,
+            verticalArrangement = Arrangement.SpaceEvenly
         ) {
             Box(modifier = Modifier.weight(1F)) {
                 GroceryIcon(
@@ -314,7 +314,7 @@ private fun IconPickerItem(
                         .fillMaxSize()
                         .padding(4.dp),
                     groceryName = iconName,
-                    iconFile = iconRef?.let { File(context.filesDir, it.filePath) },
+                    iconFile = iconRef?.let { File(context.filesDir, it.filePath) }
                 )
             }
             Text(
@@ -323,7 +323,7 @@ private fun IconPickerItem(
                 style = MaterialTheme.typography.labelLarge,
                 maxLines = 1,
                 textAlign = TextAlign.Center,
-                overflow = TextOverflow.Ellipsis,
+                overflow = TextOverflow.Ellipsis
             )
         }
     }

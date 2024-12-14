@@ -23,13 +23,13 @@ import com.rendox.grocerygenius.feature.settings.settingsScreen
 fun GroceryGeniusNavHost(
     modifier: Modifier = Modifier,
     startDestination: String = GROCERY_LISTS_DASHBOARD_ROUTE,
-    defaultGroceryListId: String? = null,
+    defaultGroceryListId: String? = null
 ) {
     val navController = rememberNavController()
     NavHost(
         modifier = modifier.fillMaxSize(),
         navController = navController,
-        startDestination = startDestination,
+        startDestination = startDestination
     ) {
         groceryListsDashboardScreen(
             navigateToGroceryListScreen = { groceryListId ->
@@ -41,7 +41,7 @@ fun GroceryGeniusNavHost(
                 if (navController.currentDestination?.route == GROCERY_LISTS_DASHBOARD_ROUTE) {
                     navController.navigateToSettings()
                 }
-            },
+            }
         )
         groceryListNestedNavigation(
             navController = navController,
@@ -62,15 +62,15 @@ fun GroceryGeniusNavHost(
             navigateToIconPicker = { editProductId, groceryListId ->
                 navController.navigateToIconPicker(
                     editProductId = editProductId,
-                    groceryListId = groceryListId,
+                    groceryListId = groceryListId
                 )
-            },
+            }
         )
         settingsScreen(
-            navigateBack = { navController.popBackStack() },
+            navigateBack = { navController.popBackStack() }
         )
         iconPickerScreen(
-            navigateBack = { navController.popBackStack() },
+            navigateBack = { navController.popBackStack() }
         )
         onboardingScreen(
             closeOnboarding = {
@@ -79,7 +79,7 @@ fun GroceryGeniusNavHost(
                         popUpTo(ONBOARDING_ROUTE) { inclusive = true }
                     }
                 }
-            },
+            }
         )
     }
 }

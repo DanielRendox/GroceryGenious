@@ -6,21 +6,21 @@ import android.util.Log
 import com.rendox.grocerygenius.network.di.Dispatcher
 import com.rendox.grocerygenius.network.di.GroceryGeniusDispatchers
 import dagger.hilt.android.qualifiers.ApplicationContext
-import kotlinx.coroutines.CoroutineDispatcher
-import kotlinx.coroutines.withContext
 import java.io.File
 import java.io.FileOutputStream
 import java.io.IOException
 import javax.inject.Inject
+import kotlinx.coroutines.CoroutineDispatcher
+import kotlinx.coroutines.withContext
 
 class AssetToFileSaver @Inject constructor(
     @ApplicationContext private val appContext: Context,
-    @Dispatcher(GroceryGeniusDispatchers.IO) private val ioDispatcher: CoroutineDispatcher,
+    @Dispatcher(GroceryGeniusDispatchers.IO) private val ioDispatcher: CoroutineDispatcher
 ) {
     suspend fun copyAssetToInternalStorage(
         assetFilePath: String,
         outputDirPath: String? = null,
-        outputFileName: String? = null,
+        outputFileName: String? = null
     ): File? = withContext(ioDispatcher) {
         val derivedOutputFileName = outputFileName ?: Uri.parse(assetFilePath).lastPathSegment
         if (derivedOutputFileName == null) {

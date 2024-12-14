@@ -36,16 +36,16 @@ fun GroceryGridItem(
     groceryName: String,
     groceryDescription: String?,
     iconFile: File?,
-    color: Color,
+    color: Color
 ) {
     Surface(
         modifier = modifier.testTag("GroceryGridItem"),
-        color = color,
+        color = color
     ) {
         BoxWithConstraints(modifier = Modifier.padding(8.dp)) {
             val boxWithConstraintsScope = this
             Column(
-                horizontalAlignment = Alignment.CenterHorizontally,
+                horizontalAlignment = Alignment.CenterHorizontally
             ) {
                 val textMeasurer = rememberTextMeasurer()
                 val titleStyle = MaterialTheme.typography.labelMedium
@@ -56,7 +56,7 @@ fun GroceryGridItem(
                         text = groceryName,
                         style = titleStyle,
                         constraints = boxWithConstraintsScope.constraints,
-                        maxLines = titleMaxLines,
+                        maxLines = titleMaxLines
                     )
                 }
                 val descriptionMaxLines = if (titleLayoutResult.lineCount == 1) 2 else 1
@@ -64,16 +64,16 @@ fun GroceryGridItem(
                     modifier = Modifier
                         .weight(1F)
                         .fillMaxWidth(),
-                    contentAlignment = Alignment.Center,
+                    contentAlignment = Alignment.Center
                 ) {
                     GroceryIcon(
                         groceryName = groceryName,
-                        iconFile = iconFile,
+                        iconFile = iconFile
                     )
                 }
                 Box(
                     modifier = Modifier.heightIn(min = 40.dp),
-                    contentAlignment = Alignment.Center,
+                    contentAlignment = Alignment.Center
                 ) {
                     Column(horizontalAlignment = Alignment.CenterHorizontally) {
                         val titleFontSize =
@@ -85,7 +85,7 @@ fun GroceryGridItem(
                             lineHeight = titleFontSize,
                             textAlign = TextAlign.Center,
                             maxLines = titleMaxLines,
-                            overflow = TextOverflow.Ellipsis,
+                            overflow = TextOverflow.Ellipsis
                         )
                         if (groceryDescription != null) {
                             Text(
@@ -95,7 +95,7 @@ fun GroceryGridItem(
                                 lineHeight = 12.sp,
                                 textAlign = TextAlign.Center,
                                 maxLines = descriptionMaxLines,
-                                overflow = TextOverflow.Ellipsis,
+                                overflow = TextOverflow.Ellipsis
                             )
                         }
                     }
@@ -108,7 +108,7 @@ fun GroceryGridItem(
 fun Modifier.groceryGridItemCornerRounding(
     itemIndex: Int,
     numOfColumns: Int,
-    lastIndex: Int,
+    lastIndex: Int
 ) = this.clip(
     shape = RoundedCornerShape(
         topStart = when (itemIndex) {
@@ -124,12 +124,12 @@ fun Modifier.groceryGridItemCornerRounding(
             lastIndex - (lastIndex % numOfColumns) -> GroceryItemRounding
             else -> 0.dp
         },
-        bottomEnd = when  {
+        bottomEnd = when {
             itemIndex == lastIndex -> GroceryItemRounding
             itemIndex == lastIndex - (lastIndex % numOfColumns) - 1 &&
-                    (lastIndex + 1) % numOfColumns != 0 -> GroceryItemRounding
+                (lastIndex + 1) % numOfColumns != 0 -> GroceryItemRounding
             else -> 0.dp
-        },
+        }
     )
 )
 
@@ -138,20 +138,20 @@ class GridItemPreviewParameterProvider : PreviewParameterProvider<Pair<String, S
         get() = sequenceOf(
             "Mozzarella" to null,
             "Dishwashing" to "Lemon Scent",
-            "Echo Glow Smart Lamp" to "for kids room",
+            "Echo Glow Smart Lamp" to "for kids room"
         )
 }
 
 @Preview
 @Composable
 private fun LazyGroceryGridItemPreview(
-    @PreviewParameter(GridItemPreviewParameterProvider::class) titleAndDescription: Pair<String, String>,
+    @PreviewParameter(GridItemPreviewParameterProvider::class) titleAndDescription: Pair<String, String>
 ) {
     GroceryGridItem(
         modifier = Modifier.size(104.dp),
         groceryName = titleAndDescription.first,
         groceryDescription = titleAndDescription.second,
         color = MaterialTheme.colorScheme.groceryListItemColors.defaultBackgroundColor,
-        iconFile = null,
+        iconFile = null
     )
 }

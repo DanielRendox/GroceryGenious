@@ -7,13 +7,13 @@ import com.rendox.grocerygenius.data.model.asExternalModel
 import com.rendox.grocerygenius.database.product.ProductDao
 import com.rendox.grocerygenius.model.Product
 import com.rendox.grocerygenius.network.data_sources.ProductNetworkDataSource
+import javax.inject.Inject
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
-import javax.inject.Inject
 
 class ProductRepositoryImpl @Inject constructor(
     private val productDao: ProductDao,
-    private val productNetworkDataSource: ProductNetworkDataSource,
+    private val productNetworkDataSource: ProductNetworkDataSource
 ) : ProductRepository {
     override suspend fun insertProduct(product: Product) {
         productDao.insertProduct(product.asEntity())
@@ -35,11 +35,17 @@ class ProductRepositoryImpl @Inject constructor(
         }
     }
 
-    override suspend fun updateProductCategory(productId: String, categoryId: String?) {
+    override suspend fun updateProductCategory(
+        productId: String,
+        categoryId: String?
+    ) {
         productDao.updateProductCategory(productId, categoryId)
     }
 
-    override suspend fun updateProductIcon(productId: String, iconId: String?) {
+    override suspend fun updateProductIcon(
+        productId: String,
+        iconId: String?
+    ) {
         productDao.updateProductIcon(productId, iconId)
     }
 
@@ -69,6 +75,6 @@ class ProductRepositoryImpl @Inject constructor(
         modelUpdater = { changedIds ->
             val networkCategories = productNetworkDataSource.getProductsByIds(ids = changedIds)
             productDao.upsertProducts(networkCategories.map { it.asEntity() })
-        },
+        }
     )
 }

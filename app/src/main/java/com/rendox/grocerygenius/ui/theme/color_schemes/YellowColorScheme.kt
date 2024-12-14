@@ -33,7 +33,7 @@ val YellowLightColorScheme = lightColorScheme(
     inversePrimary = Color(0xFFE8C349),
     surfaceTint = Color(0xFF735C00),
     outlineVariant = Color(0xFFCEC6B4),
-    scrim = Color(0xFF000000),
+    scrim = Color(0xFF000000)
 )
 
 val YellowDarkColorScheme = darkColorScheme(
@@ -65,5 +65,5 @@ val YellowDarkColorScheme = darkColorScheme(
     inversePrimary = Color(0xFF735C00),
     surfaceTint = Color(0xFFE8C349),
     outlineVariant = Color(0xFF4C4639),
-    scrim = Color(0xFF000000),
+    scrim = Color(0xFF000000)
 )

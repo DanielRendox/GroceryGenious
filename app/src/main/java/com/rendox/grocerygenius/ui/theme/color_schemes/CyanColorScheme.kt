@@ -33,7 +33,7 @@ val CyanLightColorScheme = lightColorScheme(
     inversePrimary = Color(0xFF97CBFF),
     surfaceTint = Color(0xFF00639B),
     outlineVariant = Color(0xFFC2C7CF),
-    scrim = Color(0xFF000000),
+    scrim = Color(0xFF000000)
 )
 
 val CyanDarkColorScheme = darkColorScheme(
@@ -65,5 +65,5 @@ val CyanDarkColorScheme = darkColorScheme(
     inversePrimary = Color(0xFF00639B),
     surfaceTint = Color(0xFF97CBFF),
     outlineVariant = Color(0xFF42474E),
-    scrim = Color(0xFF000000),
+    scrim = Color(0xFF000000)
 )

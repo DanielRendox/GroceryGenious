@@ -4,5 +4,5 @@ enum class SyncStatus {
     RUNNING,
     SUCCEEDED,
     FAILED,
-    OFFLINE,
+    OFFLINE
 }

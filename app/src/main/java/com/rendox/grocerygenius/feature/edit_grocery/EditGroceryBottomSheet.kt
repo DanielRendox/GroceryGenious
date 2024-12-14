@@ -42,7 +42,7 @@ fun EditGroceryBottomSheet(
     editGroceryDescription: TextFieldValue,
     hideBottomSheetOnCompletion: () -> Unit,
     onIntent: (EditGroceryUiIntent) -> Unit,
-    navigateToIconPicker: (String) -> Unit,
+    navigateToIconPicker: (String) -> Unit
 ) = Box(modifier = modifier) {
     var categoryPickerIsVisible by remember { mutableStateOf(false) }
     var deleteProductDialogIsVisible by remember { mutableStateOf(false) }
@@ -58,7 +58,7 @@ fun EditGroceryBottomSheet(
         onDismissRequest = { hideBottomSheet() },
         sheetState = editBottomSheetState,
         scrimColor = Color.Transparent,
-        dragHandle = { BottomSheetDragHandle() },
+        dragHandle = { BottomSheetDragHandle() }
     ) {
         val itemDescriptionFocusRequester = remember { FocusRequester() }
         val focusManager = LocalFocusManager.current
@@ -106,7 +106,7 @@ fun EditGroceryBottomSheet(
             },
             onDeleteProduct = {
                 deleteProductDialogIsVisible = true
-            },
+            }
         )
     }
 
@@ -123,7 +123,7 @@ fun EditGroceryBottomSheet(
             onCustomCategorySelected = {
                 onIntent(EditGroceryUiIntent.OnCustomCategorySelected)
                 categoryPickerIsVisible = false
-            },
+            }
         )
     }
 
@@ -137,7 +137,7 @@ fun EditGroceryBottomSheet(
                 deleteProductDialogIsVisible = false
             },
             onDismissRequest = { deleteProductDialogIsVisible = false },
-            bodyText = stringResource(R.string.delete_product_dialog_text),
+            bodyText = stringResource(R.string.delete_product_dialog_text)
         )
     }
 }
@@ -149,7 +149,7 @@ class ParameterProvider : PreviewParameterProvider<Boolean> {
 @Preview
 @Composable
 private fun EditGroceryBottomSheetContentPreview(
-    @PreviewParameter(ParameterProvider::class) productCanBeModified: Boolean,
+    @PreviewParameter(ParameterProvider::class) productCanBeModified: Boolean
 ) {
     GroceryGeniusTheme {
         Surface {
@@ -167,7 +167,7 @@ private fun EditGroceryBottomSheetContentPreview(
                 onChangeIconClick = {},
                 productCanBeModified = productCanBeModified,
                 onRemoveGrocery = {},
-                onDeleteProduct = {},
+                onDeleteProduct = {}
             )
         }
     }

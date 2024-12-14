@@ -5,17 +5,17 @@ import com.rendox.grocerygenius.datastore.UserPreferencesDataSource
 import com.rendox.grocerygenius.model.DarkThemeConfig
 import com.rendox.grocerygenius.model.GroceryGeniusColorScheme
 import com.rendox.grocerygenius.model.UserPreferences
+import javax.inject.Inject
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.flatMapLatest
 import kotlinx.coroutines.flow.flowOf
 import kotlinx.coroutines.flow.map
-import javax.inject.Inject
 
 class UserPreferencesRepositoryImpl @Inject constructor(
     private val userPreferencesDataSource: UserPreferencesDataSource,
-    private val groceryListRepository: GroceryListRepository,
+    private val groceryListRepository: GroceryListRepository
 ) : UserPreferencesRepository {
     @OptIn(ExperimentalCoroutinesApi::class)
     override val userPreferencesFlow: Flow<UserPreferences>
@@ -27,7 +27,9 @@ class UserPreferencesRepositoryImpl @Inject constructor(
                         .map { groceryList ->
                             userPreferences.copy(defaultListId = groceryList?.id)
                         }
-                } else flowOf(userPreferences)
+                } else {
+                    flowOf(userPreferences)
+                }
             }
 
     override suspend fun updateDefaultListId(listId: String?) {

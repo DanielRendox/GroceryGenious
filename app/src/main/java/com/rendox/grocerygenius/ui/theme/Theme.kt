@@ -29,7 +29,7 @@ fun GroceryGeniusTheme(
     useDarkTheme: Boolean = isSystemInDarkTheme(),
     disableDynamicColor: Boolean = true,
     requestedColorScheme: GroceryGeniusColorScheme? = null,
-    content: @Composable () -> Unit,
+    content: @Composable () -> Unit
 ) {
     val dynamicColor = dynamicColorIsSupported && !disableDynamicColor
     val extendedColors =
@@ -50,43 +50,59 @@ fun GroceryGeniusTheme(
     ) {
         MaterialTheme(
             colorScheme = resultingColorScheme,
-            content = content,
+            content = content
         )
     }
 }
 
 @Composable
-fun GroceryGeniusColorScheme.deriveColorScheme(
-    useDarkTheme: Boolean
-): ColorScheme = when (this) {
+fun GroceryGeniusColorScheme.deriveColorScheme(useDarkTheme: Boolean): ColorScheme = when (this) {
     GroceryGeniusColorScheme.BeigeColorScheme -> {
-        if (useDarkTheme) BeigeDarkColorScheme
-        else BeigeLightColorScheme
+        if (useDarkTheme) {
+            BeigeDarkColorScheme
+        } else {
+            BeigeLightColorScheme
+        }
     }
 
     GroceryGeniusColorScheme.CyanColorScheme -> {
-        if (useDarkTheme) CyanDarkColorScheme
-        else CyanLightColorScheme
+        if (useDarkTheme) {
+            CyanDarkColorScheme
+        } else {
+            CyanLightColorScheme
+        }
     }
 
     GroceryGeniusColorScheme.GreenColorScheme -> {
-        if (useDarkTheme) GreenDarkColorScheme
-        else GreenLightColorScheme
+        if (useDarkTheme) {
+            GreenDarkColorScheme
+        } else {
+            GreenLightColorScheme
+        }
     }
 
     GroceryGeniusColorScheme.PinkColorScheme -> {
-        if (useDarkTheme) PinkDarkColorScheme
-        else PinkLightColorScheme
+        if (useDarkTheme) {
+            PinkDarkColorScheme
+        } else {
+            PinkLightColorScheme
+        }
     }
 
     GroceryGeniusColorScheme.PurpleColorScheme -> {
-        if (useDarkTheme) PurpleDarkColorScheme
-        else PurpleLightColorScheme
+        if (useDarkTheme) {
+            PurpleDarkColorScheme
+        } else {
+            PurpleLightColorScheme
+        }
     }
 
     GroceryGeniusColorScheme.YellowColorScheme -> {
-        if (useDarkTheme) YellowDarkColorScheme
-        else YellowLightColorScheme
+        if (useDarkTheme) {
+            YellowDarkColorScheme
+        } else {
+            YellowLightColorScheme
+        }
     }
 }
 

@@ -8,5 +8,5 @@ annotation class Dispatcher(val dispatcher: GroceryGeniusDispatchers)
 
 enum class GroceryGeniusDispatchers {
     Default,
-    IO,
+    IO
 }

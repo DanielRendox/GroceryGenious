@@ -35,7 +35,7 @@ fun LazyGroceryGrid(
     showScrollbar: Boolean = true,
     groceryItem: @Composable (Grocery) -> Unit,
     customProducts: List<Product> = emptyList(),
-    customProduct: (@Composable (Product) -> Unit)? = null,
+    customProduct: (@Composable (Product) -> Unit)? = null
 ) {
     val scrollbarState = lazyGridState.scrollbarState(itemsAvailable = groceries.size)
     BoxWithConstraints(modifier = modifier) {
@@ -50,21 +50,21 @@ fun LazyGroceryGrid(
             contentPadding = contentPadding,
             columns = GridCells.Adaptive(104.dp),
             horizontalArrangement = horizontalArrangement,
-            verticalArrangement = Arrangement.spacedBy(4.dp),
+            verticalArrangement = Arrangement.spacedBy(4.dp)
         ) {
             // Add dummy item to prevent automatic scroll when the first item is clicked
             // (this is a workaround for an internal bug in LazyVerticalGrid)
             item(
                 key = "Dummy",
                 span = { GridItemSpan(maxLineSpan) },
-                contentType = "Dummy",
+                contentType = "Dummy"
             ) {
                 Spacer(modifier = Modifier.height(0.dp))
             }
             items(
                 count = groceries.size,
                 key = { index -> groceries[index].productId },
-                contentType = { "Grocery" },
+                contentType = { "Grocery" }
             ) { index ->
                 BoxWithConstraints(modifier = Modifier.aspectRatio(1F)) {
                     val cellWidth = this.maxWidth
@@ -75,7 +75,7 @@ fun LazyGroceryGrid(
                         modifier = Modifier.groceryGridItemCornerRounding(
                             itemIndex = index,
                             numOfColumns = numOfColumns,
-                            lastIndex = groceries.lastIndex + customProducts.size,
+                            lastIndex = groceries.lastIndex + customProducts.size
                         )
                     ) {
                         groceryItem(groceries[index])
@@ -86,7 +86,7 @@ fun LazyGroceryGrid(
                 items(
                     count = customProducts.size,
                     key = { index -> customProducts[index].id },
-                    contentType = { "Grocery" },
+                    contentType = { "Grocery" }
                 ) { index ->
                     BoxWithConstraints(modifier = Modifier.aspectRatio(1F)) {
                         val cellWidth = this.maxWidth
@@ -97,7 +97,7 @@ fun LazyGroceryGrid(
                             modifier = Modifier.groceryGridItemCornerRounding(
                                 itemIndex = groceries.size + index,
                                 numOfColumns = numOfColumns,
-                                lastIndex = groceries.lastIndex + customProducts.size,
+                                lastIndex = groceries.lastIndex + customProducts.size
                             )
                         ) {
                             customProduct(customProducts[index])
@@ -113,9 +113,8 @@ fun LazyGroceryGrid(
                     .padding(horizontal = 2.dp)
                     .align(Alignment.CenterEnd),
                 state = scrollbarState,
-                orientation = Orientation.Vertical,
+                orientation = Orientation.Vertical
             )
         }
     }
 }
-

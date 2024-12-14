@@ -32,7 +32,7 @@ import com.rendox.grocerygenius.ui.theme.GroceryGeniusTheme
 class DashboardItemViewHolder(
     private val composeView: ComposeView,
     private val onDrag: (RecyclerView.ViewHolder) -> Unit,
-    private val onViewClicked: (String) -> Unit,
+    private val onViewClicked: (String) -> Unit
 ) : RecyclerView.ViewHolder(composeView) {
 
     fun bind(groceryList: GroceryList) {
@@ -43,7 +43,7 @@ class DashboardItemViewHolder(
                     .padding(horizontal = 16.dp, vertical = 4.dp),
                 list = groceryList,
                 onDrag = { onDrag(this) },
-                onClick = { onViewClicked(groceryList.id) },
+                onClick = { onViewClicked(groceryList.id) }
             )
         }
     }
@@ -54,7 +54,7 @@ private fun ListItem(
     modifier: Modifier = Modifier,
     list: GroceryList,
     onDrag: () -> Unit = {},
-    onClick: () -> Unit = {},
+    onClick: () -> Unit = {}
 ) = ElevatedCard(modifier = modifier) {
     Box(
         modifier = Modifier
@@ -68,7 +68,7 @@ private fun ListItem(
                 text = list.name,
                 style = MaterialTheme.typography.titleLarge,
                 maxLines = 1,
-                overflow = TextOverflow.Ellipsis,
+                overflow = TextOverflow.Ellipsis
             )
             Text(
                 text = pluralStringResource(
@@ -84,14 +84,14 @@ private fun ListItem(
                 .draggable(
                     state = rememberDraggableState { onDrag() },
                     startDragImmediately = true,
-                    orientation = Orientation.Vertical,
+                    orientation = Orientation.Vertical
                 ),
-            contentAlignment = Alignment.Center,
+            contentAlignment = Alignment.Center
         ) {
             Icon(
                 modifier = Modifier.padding(8.dp),
                 painter = painterResource(id = R.drawable.baseline_drag_handle_24),
-                contentDescription = stringResource(id = R.string.drag_handle),
+                contentDescription = stringResource(id = R.string.drag_handle)
             )
         }
     }
@@ -107,7 +107,7 @@ private fun PreviewListItem() {
                 list = GroceryList(
                     id = "1",
                     name = "Sample List",
-                    numOfGroceries = 5,
+                    numOfGroceries = 5
                 )
             )
         }

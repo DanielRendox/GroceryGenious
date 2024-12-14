@@ -52,7 +52,7 @@ class GroceryListViewModel @AssistedInject constructor(
     private val userPreferencesRepository: UserPreferencesRepository,
     private val productRepository: ProductRepository,
     private val categoryRepository: CategoryRepository,
-    @Dispatcher(GroceryGeniusDispatchers.Default) private val defaultDispatcher: CoroutineDispatcher,
+    @Dispatcher(GroceryGeniusDispatchers.Default) private val defaultDispatcher: CoroutineDispatcher
 ) : ViewModel() {
 
     var openedGroceryListName by mutableStateOf<TextFieldValue?>(null)
@@ -75,7 +75,7 @@ class GroceryListViewModel @AssistedInject constructor(
         .stateIn(
             scope = viewModelScope,
             started = SharingStarted.WhileSubscribed(5000),
-            initialValue = null,
+            initialValue = null
         )
 
     private val openedCategoryIdFlow = MutableStateFlow<String?>(null)
@@ -86,7 +86,7 @@ class GroceryListViewModel @AssistedInject constructor(
         .stateIn(
             scope = viewModelScope,
             started = SharingStarted.WhileSubscribed(5000),
-            initialValue = null,
+            initialValue = null
         )
 
     private val _openedCategoryGroceriesFlow = MutableStateFlow(emptyList<Grocery>())
@@ -121,7 +121,7 @@ class GroceryListViewModel @AssistedInject constructor(
                             purchased = groceryFromList?.purchased ?: true,
                             icon = product.icon,
                             category = product.category,
-                            productIsDefault = product.isDefault,
+                            productIsDefault = product.isDefault
                         )
                     }
                 }.collectLatest { groceries ->
@@ -144,7 +144,7 @@ class GroceryListViewModel @AssistedInject constructor(
                 .collect { listName ->
                     groceryListRepository.updateGroceryListName(
                         listId = openedGroceryListId,
-                        name = listName.trim(),
+                        name = listName.trim()
                     )
                 }
         }
@@ -227,14 +227,14 @@ class GroceryListViewModel @AssistedInject constructor(
                 groceryRepository.updatePurchased(
                     productId = grocery.productId,
                     listId = openedGroceryListId,
-                    purchased = !grocery.purchased,
+                    purchased = !grocery.purchased
                 )
             } else {
                 groceryRepository.addGroceryToList(
                     productId = grocery.productId,
                     listId = openedGroceryListId,
                     description = grocery.description,
-                    purchased = !grocery.purchased,
+                    purchased = !grocery.purchased
                 )
             }
         }
@@ -245,7 +245,7 @@ class GroceryListViewModel @AssistedInject constructor(
             groceryRepository.updatePurchased(
                 productId = item.productId,
                 listId = openedGroceryListId,
-                purchased = !item.purchased,
+                purchased = !item.purchased
             )
         }
     }
@@ -277,7 +277,7 @@ class GroceryListViewModel @AssistedInject constructor(
         if (editModeIsEnabled && listName != null) {
             val nameLength = listName.text.length
             openedGroceryListName = listName.copy(
-                selection = TextRange(nameLength, nameLength),
+                selection = TextRange(nameLength, nameLength)
             )
         }
         _groceryListEditModeIsEnabledFlow.update { editModeIsEnabled }

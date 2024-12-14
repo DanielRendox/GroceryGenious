@@ -41,8 +41,8 @@ import com.rendox.grocerygenius.model.Category
 import com.rendox.grocerygenius.model.Grocery
 import com.rendox.grocerygenius.model.Product
 import com.rendox.grocerygenius.ui.components.SearchField
-import com.rendox.grocerygenius.ui.components.grocery_list.LazyGroceryGrid
 import com.rendox.grocerygenius.ui.components.grocery_list.GroceryGridItem
+import com.rendox.grocerygenius.ui.components.grocery_list.LazyGroceryGrid
 import com.rendox.grocerygenius.ui.components.grocery_list.groceryListItemColors
 import com.rendox.grocerygenius.ui.helpers.ObserveUiEvent
 import com.rendox.grocerygenius.ui.helpers.UiEvent
@@ -72,7 +72,7 @@ fun AddGroceryBottomSheetContent(
     onClearSearchQuery: () -> Unit,
     onGrocerySearchResultClick: (Grocery) -> Unit,
     onCustomProductClick: (Product) -> Unit,
-    onEditGroceryClicked: () -> Unit,
+    onEditGroceryClicked: () -> Unit
 ) {
     val focusRequester = remember { FocusRequester() }
     val focusManager = LocalFocusManager.current
@@ -97,7 +97,7 @@ fun AddGroceryBottomSheetContent(
             onFabClicked = onFabClicked,
             focusRequester = focusRequester,
             onSearchQueryChanged = onSearchQueryChanged,
-            clearSearchQuery = onClearSearchQuery,
+            clearSearchQuery = onClearSearchQuery
         )
         if (showExtendedContent) {
             Box(
@@ -113,7 +113,7 @@ fun AddGroceryBottomSheetContent(
                             grocerySearchResults = grocerySearchResults,
                             onGrocerySearchResultClick = onGrocerySearchResultClick,
                             customProducts = customProducts,
-                            onCustomProductClick = onCustomProductClick,
+                            onCustomProductClick = onCustomProductClick
                         )
                     }
 
@@ -121,7 +121,7 @@ fun AddGroceryBottomSheetContent(
                         if (previousGrocery != null) {
                             RefineItemOptions(
                                 groceryName = previousGrocery.name,
-                                onEditGroceryClicked = onEditGroceryClicked,
+                                onEditGroceryClicked = onEditGroceryClicked
                             )
                         }
                     }
@@ -143,12 +143,12 @@ private fun BottomSheetHeader(
     onFabClicked: () -> Unit,
     onKeyboardDone: () -> Unit,
     onSearchQueryChanged: (String) -> Unit,
-    clearSearchQuery: () -> Unit,
+    clearSearchQuery: () -> Unit
 ) {
     Row(
         modifier = Modifier
             .padding(horizontal = 16.dp)
-            .fillMaxWidth(),
+            .fillMaxWidth()
     ) {
         SearchField(
             modifier = Modifier
@@ -162,7 +162,7 @@ private fun BottomSheetHeader(
                         stringResource(R.string.add_grocery_search_field_placeholder_expanded)
                     } else {
                         stringResource(R.string.add_grocery_search_field_placeholder_collapsed)
-                    },
+                    }
                 )
             },
             clearSearchInputButtonIsShown = clearSearchInputButtonIsShown,
@@ -170,12 +170,12 @@ private fun BottomSheetHeader(
             keyboardActions = KeyboardActions(
                 onDone = { onKeyboardDone() }
             ),
-            onSearchQueryChanged = onSearchQueryChanged,
+            onSearchQueryChanged = onSearchQueryChanged
         )
         Fab(
             showCancelButtonInsteadOfFab = showCancelButtonInsteadOfFab,
             onCancelButtonClicked = onCancelButtonClicked,
-            onFabClicked = onFabClicked,
+            onFabClicked = onFabClicked
         )
     }
 }
@@ -186,7 +186,7 @@ private fun SearchResults(
     grocerySearchResults: List<Grocery>,
     customProducts: List<Product>,
     onGrocerySearchResultClick: (Grocery) -> Unit,
-    onCustomProductClick: (Product) -> Unit,
+    onCustomProductClick: (Product) -> Unit
 ) {
     val context = LocalContext.current
     LazyGroceryGrid(
@@ -227,7 +227,7 @@ private fun SearchResults(
                 }
             )
         },
-        showScrollbar = false,
+        showScrollbar = false
     )
 }
 
@@ -235,16 +235,16 @@ private fun SearchResults(
 private fun RefineItemOptions(
     modifier: Modifier = Modifier,
     groceryName: String,
-    onEditGroceryClicked: () -> Unit,
+    onEditGroceryClicked: () -> Unit
 ) {
     Column(modifier = modifier) {
         Text(
             modifier = Modifier.padding(bottom = 8.dp),
             text = stringResource(
                 R.string.add_grocery_refine_item_options_title,
-                groceryName,
+                groceryName
             ),
-            style = MaterialTheme.typography.titleMedium,
+            style = MaterialTheme.typography.titleMedium
         )
 
         Row(
@@ -253,16 +253,16 @@ private fun RefineItemOptions(
                 .background(color = MaterialTheme.colorScheme.secondaryContainer)
                 .clickable(onClick = onEditGroceryClicked)
                 .padding(8.dp),
-            verticalAlignment = Alignment.CenterVertically,
+            verticalAlignment = Alignment.CenterVertically
         ) {
             Icon(
                 modifier = Modifier.padding(end = 8.dp),
                 imageVector = Icons.Default.Edit,
-                contentDescription = null,
+                contentDescription = null
             )
             Text(
                 text = stringResource(R.string.add_grocery_edit_item_button_title),
-                style = MaterialTheme.typography.bodySmall,
+                style = MaterialTheme.typography.bodySmall
             )
         }
     }
@@ -281,8 +281,8 @@ private fun SearchResultsPreview() {
                 category = Category(
                     id = index.toString(),
                     name = "Category$index",
-                    sortingPriority = index.toLong(),
-                ),
+                    sortingPriority = index.toLong()
+                )
             )
         }
     }
@@ -293,7 +293,7 @@ private fun SearchResultsPreview() {
                 grocerySearchResults = searchResults,
                 onGrocerySearchResultClick = {},
                 customProducts = emptyList(),
-                onCustomProductClick = {},
+                onCustomProductClick = {}
             )
         }
     }
@@ -306,7 +306,7 @@ private fun RefineItemOptionsPreview() {
         Surface {
             RefineItemOptions(
                 groceryName = "Test grocery",
-                onEditGroceryClicked = {},
+                onEditGroceryClicked = {}
             )
         }
     }
@@ -322,7 +322,7 @@ private fun Fab(
         modifier = Modifier
             .width(80.dp)
             .height(56.dp),
-        contentAlignment = Alignment.Center,
+        contentAlignment = Alignment.Center
     ) {
         if (showCancelButtonInsteadOfFab) {
             TextButton(
@@ -337,13 +337,13 @@ private fun Fab(
                     .clip(RoundedCornerShape(16.dp))
                     .background(MaterialTheme.colorScheme.primaryContainer)
                     .clickable(onClick = onFabClicked),
-                contentAlignment = Alignment.Center,
+                contentAlignment = Alignment.Center
             ) {
                 Icon(
                     modifier = Modifier.size(24.dp),
                     imageVector = Icons.Default.Add,
                     contentDescription = null,
-                    tint = MaterialTheme.colorScheme.onPrimaryContainer,
+                    tint = MaterialTheme.colorScheme.onPrimaryContainer
                 )
             }
         }

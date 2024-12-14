@@ -9,5 +9,5 @@ data class IconPickerUiState(
     val searchResults: List<IconReference> = emptyList(),
     val product: Product? = null,
     val clearSearchQueryButtonIsShown: Boolean = false,
-    val searchResultsShown: Boolean = false,
+    val searchResultsShown: Boolean = false
 )

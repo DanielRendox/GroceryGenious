@@ -24,30 +24,30 @@ fun PickerDialog(
     modifier: Modifier = Modifier,
     title: String,
     onDismissRequest: () -> Unit,
-    content: @Composable ColumnScope.() -> Unit,
+    content: @Composable ColumnScope.() -> Unit
 ) {
     Dialog(onDismissRequest = onDismissRequest) {
         Surface(
             modifier = modifier.fillMaxWidth().height(600.dp),
             shape = MaterialTheme.shapes.large,
-            tonalElevation = AlertDialogDefaults.TonalElevation,
+            tonalElevation = AlertDialogDefaults.TonalElevation
         ) {
             Column {
                 Text(
                     modifier = Modifier.padding(16.dp),
                     text = title,
-                    style = MaterialTheme.typography.headlineSmall,
+                    style = MaterialTheme.typography.headlineSmall
                 )
                 HorizontalDivider()
                 content()
                 HorizontalDivider()
                 Box(
                     modifier = Modifier.fillMaxWidth(),
-                    contentAlignment = Alignment.CenterEnd,
+                    contentAlignment = Alignment.CenterEnd
                 ) {
                     TextButton(
                         modifier = Modifier.padding(16.dp),
-                        onClick = onDismissRequest,
+                        onClick = onDismissRequest
                     ) {
                         Text(text = stringResource(android.R.string.cancel))
                     }

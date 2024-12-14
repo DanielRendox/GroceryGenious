@@ -18,7 +18,7 @@ import kotlinx.coroutines.launch
 @OptIn(ExperimentalMaterial3Api::class)
 class AddGroceryBottomSheetState(
     val bottomSheetState: SheetState,
-    private val coroutineScope: CoroutineScope,
+    private val coroutineScope: CoroutineScope
 ) {
     val sheetIsExpanding = bottomSheetState.targetValue == SheetValue.Expanded
     val sheetIsCollapsing = bottomSheetState.targetValue == SheetValue.PartiallyExpanded
@@ -93,16 +93,16 @@ class AddGroceryBottomSheetState(
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun rememberAddGroceryBottomSheetState(
-    bottomSheetState: SheetState = rememberStandardBottomSheetState(),
+    bottomSheetState: SheetState = rememberStandardBottomSheetState()
 ): AddGroceryBottomSheetState {
     val coroutineScope = rememberCoroutineScope()
     return remember(
         bottomSheetState.currentValue,
-        bottomSheetState.targetValue,
+        bottomSheetState.targetValue
     ) {
         AddGroceryBottomSheetState(
             bottomSheetState = bottomSheetState,
-            coroutineScope = coroutineScope,
+            coroutineScope = coroutineScope
         )
     }
 }

@@ -31,7 +31,7 @@ fun CategoryPickerDialog(
     categories: List<Category>,
     onCategorySelected: (Category) -> Unit,
     onCustomCategorySelected: () -> Unit,
-    onDismissRequest: () -> Unit,
+    onDismissRequest: () -> Unit
 ) {
     PickerDialog(
         modifier = modifier,
@@ -43,17 +43,17 @@ fun CategoryPickerDialog(
                 CategoryOption(
                     isSelected = selectedCategoryId == null,
                     categoryName = stringResource(R.string.custom_category_title),
-                    onClick = onCustomCategorySelected,
+                    onClick = onCustomCategorySelected
                 )
             }
             items(
                 items = categories,
-                key = { it.id },
+                key = { it.id }
             ) { category ->
                 CategoryOption(
                     onClick = { onCategorySelected(category) },
                     isSelected = category.id == selectedCategoryId,
-                    categoryName = category.name,
+                    categoryName = category.name
                 )
             }
         }
@@ -65,7 +65,7 @@ private fun CategoryOption(
     modifier: Modifier = Modifier,
     isSelected: Boolean,
     categoryName: String,
-    onClick: () -> Unit,
+    onClick: () -> Unit
 ) {
     val interactionSource = remember { MutableInteractionSource() }
     Row(
@@ -74,14 +74,14 @@ private fun CategoryOption(
             .clickable(
                 onClick = onClick,
                 interactionSource = interactionSource,
-                indication = null,
+                indication = null
             ),
-        verticalAlignment = Alignment.CenterVertically,
+        verticalAlignment = Alignment.CenterVertically
     ) {
         RadioButton(
             modifier = Modifier.padding(start = 16.dp),
             selected = isSelected,
-            onClick = onClick,
+            onClick = onClick
         )
         Text(text = categoryName)
     }
@@ -94,7 +94,7 @@ private fun ChooseCategoryDialogPreview() {
         listOf(
             Category("1", "Fruit"),
             Category("2", "Vegetable"),
-            Category("3", "Meat"),
+            Category("3", "Meat")
         )
     }
     GroceryGeniusTheme {
@@ -107,7 +107,7 @@ private fun ChooseCategoryDialogPreview() {
                 categories = categories,
                 onCategorySelected = {},
                 onDismissRequest = {},
-                onCustomCategorySelected = {},
+                onCustomCategorySelected = {}
             )
         }
     }

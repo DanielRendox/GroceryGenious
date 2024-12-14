@@ -10,7 +10,7 @@ import javax.inject.Inject
 
 class OfflineFirstIconNetworkDataSource @Inject constructor(
     @ApplicationContext private val appContext: Context,
-    private val gitHubApi: GitHubApi,
+    private val gitHubApi: GitHubApi
 ) : IconNetworkDataSource {
 
     override suspend fun downloadIcons(): List<IconReference> {
@@ -23,20 +23,19 @@ class OfflineFirstIconNetworkDataSource @Inject constructor(
         }
 
         val extractedFiles = UnzipUtils.unzip(
-            iconsArchive, appContext.filesDir.absolutePath + "/icons"
+            iconsArchive,
+            appContext.filesDir.absolutePath + "/icons"
         ).map { file ->
             IconReference(
                 uniqueFileName = file.name,
-                filePath = file.toRelativeString(appContext.filesDir),
+                filePath = file.toRelativeString(appContext.filesDir)
             )
         }
         iconsArchive.delete()
         return extractedFiles
     }
 
-    override suspend fun downloadIconsByIds(
-        ids: List<String>
-    ): List<IconReference> = ids.map { iconName ->
+    override suspend fun downloadIconsByIds(ids: List<String>): List<IconReference> = ids.map { iconName ->
         val iconFile = appContext.filesDir.resolve("icons/$iconName")
             .apply { parentFile?.mkdirs() }
         gitHubApi.getIconByName(iconName).byteStream().use { input ->
@@ -46,7 +45,7 @@ class OfflineFirstIconNetworkDataSource @Inject constructor(
         }
         IconReference(
             uniqueFileName = iconName,
-            filePath = iconFile.toRelativeString(appContext.filesDir),
+            filePath = iconFile.toRelativeString(appContext.filesDir)
         )
     }
 

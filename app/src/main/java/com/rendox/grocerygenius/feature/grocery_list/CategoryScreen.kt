@@ -34,8 +34,8 @@ import com.rendox.grocerygenius.ui.components.collapsing_toolbar.CollapsingToolb
 import com.rendox.grocerygenius.ui.components.collapsing_toolbar.CollapsingToolbarScaffoldScrollableState
 import com.rendox.grocerygenius.ui.components.collapsing_toolbar.scroll_behavior.CollapsingToolbarNestedScrollConnection
 import com.rendox.grocerygenius.ui.components.collapsing_toolbar.scroll_behavior.rememberExitUntilCollapsedToolbarState
-import com.rendox.grocerygenius.ui.components.grocery_list.LazyGroceryGrid
 import com.rendox.grocerygenius.ui.components.grocery_list.GroceryGridItem
+import com.rendox.grocerygenius.ui.components.grocery_list.LazyGroceryGrid
 import com.rendox.grocerygenius.ui.components.grocery_list.groceryListItemColors
 import com.rendox.grocerygenius.ui.theme.TopAppBarMediumHeight
 import com.rendox.grocerygenius.ui.theme.TopAppBarSmallHeight
@@ -44,7 +44,7 @@ import java.io.File
 @Composable
 fun CategoryRoute(
     viewModel: GroceryListViewModel = hiltViewModel(),
-    navigateBack: () -> Unit,
+    navigateBack: () -> Unit
 ) {
     val category by viewModel.openedCategoryFlow.collectAsStateWithLifecycle()
     val groceries by viewModel.openedCategoryGroceriesFlow.collectAsStateWithLifecycle()
@@ -52,7 +52,7 @@ fun CategoryRoute(
         categoryName = category?.name ?: stringResource(R.string.custom_category_title),
         groceries = groceries,
         onGroceryClick = viewModel::onCategoryScreenGroceryClick,
-        navigateBack = navigateBack,
+        navigateBack = navigateBack
     )
 }
 
@@ -61,7 +61,7 @@ fun CategoryScreen(
     categoryName: String,
     groceries: List<Grocery>,
     onGroceryClick: (Grocery) -> Unit,
-    navigateBack: () -> Unit,
+    navigateBack: () -> Unit
 ) {
     val toolbarHeightRange = with(LocalDensity.current) {
         TopAppBarSmallHeight.roundToPx()..TopAppBarMediumHeight.roundToPx()
@@ -83,7 +83,7 @@ fun CategoryScreen(
         CollapsingToolbarNestedScrollConnection(
             toolbarState = toolbarState,
             scrollState = scrollState,
-            coroutineScope = coroutineScope,
+            coroutineScope = coroutineScope
         )
     }
 
@@ -104,7 +104,7 @@ fun CategoryScreen(
                     text = categoryName,
                     style = titleStyle.copy(textMotion = TextMotion.Animated),
                     maxLines = 1,
-                    overflow = TextOverflow.Ellipsis,
+                    overflow = TextOverflow.Ellipsis
                 )
             },
             expandedTitleFontSize = titleStyle.fontSize,
@@ -113,10 +113,10 @@ fun CategoryScreen(
                 IconButton(onClick = navigateBack) {
                     Icon(
                         imageVector = Icons.AutoMirrored.Default.ArrowBack,
-                        contentDescription = stringResource(R.string.back),
+                        contentDescription = stringResource(R.string.back)
                     )
                 }
-            },
+            }
         )
         LazyGroceryGrid(
             modifier = Modifier.testTag("LazyGroceryGrid"),
@@ -144,8 +144,8 @@ fun CategoryScreen(
             contentPadding = PaddingValues(
                 start = 16.dp,
                 end = 16.dp,
-                bottom = 16.dp,
-            ),
+                bottom = 16.dp
+            )
         )
     }
 }

@@ -8,6 +8,7 @@ import com.rendox.grocerygenius.data.user_preferences.UserPreferencesRepository
 import com.rendox.grocerygenius.ui.helpers.UiEvent
 import com.rendox.grocerygenius.ui.theme.dynamicColorIsSupported
 import dagger.hilt.android.lifecycle.HiltViewModel
+import javax.inject.Inject
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.collectLatest
@@ -15,13 +16,12 @@ import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
-import javax.inject.Inject
 
 @HiltViewModel
 class SettingsScreenViewModel @Inject constructor(
     private val userPreferencesRepository: UserPreferencesRepository,
     groceryListRepository: GroceryListRepository,
-    private val categoryRepository: CategoryRepository,
+    private val categoryRepository: CategoryRepository
 ) : ViewModel() {
 
     private val _uiStateFlow = MutableStateFlow(SettingsScreenState())
@@ -37,7 +37,7 @@ class SettingsScreenViewModel @Inject constructor(
                     groceryLists = groceryListRepository.getAllGroceryLists().first(),
                     categories = categoryRepository.getAllCategories()
                         .map { categories -> categories.sortedBy { it.sortingPriority } }
-                        .first(),
+                        .first()
                 )
             }
             userPreferencesRepository.userPreferencesFlow.collectLatest { userPreferences ->
@@ -46,7 +46,7 @@ class SettingsScreenViewModel @Inject constructor(
                 _uiStateFlow.update { uiState ->
                     uiState.copy(
                         userPreferences = userPreferences.copy(useSystemAccentColor = useSystemAccentColor),
-                        isLoading = false,
+                        isLoading = false
                     )
                 }
             }

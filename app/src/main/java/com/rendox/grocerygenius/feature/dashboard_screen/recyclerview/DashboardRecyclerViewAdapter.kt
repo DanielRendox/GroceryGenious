@@ -14,14 +14,14 @@ class DashboardRecyclerViewAdapter(
     var groceryLists: List<GroceryList>,
     private val updateLists: (List<GroceryList>) -> Unit,
     private val onItemClicked: (String) -> Unit,
-    private val onAdderItemClicked: () -> Unit,
+    private val onAdderItemClicked: () -> Unit
 ) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     private val touchHelperCallback = DragHandleReorderItemTouchHelperCallback(
         onItemMove = { fromPosition, toPosition ->
             onItemMove(fromPosition, toPosition)
         },
-        onClearView = { updateLists(groceryLists) },
+        onClearView = { updateLists(groceryLists) }
     )
     private val touchHelper = ItemTouchHelper(touchHelperCallback)
 
@@ -40,15 +40,15 @@ class DashboardRecyclerViewAdapter(
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
-    ): RecyclerView.ViewHolder = when(viewType) {
+    ): RecyclerView.ViewHolder = when (viewType) {
         VIEW_TYPE_GROCERY_LIST -> DashboardItemViewHolder(
             composeView = ComposeView(parent.context),
             onDrag = { touchHelper.startDrag(it) },
-            onViewClicked = onItemClicked,
+            onViewClicked = onItemClicked
         )
         VIEW_TYPE_ADDER -> GroceryListAdderItemViewHolder(
             composeView = ComposeView(parent.context),
-            onViewClicked = onAdderItemClicked,
+            onViewClicked = onAdderItemClicked
         )
 
         else -> throw IllegalArgumentException("Unknown view type: $viewType")
@@ -57,7 +57,7 @@ class DashboardRecyclerViewAdapter(
     override fun onBindViewHolder(
         holder: RecyclerView.ViewHolder,
         position: Int
-    ) = when(holder) {
+    ) = when (holder) {
         is DashboardItemViewHolder -> holder.bind(groceryLists[position])
         is GroceryListAdderItemViewHolder -> holder.bind()
         else -> throw IllegalArgumentException("Unknown view holder: $holder")
@@ -65,7 +65,10 @@ class DashboardRecyclerViewAdapter(
 
     override fun getItemCount() = groceryLists.size + 1
 
-    private fun onItemMove(fromPosition: Int, toPosition: Int) {
+    private fun onItemMove(
+        fromPosition: Int,
+        toPosition: Int
+    ) {
         groceryLists = this.groceryLists.toMutableList().also {
             Collections.swap(it, fromPosition, toPosition)
         }

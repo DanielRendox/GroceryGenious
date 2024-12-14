@@ -13,7 +13,7 @@ class ExitUntilCollapsedState(
 ) : FixedScrollFlagState(heightRange) {
 
     override var _scrollOffset by mutableFloatStateOf(
-        value = scrollOffset.coerceIn(0f, rangeDifference.toFloat()),
+        value = scrollOffset.coerceIn(0f, rangeDifference.toFloat())
     )
 
     override var scrollOffset: Float
@@ -46,7 +46,7 @@ class ExitUntilCollapsedState(
                 restore = {
                     ExitUntilCollapsedState(
                         heightRange = (it[minHeightKey] as Int)..(it[maxHeightKey] as Int),
-                        scrollOffset = it[scrollOffsetKey] as Float,
+                        scrollOffset = it[scrollOffsetKey] as Float
                     )
                 }
             )
@@ -55,8 +55,7 @@ class ExitUntilCollapsedState(
 }
 
 @Composable
-fun rememberExitUntilCollapsedToolbarState(
-    toolbarHeightRange: IntRange
-): ExitUntilCollapsedState = rememberSaveable(saver = ExitUntilCollapsedState.Saver) {
-    ExitUntilCollapsedState(toolbarHeightRange)
-}
+fun rememberExitUntilCollapsedToolbarState(toolbarHeightRange: IntRange): ExitUntilCollapsedState =
+    rememberSaveable(saver = ExitUntilCollapsedState.Saver) {
+        ExitUntilCollapsedState(toolbarHeightRange)
+    }

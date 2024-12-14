@@ -16,9 +16,9 @@ import androidx.compose.animation.slideOutVertically
 object GroceryGeniusTransition {
 
     /*
-   * The code of sharedZ animation was taken from https://github.com/ofalvai/HabitBuilder
-   * Thank you @ofalvai!
-   */
+     * The code of sharedZ animation was taken from https://github.com/ofalvai/HabitBuilder
+     * Thank you @ofalvai!
+     */
     val SharedZAxisEnterForward = scaleIn(
         initialScale = 0.8f,
         animationSpec = tween(300)
@@ -29,11 +29,11 @@ object GroceryGeniusTransition {
     )
     val SlideInVertically = slideInVertically(
         initialOffsetY = { it / 10 },
-        animationSpec = tween(durationMillis = 200),
+        animationSpec = tween(durationMillis = 200)
     ) + fadeIn(animationSpec = tween(durationMillis = 150, easing = LinearEasing))
     val SlideOutVertically = slideOutVertically(
         targetOffsetY = { it / 10 },
-        animationSpec = tween(durationMillis = 200),
+        animationSpec = tween(durationMillis = 200)
     ) + fadeOut(animationSpec = tween(durationMillis = 150, easing = LinearEasing))
 
     val SlideInHorizontallyEnterForward = slideInHorizontally { it }

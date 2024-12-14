@@ -1,6 +1,5 @@
 package com.rendox.grocerygenius.feature.dashboard_screen
 
-
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
@@ -43,7 +42,7 @@ import com.rendox.grocerygenius.ui.theme.TopAppBarSmallHeight
 fun GroceryListsDashboardRoute(
     viewModel: GroceryListsDashboardViewModel = hiltViewModel(),
     navigateToGroceryListScreen: (String) -> Unit,
-    navigateToSettingsScreen: () -> Unit,
+    navigateToSettingsScreen: () -> Unit
 ) {
     val screenState by viewModel.groceryListsFlow.collectAsStateWithLifecycle()
     val navigateToGroceryListEvent by viewModel.navigateToGroceryListEvent.collectAsStateWithLifecycle()
@@ -55,7 +54,7 @@ fun GroceryListsDashboardRoute(
         groceryLists = screenState,
         onIntent = viewModel::onIntent,
         navigateToSettingsScreen = navigateToSettingsScreen,
-        navigateToGroceryListScreen = navigateToGroceryListScreen,
+        navigateToGroceryListScreen = navigateToGroceryListScreen
     )
 }
 
@@ -64,7 +63,7 @@ fun GroceryListsDashboardScreen(
     groceryLists: List<GroceryList>,
     onIntent: (GroceryListsDashboardUiIntent) -> Unit = {},
     navigateToSettingsScreen: () -> Unit = {},
-    navigateToGroceryListScreen: (String) -> Unit = {},
+    navigateToGroceryListScreen: (String) -> Unit = {}
 ) {
     var scrollState by rememberSaveable { mutableIntStateOf(0) }
 
@@ -76,22 +75,22 @@ fun GroceryListsDashboardScreen(
         Box(
             modifier = Modifier
                 .fillMaxWidth()
-                .height(TopAppBarSmallHeight),
+                .height(TopAppBarSmallHeight)
         ) {
             Text(
                 modifier = Modifier.align(Alignment.Center),
                 text = stringResource(id = R.string.app_name),
-                style = MaterialTheme.typography.titleLarge,
+                style = MaterialTheme.typography.titleLarge
             )
             IconButton(
                 modifier = Modifier
                     .padding(end = TopAppBarActionsHorizontalPadding)
                     .align(Alignment.CenterEnd),
-                onClick = navigateToSettingsScreen,
+                onClick = navigateToSettingsScreen
             ) {
                 Icon(
                     imageVector = Icons.Default.Settings,
-                    contentDescription = stringResource(R.string.settings),
+                    contentDescription = stringResource(R.string.settings)
                 )
             }
         }
@@ -103,7 +102,11 @@ fun GroceryListsDashboardScreen(
                 val binding = ListRecyclerviewBinding.inflate(inflater, parent, attachToParent)
                 binding.listRecyclerview.addOnScrollListener(
                     object : RecyclerView.OnScrollListener() {
-                        override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
+                        override fun onScrolled(
+                            recyclerView: RecyclerView,
+                            dx: Int,
+                            dy: Int
+                        ) {
                             super.onScrolled(recyclerView, dx, dy)
                             scrollState += dy
                         }
@@ -115,10 +118,10 @@ fun GroceryListsDashboardScreen(
                     updateLists = { newValue ->
                         onIntent(GroceryListsDashboardUiIntent.OnUpdateGroceryLists(newValue))
                     },
-                    onItemClicked =navigateToGroceryListScreen,
+                    onItemClicked = navigateToGroceryListScreen,
                     onAdderItemClicked = {
                         onIntent(GroceryListsDashboardUiIntent.OnAdderItemClick)
-                    },
+                    }
                 )
                 binding
             },
@@ -145,7 +148,7 @@ private fun GroceryListsDashboardPreview() {
     GroceryGeniusTheme {
         Surface(modifier = Modifier.fillMaxSize()) {
             GroceryListsDashboardScreen(
-                groceryLists = sampleDashboard,
+                groceryLists = sampleDashboard
             )
         }
     }
@@ -155,6 +158,6 @@ val sampleDashboard = List(20) {
     GroceryList(
         id = it.toString(),
         name = "List $it",
-        numOfGroceries = it,
+        numOfGroceries = it
     )
 }

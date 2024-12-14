@@ -33,7 +33,7 @@ val BeigeLightColorScheme = lightColorScheme(
     inversePrimary = Color(0xFFFFB86B),
     surfaceTint = Color(0xFF895100),
     outlineVariant = Color(0xFFD5C4B5),
-    scrim = Color(0xFF000000),
+    scrim = Color(0xFF000000)
 )
 
 val BeigeDarkColorScheme = darkColorScheme(
@@ -65,5 +65,5 @@ val BeigeDarkColorScheme = darkColorScheme(
     inversePrimary = Color(0xFF895100),
     surfaceTint = Color(0xFFFFB86B),
     outlineVariant = Color(0xFF50453A),
-    scrim = Color(0xFF000000),
+    scrim = Color(0xFF000000)
 )

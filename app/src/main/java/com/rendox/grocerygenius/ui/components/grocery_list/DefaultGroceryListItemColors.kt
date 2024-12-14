@@ -7,11 +7,11 @@ import androidx.compose.ui.graphics.Color
 @Immutable
 class DefaultGroceryListItemColors(
     val defaultBackgroundColor: Color,
-    val purchasedBackgroundColor: Color,
+    val purchasedBackgroundColor: Color
 )
 
 val ColorScheme.groceryListItemColors: DefaultGroceryListItemColors
     get() = DefaultGroceryListItemColors(
         defaultBackgroundColor = primaryContainer,
-        purchasedBackgroundColor = tertiaryContainer,
+        purchasedBackgroundColor = tertiaryContainer
     )

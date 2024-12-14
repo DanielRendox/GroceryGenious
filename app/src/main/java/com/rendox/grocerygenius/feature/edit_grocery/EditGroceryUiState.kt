@@ -6,5 +6,5 @@ import com.rendox.grocerygenius.model.Grocery
 data class EditGroceryUiState(
     val editGrocery: Grocery? = null,
     val clearEditGroceryDescriptionButtonIsShown: Boolean = false,
-    val groceryCategories: List<Category> = emptyList(),
+    val groceryCategories: List<Category> = emptyList()
 )

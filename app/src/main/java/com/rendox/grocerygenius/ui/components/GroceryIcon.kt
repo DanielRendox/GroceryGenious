@@ -24,14 +24,14 @@ import java.io.File
 fun GroceryIcon(
     modifier: Modifier = Modifier,
     groceryName: String,
-    iconFile: File?,
+    iconFile: File?
 ) {
     if (iconFile != null) {
         SubcomposeAsyncImage(
             modifier = modifier,
             model = iconFile,
             contentDescription = null,
-            colorFilter = ColorFilter.tint(color = LocalContentColor.current),
+            colorFilter = ColorFilter.tint(color = LocalContentColor.current)
         ) {
             if (painter.state is AsyncImagePainter.State.Error) {
                 TextIcon(title = groceryName)
@@ -51,7 +51,7 @@ fun GroceryIcon(
 @Composable
 private fun TextIcon(
     modifier: Modifier = Modifier,
-    title: String,
+    title: String
 ) {
     BoxWithConstraints(contentAlignment = Alignment.Center) {
         val groceryNameFirstLetter = title.firstOrNull()?.uppercaseChar()
@@ -64,7 +64,7 @@ private fun TextIcon(
             text = groceryNameFirstLetter?.toString() ?: "",
             style = MaterialTheme.typography.headlineLarge,
             fontFamily = trainOneFontFamily,
-            fontSize = with(density) { boxWithConstraintsScope.maxHeight.toSp() * 0.8F },
+            fontSize = with(density) { boxWithConstraintsScope.maxHeight.toSp() * 0.8F }
         )
     }
 }

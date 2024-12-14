@@ -47,23 +47,23 @@ fun EditGroceryBottomSheetContent(
     onChangeIconClick: () -> Unit,
     onRemoveGrocery: () -> Unit,
     onDeleteProduct: () -> Unit,
-    itemDescriptionFocusRequester: FocusRequester,
+    itemDescriptionFocusRequester: FocusRequester
 ) {
     Column(modifier = modifier) {
         Row(
             modifier = Modifier.fillMaxWidth(),
-            verticalAlignment = Alignment.CenterVertically,
+            verticalAlignment = Alignment.CenterVertically
         ) {
             Text(
                 modifier = Modifier.weight(1F),
                 text = groceryName,
                 style = MaterialTheme.typography.headlineSmall,
                 maxLines = 2,
-                overflow = TextOverflow.Ellipsis,
+                overflow = TextOverflow.Ellipsis
             )
             TextButton(
                 modifier = Modifier.padding(start = 8.dp),
-                onClick = onDoneButtonClick,
+                onClick = onDoneButtonClick
             ) {
                 Text(text = stringResource(R.string.done))
             }
@@ -83,13 +83,13 @@ fun EditGroceryBottomSheetContent(
                 onDone = { onKeyboardDone() }
             ),
             clearSearchInputButtonIsShown = clearGroceryDescriptionButtonIsShown,
-            onClearSearchInputClicked = onClearGroceryDescription,
+            onClearSearchInputClicked = onClearGroceryDescription
         )
 
         GrocerySettings(
             modifier = Modifier.padding(top = 32.dp),
             onChangeCategoryClick = onChangeCategoryClick,
-            onChangeIconClick = onChangeIconClick,
+            onChangeIconClick = onChangeIconClick
         )
 
         FilledTonalButton(
@@ -99,12 +99,12 @@ fun EditGroceryBottomSheetContent(
             onClick = onRemoveGrocery,
             shape = CornerRoundingDefault,
             colors = ButtonDefaults.buttonColors(
-                containerColor = MaterialTheme.colorScheme.surfaceVariant,
+                containerColor = MaterialTheme.colorScheme.surfaceVariant
             )
         ) {
             Text(
                 text = stringResource(R.string.edit_grocery_remove_item_button_title),
-                color = MaterialTheme.colorScheme.onSurface,
+                color = MaterialTheme.colorScheme.onSurface
             )
         }
 
@@ -114,12 +114,12 @@ fun EditGroceryBottomSheetContent(
                 onClick = onDeleteProduct,
                 shape = CornerRoundingDefault,
                 colors = ButtonDefaults.buttonColors(
-                    containerColor = MaterialTheme.extendedColors.redAccent,
+                    containerColor = MaterialTheme.extendedColors.redAccent
                 )
             ) {
                 Text(
                     text = stringResource(R.string.edit_grocery_delete_grocery_button_title),
-                    color = MaterialTheme.extendedColors.onRedAccent,
+                    color = MaterialTheme.extendedColors.onRedAccent
                 )
             }
         }
@@ -130,38 +130,38 @@ fun EditGroceryBottomSheetContent(
 private fun GrocerySettings(
     modifier: Modifier = Modifier,
     onChangeCategoryClick: () -> Unit,
-    onChangeIconClick: () -> Unit,
+    onChangeIconClick: () -> Unit
 ) {
     Column(modifier = modifier) {
         Text(
             text = stringResource(R.string.settings),
-            style = MaterialTheme.typography.titleMedium,
+            style = MaterialTheme.typography.titleMedium
         )
         Row(
             modifier = Modifier.padding(top = 8.dp),
-            horizontalArrangement = Arrangement.spacedBy(16.dp),
+            horizontalArrangement = Arrangement.spacedBy(16.dp)
         ) {
             SettingButton(
                 modifier = Modifier.weight(1F),
                 icon = {
                     Icon(
                         painter = painterResource(R.drawable.baseline_folder_24),
-                        contentDescription = null,
+                        contentDescription = null
                     )
                 },
                 title = stringResource(R.string.edit_grocery_change_category_button_title),
-                onClick = onChangeCategoryClick,
+                onClick = onChangeCategoryClick
             )
             SettingButton(
                 modifier = Modifier.weight(1F),
                 icon = {
                     Icon(
                         imageVector = Icons.Default.Edit,
-                        contentDescription = null,
+                        contentDescription = null
                     )
                 },
                 title = stringResource(R.string.edit_grocery_change_icon_button_title),
-                onClick = onChangeIconClick,
+                onClick = onChangeIconClick
             )
         }
     }
@@ -172,7 +172,7 @@ private fun SettingButton(
     modifier: Modifier = Modifier,
     title: String,
     icon: @Composable () -> Unit,
-    onClick: () -> Unit,
+    onClick: () -> Unit
 ) {
     Column(
         modifier = modifier
@@ -180,13 +180,13 @@ private fun SettingButton(
             .background(MaterialTheme.colorScheme.surfaceVariant)
             .clickable(onClick = onClick)
             .padding(8.dp),
-        horizontalAlignment = Alignment.CenterHorizontally,
+        horizontalAlignment = Alignment.CenterHorizontally
     ) {
         icon()
         Text(
             modifier = Modifier.padding(top = 8.dp),
             text = title,
-            style = MaterialTheme.typography.labelSmall,
+            style = MaterialTheme.typography.labelSmall
         )
     }
 }

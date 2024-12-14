@@ -14,11 +14,11 @@ import kotlinx.coroutines.launch
 class CollapsingToolbarNestedScrollConnection(
     private val toolbarState: ToolbarState,
     private val scrollState: CollapsingToolbarScaffoldScrollableState,
-    private val coroutineScope: CoroutineScope,
+    private val coroutineScope: CoroutineScope
 ) : NestedScrollConnection {
     override fun onPreScroll(
         available: Offset,
-        source: NestedScrollSource,
+        source: NestedScrollSource
     ): Offset {
         toolbarState.scrollTopLimitReached =
             scrollState.firstVisibleItemIndex == 0 && scrollState.firstVisibleItemScrollOffset == 0
@@ -28,7 +28,7 @@ class CollapsingToolbarNestedScrollConnection(
 
     override suspend fun onPostFling(
         consumed: Velocity,
-        available: Velocity,
+        available: Velocity
     ): Velocity {
         if (available.y > 0) {
             coroutineScope.launch {
@@ -39,7 +39,7 @@ class CollapsingToolbarNestedScrollConnection(
                 ) { value, _ ->
                     toolbarState.scrollTopLimitReached =
                         scrollState.firstVisibleItemIndex == 0 &&
-                                scrollState.firstVisibleItemScrollOffset == 0
+                        scrollState.firstVisibleItemScrollOffset == 0
                     toolbarState.scrollOffset -= (value - (toolbarState.height + toolbarState.offset))
                     if (toolbarState.scrollOffset == 0f) coroutineScope.coroutineContext.cancelChildren()
                 }
@@ -52,7 +52,7 @@ class CollapsingToolbarNestedScrollConnection(
     override fun onPostScroll(
         consumed: Offset,
         available: Offset,
-        source: NestedScrollSource,
+        source: NestedScrollSource
     ): Offset {
         toolbarState.scrollTopLimitReached =
             scrollState.firstVisibleItemIndex == 0 && scrollState.firstVisibleItemScrollOffset == 0

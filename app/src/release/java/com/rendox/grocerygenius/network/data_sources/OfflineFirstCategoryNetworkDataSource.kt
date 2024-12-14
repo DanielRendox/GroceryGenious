@@ -5,12 +5,10 @@ import com.rendox.grocerygenius.network.model.CategoryNetwork
 import com.rendox.grocerygenius.network.model.NetworkChangeList
 import javax.inject.Inject
 
-
 class OfflineFirstCategoryNetworkDataSource @Inject constructor(
-    private val gitHubApi: GitHubApi,
+    private val gitHubApi: GitHubApi
 ) : CategoryNetworkDataSource {
-    override suspend fun getAllCategories(): List<CategoryNetwork> =
-        gitHubApi.getCategories()
+    override suspend fun getAllCategories(): List<CategoryNetwork> = gitHubApi.getCategories()
 
     override suspend fun getCategoriesByIds(ids: List<String>): List<CategoryNetwork> =
         getAllCategories().filter { it.id in ids }

@@ -6,5 +6,5 @@ import com.squareup.moshi.JsonClass
 data class NetworkChangeList(
     val id: String,
     val changeListVersion: Int,
-    val isDeleted: Boolean,
+    val isDeleted: Boolean
 )

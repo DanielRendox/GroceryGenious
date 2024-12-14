@@ -11,14 +11,14 @@ import java.util.Collections
 class CategoriesRecyclerViewAdapter(
     recyclerView: RecyclerView,
     var categories: List<Category>,
-    private val updateLists: (List<Category>) -> Unit,
+    private val updateLists: (List<Category>) -> Unit
 ) : RecyclerView.Adapter<CategoryViewHolder>() {
 
     private val touchHelperCallback = DragHandleReorderItemTouchHelperCallback(
         onItemMove = { fromPosition, toPosition ->
             onItemMove(fromPosition, toPosition)
         },
-        onClearView = { updateLists(categories) },
+        onClearView = { updateLists(categories) }
     )
     private val touchHelper = ItemTouchHelper(touchHelperCallback)
 
@@ -31,7 +31,7 @@ class CategoriesRecyclerViewAdapter(
         viewType: Int
     ) = CategoryViewHolder(
         composeView = ComposeView(parent.context),
-        onDrag = { touchHelper.startDrag(it) },
+        onDrag = { touchHelper.startDrag(it) }
     )
 
     override fun onBindViewHolder(
@@ -43,7 +43,10 @@ class CategoriesRecyclerViewAdapter(
 
     override fun getItemCount() = categories.size
 
-    private fun onItemMove(fromPosition: Int, toPosition: Int) {
+    private fun onItemMove(
+        fromPosition: Int,
+        toPosition: Int
+    ) {
         categories = this.categories.toMutableList().also {
             Collections.swap(it, fromPosition, toPosition)
         }

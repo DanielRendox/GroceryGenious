@@ -15,10 +15,10 @@ import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
+import javax.inject.Singleton
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.SupervisorJob
-import javax.inject.Singleton
 
 private const val USER_PREFERENCES = "user_preferences"
 
@@ -30,13 +30,13 @@ object DataStoreModule {
     @Provides
     fun providePreferencesDataStore(
         @ApplicationContext appContext: Context,
-        @Dispatcher(GroceryGeniusDispatchers.IO) ioDispatcher: CoroutineDispatcher,
+        @Dispatcher(GroceryGeniusDispatchers.IO) ioDispatcher: CoroutineDispatcher
     ): DataStore<Preferences> {
         return PreferenceDataStoreFactory.create(
             corruptionHandler = ReplaceFileCorruptionHandler(
                 produceNewData = { emptyPreferences() }
             ),
-            migrations = listOf(SharedPreferencesMigration(appContext,USER_PREFERENCES)),
+            migrations = listOf(SharedPreferencesMigration(appContext, USER_PREFERENCES)),
             scope = CoroutineScope(ioDispatcher + SupervisorJob()),
             produceFile = { appContext.preferencesDataStoreFile(USER_PREFERENCES) }
         )

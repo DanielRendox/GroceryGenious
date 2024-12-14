@@ -28,7 +28,7 @@ import com.rendox.grocerygenius.ui.theme.GroceryGeniusTheme
 
 class GroceryListAdderItemViewHolder(
     private val composeView: ComposeView,
-    private val onViewClicked: () -> Unit,
+    private val onViewClicked: () -> Unit
 ) : RecyclerView.ViewHolder(composeView) {
 
     fun bind() {
@@ -39,7 +39,7 @@ class GroceryListAdderItemViewHolder(
                         start = 16.dp,
                         end = 16.dp,
                         top = 4.dp,
-                        bottom = 16.dp,
+                        bottom = 16.dp
                     ),
                 onClick = onViewClicked
             )
@@ -50,29 +50,29 @@ class GroceryListAdderItemViewHolder(
 @Composable
 private fun AdderItem(
     modifier: Modifier = Modifier,
-    onClick: () -> Unit = {},
+    onClick: () -> Unit = {}
 ) {
     OutlinedCard(
         modifier = modifier,
         onClick = onClick,
-        border = BorderStroke(1.dp, MaterialTheme.colorScheme.outlineVariant),
+        border = BorderStroke(1.dp, MaterialTheme.colorScheme.outlineVariant)
     ) {
         Box(
             modifier = Modifier
                 .fillMaxWidth()
                 .height(96.dp),
-            contentAlignment = Alignment.Center,
+            contentAlignment = Alignment.Center
         ) {
             Column(horizontalAlignment = Alignment.CenterHorizontally) {
                 Icon(
                     modifier = Modifier.size(48.dp),
                     imageVector = Icons.Default.Add,
                     contentDescription = null,
-                    tint = MaterialTheme.colorScheme.outline,
+                    tint = MaterialTheme.colorScheme.outline
                 )
                 Text(
                     text = stringResource(R.string.add_grocery_list_button_description),
-                    color = MaterialTheme.colorScheme.onSurface,
+                    color = MaterialTheme.colorScheme.onSurface
                 )
             }
         }
@@ -87,7 +87,7 @@ private fun PreviewListItem() {
             AdderItem(
                 modifier = Modifier
                     .padding(16.dp)
-                    .width(400.dp),
+                    .width(400.dp)
             )
         }
     }

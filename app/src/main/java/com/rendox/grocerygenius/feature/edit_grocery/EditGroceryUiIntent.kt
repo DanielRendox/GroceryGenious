@@ -13,6 +13,6 @@ sealed interface EditGroceryUiIntent {
 
     data class OnEditOtherGrocery(
         val productId: String,
-        val groceryListId: String,
+        val groceryListId: String
     ) : EditGroceryUiIntent
 }

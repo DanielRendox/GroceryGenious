@@ -7,18 +7,18 @@ import com.rendox.grocerygenius.network.di.GroceryGeniusDispatchers
 import com.squareup.moshi.JsonAdapter
 import com.squareup.moshi.JsonDataException
 import dagger.hilt.android.qualifiers.ApplicationContext
-import kotlinx.coroutines.CoroutineDispatcher
-import kotlinx.coroutines.withContext
 import java.io.IOException
 import javax.inject.Inject
+import kotlinx.coroutines.CoroutineDispatcher
+import kotlinx.coroutines.withContext
 
 class JsonAssetDecoder @Inject constructor(
     @ApplicationContext val appContext: Context,
-    @Dispatcher(GroceryGeniusDispatchers.IO) val ioDispatcher: CoroutineDispatcher,
+    @Dispatcher(GroceryGeniusDispatchers.IO) val ioDispatcher: CoroutineDispatcher
 ) {
     suspend fun <T> decodeFromFile(
         adapter: JsonAdapter<T>,
-        fileName: String,
+        fileName: String
     ): T? = withContext(ioDispatcher) {
         try {
             val json = appContext.assets

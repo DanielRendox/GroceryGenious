@@ -5,5 +5,5 @@ import com.rendox.grocerygenius.model.IconReference
 
 fun IconReference.asEntity() = IconEntity(
     uniqueFileName = uniqueFileName,
-    filePath = filePath,
+    filePath = filePath
 )

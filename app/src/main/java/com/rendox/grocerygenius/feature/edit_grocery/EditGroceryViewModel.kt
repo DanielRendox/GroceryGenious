@@ -14,6 +14,8 @@ import com.rendox.grocerygenius.data.product.ProductRepository
 import com.rendox.grocerygenius.model.Category
 import com.rendox.grocerygenius.model.CompoundGroceryId
 import dagger.hilt.android.lifecycle.HiltViewModel
+import java.util.UUID
+import javax.inject.Inject
 import kotlinx.coroutines.FlowPreview
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -24,15 +26,13 @@ import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
-import java.util.UUID
-import javax.inject.Inject
 
 @OptIn(FlowPreview::class)
 @HiltViewModel
 class EditGroceryViewModel @Inject constructor(
     categoryRepository: CategoryRepository,
     private val groceryRepository: GroceryRepository,
-    private val productRepository: ProductRepository,
+    private val productRepository: ProductRepository
 ) : ViewModel() {
     private val compoundGroceryIdFlow = MutableStateFlow<CompoundGroceryId?>(null)
 
@@ -94,7 +94,7 @@ class EditGroceryViewModel @Inject constructor(
             compoundGroceryIdFlow.value?.let { compoundGroceryId ->
                 val grocery = groceryRepository.getGroceryById(
                     productId = compoundGroceryId.productId,
-                    listId = compoundGroceryId.groceryListId,
+                    listId = compoundGroceryId.groceryListId
                 ).first() ?: return@launch
 
                 if (grocery.productIsDefault) {
@@ -109,20 +109,20 @@ class EditGroceryViewModel @Inject constructor(
                         description = grocery.description,
                         purchased = grocery.purchased,
                         purchasedLastModified = grocery.purchasedLastModified,
-                        isDefault = false,
+                        isDefault = false
                     )
                     groceryRepository.removeGroceryFromList(
                         productId = compoundGroceryId.productId,
-                        listId = compoundGroceryId.groceryListId,
+                        listId = compoundGroceryId.groceryListId
                     )
                     onEditOtherGrocery(
                         productId = newProductId,
-                        groceryListId = compoundGroceryId.groceryListId,
+                        groceryListId = compoundGroceryId.groceryListId
                     )
                 } else {
                     productRepository.updateProductCategory(
                         productId = compoundGroceryId.productId,
-                        categoryId = category?.id,
+                        categoryId = category?.id
                     )
                 }
             }
@@ -139,7 +139,7 @@ class EditGroceryViewModel @Inject constructor(
             compoundGroceryIdFlow.value?.let { (productId, groceryListId) ->
                 groceryRepository.removeGroceryFromList(
                     productId = productId,
-                    listId = groceryListId,
+                    listId = groceryListId
                 )
             }
         }
@@ -153,23 +153,26 @@ class EditGroceryViewModel @Inject constructor(
         }
     }
 
-    private fun onEditOtherGrocery(productId: String, groceryListId: String) {
+    private fun onEditOtherGrocery(
+        productId: String,
+        groceryListId: String
+    ) {
         compoundGroceryIdFlow.update {
             CompoundGroceryId(
                 productId = productId,
-                groceryListId = groceryListId,
+                groceryListId = groceryListId
             )
         }
         updateGroceryJob?.cancel()
         updateGroceryJob = viewModelScope.launch {
             val grocery = groceryRepository.getGroceryById(
                 productId = productId,
-                listId = groceryListId,
+                listId = groceryListId
             ).first() ?: return@launch
             val nameLength = grocery.description?.length ?: 0
             editGroceryDescription = TextFieldValue(
                 text = grocery.description ?: "",
-                selection = TextRange(nameLength, nameLength),
+                selection = TextRange(nameLength, nameLength)
             )
             _uiStateFlow.update { it.copy(editGrocery = grocery) }
             editGroceryDescriptionFlow
@@ -179,7 +182,7 @@ class EditGroceryViewModel @Inject constructor(
                         groceryRepository.updateDescription(
                             productId = productId,
                             listId = groceryListId,
-                            description = description.ifEmpty { null },
+                            description = description.ifEmpty { null }
                         )
                     }
                 }

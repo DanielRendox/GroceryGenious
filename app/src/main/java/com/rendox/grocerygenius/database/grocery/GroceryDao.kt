@@ -57,29 +57,43 @@ interface GroceryDao {
         WHERE grocery.productId = :productId AND grocery.groceryListId = :listId
     """
     )
-    fun getGrocery(productId: String, listId: String): Flow<CombinedGrocery?>
+    fun getGrocery(
+        productId: String,
+        listId: String
+    ): Flow<CombinedGrocery?>
 
-    @Query("""
+    @Query(
+        """
         UPDATE GroceryEntity
         SET purchased = :purchased, purchasedLastModified = :purchasedLastModified
         WHERE productId = :productId AND groceryListId = :listId
-    """)
+    """
+    )
     suspend fun updatePurchased(
         productId: String,
         listId: String,
         purchased: Boolean,
-        purchasedLastModified: Long,
+        purchasedLastModified: Long
     )
 
-    @Query("""
+    @Query(
+        """
         UPDATE GroceryEntity
         SET description = :description
         WHERE productId = :productId AND groceryListId = :listId
-    """)
-    suspend fun updateDescription(productId: String, listId: String, description: String?)
+    """
+    )
+    suspend fun updateDescription(
+        productId: String,
+        listId: String,
+        description: String?
+    )
 
     @Query("DELETE FROM GroceryEntity WHERE productId = :productId AND groceryListId = :listId")
-    suspend fun deleteGrocery(productId: String, listId: String)
+    suspend fun deleteGrocery(
+        productId: String,
+        listId: String
+    )
 
     @Query("SELECT COUNT(productId) FROM GroceryEntity WHERE groceryListId = :listId")
     fun getNumOfGroceriesInList(listId: String): Flow<Int>

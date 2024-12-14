@@ -33,7 +33,7 @@ val PinkLightColorScheme = lightColorScheme(
     inversePrimary = Color(0xFFFFB3B5),
     surfaceTint = Color(0xFF9C4147),
     outlineVariant = Color(0xFFD7C1C1),
-    scrim = Color(0xFF000000),
+    scrim = Color(0xFF000000)
 )
 
 val PinkDarkColorScheme = darkColorScheme(
@@ -65,5 +65,5 @@ val PinkDarkColorScheme = darkColorScheme(
     inversePrimary = Color(0xFF9C4147),
     surfaceTint = Color(0xFFFFB3B5),
     outlineVariant = Color(0xFF524343),
-    scrim = Color(0xFF000000),
+    scrim = Color(0xFF000000)
 )

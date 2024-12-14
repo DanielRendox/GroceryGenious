@@ -12,16 +12,16 @@ import com.rendox.grocerygenius.network.listAdapter
 import com.rendox.grocerygenius.network.model.NetworkChangeList
 import com.squareup.moshi.Moshi
 import dagger.hilt.android.qualifiers.ApplicationContext
+import javax.inject.Inject
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.withContext
-import javax.inject.Inject
 
 class FakeIconNetworkDataSource @Inject constructor(
     @ApplicationContext private val appContext: Context,
     private val jsonAssetDecoder: JsonAssetDecoder,
     private val moshi: Moshi,
     private val assetToFileSaver: AssetToFileSaver,
-    @Dispatcher(GroceryGeniusDispatchers.IO) private val ioDispatcher: CoroutineDispatcher,
+    @Dispatcher(GroceryGeniusDispatchers.IO) private val ioDispatcher: CoroutineDispatcher
 ) : IconNetworkDataSource {
 
     override suspend fun downloadIcons(): List<IconReference> = withContext(ioDispatcher) {
@@ -37,11 +37,12 @@ class FakeIconNetworkDataSource @Inject constructor(
             )
         }
         val extractedFiles = UnzipUtils.unzip(
-            iconsArchive, appContext.filesDir.absolutePath + "/icons"
+            iconsArchive,
+            appContext.filesDir.absolutePath + "/icons"
         ).map { file ->
             IconReference(
                 uniqueFileName = file.name,
-                filePath = file.toRelativeString(appContext.filesDir),
+                filePath = file.toRelativeString(appContext.filesDir)
             )
         }
         try {
@@ -52,15 +53,13 @@ class FakeIconNetworkDataSource @Inject constructor(
         extractedFiles
     }
 
-    override suspend fun downloadIconsByIds(
-        ids: List<String>
-    ): List<IconReference> = ids.mapNotNull { fileName ->
+    override suspend fun downloadIconsByIds(ids: List<String>): List<IconReference> = ids.mapNotNull { fileName ->
         val assetFilePath = "icons/$fileName"
         val file = assetToFileSaver.copyAssetToInternalStorage(assetFilePath)
         file?.let {
             IconReference(
                 uniqueFileName = it.name,
-                filePath = it.toRelativeString(appContext.filesDir),
+                filePath = it.toRelativeString(appContext.filesDir)
             )
         }
     }
@@ -68,7 +67,7 @@ class FakeIconNetworkDataSource @Inject constructor(
     override suspend fun getIconChangeList(after: Int): List<NetworkChangeList> {
         return jsonAssetDecoder.decodeFromFile(
             adapter = moshi.listAdapter<NetworkChangeList>(),
-            fileName = "icons/icons_change_list.json",
+            fileName = "icons/icons_change_list.json"
         )?.filter { it.changeListVersion > after } ?: emptyList()
     }
 }

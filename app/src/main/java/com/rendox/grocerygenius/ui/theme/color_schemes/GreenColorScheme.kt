@@ -33,7 +33,7 @@ val GreenLightColorScheme = lightColorScheme(
     inversePrimary = Color(0xFFABD471),
     surfaceTint = Color(0xFF466811),
     outlineVariant = Color(0xFFC5C8B9),
-    scrim = Color(0xFF000000),
+    scrim = Color(0xFF000000)
 )
 
 val GreenDarkColorScheme = darkColorScheme(
@@ -65,5 +65,5 @@ val GreenDarkColorScheme = darkColorScheme(
     inversePrimary = Color(0xFF466811),
     surfaceTint = Color(0xFFABD471),
     outlineVariant = Color(0xFF45483D),
-    scrim = Color(0xFF000000),
+    scrim = Color(0xFF000000)
 )

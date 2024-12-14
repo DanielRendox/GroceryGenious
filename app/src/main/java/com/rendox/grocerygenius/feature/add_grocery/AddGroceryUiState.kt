@@ -8,5 +8,5 @@ data class AddGroceryUiState(
     val bottomSheetContentType: AddGroceryBottomSheetContentType = AddGroceryBottomSheetContentType.Suggestions,
     val grocerySearchResults: List<Grocery> = emptyList(),
     val customProducts: List<Product> = emptyList(),
-    val clearSearchQueryButtonIsShown: Boolean = false,
+    val clearSearchQueryButtonIsShown: Boolean = false
 )

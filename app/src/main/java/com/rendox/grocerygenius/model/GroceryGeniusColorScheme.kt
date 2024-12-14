@@ -6,5 +6,5 @@ enum class GroceryGeniusColorScheme {
     GreenColorScheme,
     PinkColorScheme,
     PurpleColorScheme,
-    YellowColorScheme,
+    YellowColorScheme
 }

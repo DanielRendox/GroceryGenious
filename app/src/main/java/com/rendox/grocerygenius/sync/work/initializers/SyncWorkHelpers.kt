@@ -41,7 +41,7 @@ val SyncConstraints
  */
 fun Context.syncForegroundInfo() = ForegroundInfo(
     SYNC_NOTIFICATION_ID,
-    syncWorkNotification(),
+    syncWorkNotification()
 )
 
 /**
@@ -53,7 +53,7 @@ private fun Context.syncWorkNotification(): Notification {
         val channel = NotificationChannel(
             SYNC_NOTIFICATION_CHANNEL_ID,
             getString(R.string.sync_work_notification_channel_name),
-            NotificationManager.IMPORTANCE_DEFAULT,
+            NotificationManager.IMPORTANCE_DEFAULT
         ).apply {
             description = getString(R.string.sync_work_notification_channel_description)
         }
@@ -66,7 +66,7 @@ private fun Context.syncWorkNotification(): Notification {
 
     return NotificationCompat.Builder(
         this,
-        SYNC_NOTIFICATION_CHANNEL_ID,
+        SYNC_NOTIFICATION_CHANNEL_ID
     )
         .setSmallIcon(R.drawable.shopping_cart)
         .setContentTitle(getString(R.string.sync_work_notification_title))

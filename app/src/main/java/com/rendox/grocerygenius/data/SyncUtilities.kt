@@ -1,6 +1,7 @@
 package com.rendox.grocerygenius.data
 
 import android.util.Log
+import com.rendox.grocerygenius.BuildConfig
 import com.rendox.grocerygenius.model.ChangeListVersions
 import com.rendox.grocerygenius.network.model.NetworkChangeList
 import kotlin.coroutines.cancellation.CancellationException
@@ -66,6 +67,7 @@ suspend fun Synchronizer.changeListSync(
         }
         return@suspendRunCatching true
     }
+    if (BuildConfig.DEBUG) return@suspendRunCatching true
     if (latestVersion == null) return@suspendRunCatching true
 
     val (deleted, updated) = networkChangeList.partition(NetworkChangeList::isDeleted)

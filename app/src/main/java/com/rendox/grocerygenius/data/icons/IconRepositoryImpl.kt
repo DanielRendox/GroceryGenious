@@ -8,7 +8,7 @@ import com.rendox.grocerygenius.data.model.asEntity
 import com.rendox.grocerygenius.database.groceryicon.IconDao
 import com.rendox.grocerygenius.model.Category
 import com.rendox.grocerygenius.model.IconReference
-import com.rendox.grocerygenius.network.data.sources.IconNetworkDataSource
+import com.rendox.grocerygenius.network.data.sources.icon.IconNetworkDataSource
 import dagger.hilt.android.qualifiers.ApplicationContext
 import java.io.File
 import java.io.IOException

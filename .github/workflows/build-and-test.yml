@@ -8,8 +8,6 @@ on:
   workflow_dispatch:
 
 jobs:
-  setup-gradle:
-    uses: ./.github/workflows/setup-gradle.yml
   build-and-test:
     runs-on: ubuntu-latest
 
@@ -17,8 +15,24 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Setup Gradle Environment
-        uses: ./.github/workflows/setup-gradle.yml
+      - name: Restore cache
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.gradle/caches
+            ~/.gradle/wrapper
+          key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*', '**/gradle-wrapper.properties') }}
+          restore-keys: |
+            ${{ runner.os }}-gradle-
+
+      - name: Setup Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: zulu
+          java-version: 17
+
+      - name: Ensure gradlew is executable
+        run: chmod +x ./gradlew
 
       - name: Debug build
         run: ./gradlew assembleDebug --stacktrace

@@ -16,6 +16,7 @@
 
 package com.rendox.grocerygenius.ui.components.scrollbar
 
+import android.annotation.SuppressLint
 import androidx.compose.animation.animateColorAsState
 import androidx.compose.animation.core.Spring
 import androidx.compose.animation.core.SpringSpec
@@ -172,8 +173,10 @@ private fun Modifier.scrollThumb(
     return this then ScrollThumbElement { colorState.value }
 }
 
-private data class ScrollThumbElement(val colorProducer: ColorProducer) :
-    ModifierNodeElement<ScrollThumbNode>() {
+@SuppressLint("ModifierNodeInspectableProperties")
+private data class ScrollThumbElement(
+    val colorProducer: ColorProducer
+) : ModifierNodeElement<ScrollThumbNode>() {
     override fun create(): ScrollThumbNode = ScrollThumbNode(colorProducer)
     override fun update(node: ScrollThumbNode) {
         node.colorProducer = colorProducer

@@ -1,0 +1,17 @@
+<lint>
+    <issue id="UnusedQuantity">
+        <ignore path="**/*.xml" />
+    </issue>
+    <issue id="MissingQuantity">
+        <ignore path="**/*.xml" />
+    </issue>
+    <issue id="GradleDependency">
+        <ignore path="**/*.toml" />
+    </issue>
+    <issue id="AndroidGradlePluginVersion">
+        <ignore path="**/*.toml" />
+    </issue>
+    <issue id="MonochromeLauncherIcon">
+        <ignore path="**/*.xml" />
+    </issue>
+</lint>

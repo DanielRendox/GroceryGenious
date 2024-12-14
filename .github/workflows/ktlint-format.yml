@@ -10,6 +10,9 @@ jobs:
   ktlint-format:
     runs-on: ubuntu-latest
 
+    permissions:
+      contents: write
+
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -52,8 +55,8 @@ jobs:
 
       - name: Commit and Push Changes
         env:
-          GITHUB_TOKEN: ${{ secrets.ACTIONS_PUSH }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           git add .
           git commit -m "Apply ktlint format"
-          git push https://x-access-token:${{ secrets.ACTIONS_PUSH }}@github.com/${{ github.repository }} HEAD:$(git rev-parse --abbrev-ref HEAD)
+          git push origin HEAD:${{ github.head_ref }}

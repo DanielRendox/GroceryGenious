@@ -36,6 +36,13 @@ jobs:
       - name: Ensure gradlew is executable
         run: chmod +x ./gradlew
 
+      - name: Rebase with origin
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git stash --include-untracked
+          git pull --rebase origin $(git rev-parse --abbrev-ref HEAD)
+
       - name: Run Ktlint Format
         run: ./gradlew ktlintFormat
 
@@ -46,7 +53,7 @@ jobs:
           else
             echo "No changes detected."
             exit 0
-          fi
+          fi 
 
       - name: Configure Git
         run: |

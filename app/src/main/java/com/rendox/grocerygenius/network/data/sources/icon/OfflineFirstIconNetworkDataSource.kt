@@ -1,4 +1,4 @@
-package com.rendox.grocerygenius.network.data.sources
+package com.rendox.grocerygenius.network.data.sources.icon
 
 import android.content.Context
 import com.rendox.grocerygenius.filestorage.UnzipUtils

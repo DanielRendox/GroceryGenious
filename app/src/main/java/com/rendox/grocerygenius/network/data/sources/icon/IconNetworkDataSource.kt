@@ -1,4 +1,4 @@
-package com.rendox.grocerygenius.network.data.sources
+package com.rendox.grocerygenius.network.data.sources.icon
 
 import com.rendox.grocerygenius.model.IconReference
 import com.rendox.grocerygenius.network.model.NetworkChangeList

@@ -1,4 +1,4 @@
-package com.rendox.grocerygenius.network.data.sources
+package com.rendox.grocerygenius.network.data.sources.category
 
 import com.rendox.grocerygenius.network.model.CategoryNetwork
 import com.rendox.grocerygenius.network.model.NetworkChangeList

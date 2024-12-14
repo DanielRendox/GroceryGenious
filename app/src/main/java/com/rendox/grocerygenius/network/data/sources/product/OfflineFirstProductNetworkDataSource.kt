@@ -1,4 +1,4 @@
-package com.rendox.grocerygenius.network.data.sources
+package com.rendox.grocerygenius.network.data.sources.product
 
 import com.rendox.grocerygenius.network.GitHubApi
 import com.rendox.grocerygenius.network.model.NetworkChangeList

@@ -1,11 +1,11 @@
 package com.rendox.grocerygenius.network.di
 
-import com.rendox.grocerygenius.network.data.sources.CategoryNetworkDataSource
-import com.rendox.grocerygenius.network.data.sources.IconNetworkDataSource
-import com.rendox.grocerygenius.network.data.sources.OfflineFirstCategoryNetworkDataSource
-import com.rendox.grocerygenius.network.data.sources.OfflineFirstIconNetworkDataSource
-import com.rendox.grocerygenius.network.data.sources.OfflineFirstProductNetworkDataSource
-import com.rendox.grocerygenius.network.data.sources.ProductNetworkDataSource
+import com.rendox.grocerygenius.network.data.sources.category.CategoryNetworkDataSource
+import com.rendox.grocerygenius.network.data.sources.category.OfflineFirstCategoryNetworkDataSource
+import com.rendox.grocerygenius.network.data.sources.icon.IconNetworkDataSource
+import com.rendox.grocerygenius.network.data.sources.icon.OfflineFirstIconNetworkDataSource
+import com.rendox.grocerygenius.network.data.sources.product.OfflineFirstProductNetworkDataSource
+import com.rendox.grocerygenius.network.data.sources.product.ProductNetworkDataSource
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn
@@ -14,7 +14,7 @@ import javax.inject.Singleton
 
 @Module
 @InstallIn(SingletonComponent::class)
-abstract class NetworkModuleRelease {
+abstract class NetworkModule {
 
     @Binds
     @Singleton

@@ -4,14 +4,14 @@ import com.rendox.grocerygenius.data.category.CategoryRepository
 import com.rendox.grocerygenius.data.category.CategoryRepositoryImpl
 import com.rendox.grocerygenius.data.grocery.GroceryRepository
 import com.rendox.grocerygenius.data.grocery.GroceryRepositoryImpl
-import com.rendox.grocerygenius.data.grocery_list.GroceryListRepository
-import com.rendox.grocerygenius.data.grocery_list.GroceryListRepositoryImpl
+import com.rendox.grocerygenius.data.grocerylist.GroceryListRepository
+import com.rendox.grocerygenius.data.grocerylist.GroceryListRepositoryImpl
 import com.rendox.grocerygenius.data.icons.IconRepository
 import com.rendox.grocerygenius.data.icons.IconRepositoryImpl
 import com.rendox.grocerygenius.data.product.ProductRepository
 import com.rendox.grocerygenius.data.product.ProductRepositoryImpl
-import com.rendox.grocerygenius.data.user_preferences.UserPreferencesRepository
-import com.rendox.grocerygenius.data.user_preferences.UserPreferencesRepositoryImpl
+import com.rendox.grocerygenius.data.userpreferences.UserPreferencesRepository
+import com.rendox.grocerygenius.data.userpreferences.UserPreferencesRepositoryImpl
 import com.rendox.grocerygenius.data.util.ConnectivityManagerNetworkMonitor
 import com.rendox.grocerygenius.data.util.NetworkMonitor
 import dagger.Binds
@@ -26,33 +26,23 @@ abstract class DataModule {
 
     @Binds
     @Singleton
-    abstract fun bindCategoryRepository(
-        categoryRepositoryImpl: CategoryRepositoryImpl
-    ): CategoryRepository
+    abstract fun bindCategoryRepository(categoryRepositoryImpl: CategoryRepositoryImpl): CategoryRepository
 
     @Binds
     @Singleton
-    abstract fun groceryRepository(
-        groceryRepositoryImpl: GroceryRepositoryImpl
-    ): GroceryRepository
+    abstract fun groceryRepository(groceryRepositoryImpl: GroceryRepositoryImpl): GroceryRepository
 
     @Binds
     @Singleton
-    abstract fun bindGroceryListRepository(
-        groceryListRepositoryImpl: GroceryListRepositoryImpl
-    ): GroceryListRepository
+    abstract fun bindGroceryListRepository(groceryListRepositoryImpl: GroceryListRepositoryImpl): GroceryListRepository
 
     @Binds
     @Singleton
-    abstract fun bindProductRepository(
-        productRepositoryImpl: ProductRepositoryImpl
-    ): ProductRepository
+    abstract fun bindProductRepository(productRepositoryImpl: ProductRepositoryImpl): ProductRepository
 
     @Binds
     @Singleton
-    abstract fun bindIconRepository(
-        iconRepositoryImpl: IconRepositoryImpl
-    ): IconRepository
+    abstract fun bindIconRepository(iconRepositoryImpl: IconRepositoryImpl): IconRepository
 
     @Binds
     @Singleton
@@ -62,7 +52,5 @@ abstract class DataModule {
 
     @Binds
     @Singleton
-    abstract fun bindNetworkMonitor(
-        networkMonitor: ConnectivityManagerNetworkMonitor
-    ): NetworkMonitor
+    abstract fun bindNetworkMonitor(networkMonitor: ConnectivityManagerNetworkMonitor): NetworkMonitor
 }

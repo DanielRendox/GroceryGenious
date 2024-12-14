@@ -6,7 +6,7 @@ import androidx.room.Query
 import androidx.room.RawQuery
 import androidx.room.Upsert
 import androidx.sqlite.db.SimpleSQLiteQuery
-import com.rendox.grocerygenius.database.grocery_icon.IconEntity
+import com.rendox.grocerygenius.database.groceryicon.IconEntity
 import kotlinx.coroutines.flow.Flow
 
 @Dao
@@ -115,7 +115,7 @@ abstract class ProductDao {
         val searchCondition = keywords.joinToString(" OR ") { keyword ->
             """
             (' ' || LOWER(product.name) || ' ') LIKE LOWER('% $keyword %')
-        """.trimIndent()
+            """.trimIndent()
         }
         val orderCondition = keywords.joinToString(" + ") { keyword ->
             """
@@ -123,7 +123,7 @@ abstract class ProductDao {
                 WHEN (' ' || LOWER(product.name) || ' ') LIKE LOWER('% $keyword %') THEN 1
                 ELSE 0
             END
-        """.trimIndent()
+            """.trimIndent()
         }
         val queryString = """
             SELECT
@@ -146,15 +146,19 @@ abstract class ProductDao {
     }
 
     @RawQuery(observedEntities = [IconEntity::class, ProductEntity::class])
-    protected abstract suspend fun getProductsByRawQuery(
-        query: SimpleSQLiteQuery
-    ): List<CombinedProduct>
+    protected abstract suspend fun getProductsByRawQuery(query: SimpleSQLiteQuery): List<CombinedProduct>
 
     @Query("UPDATE ProductEntity SET categoryId = :categoryId WHERE id = :productId")
-    abstract suspend fun updateProductCategory(productId: String, categoryId: String?)
+    abstract suspend fun updateProductCategory(
+        productId: String,
+        categoryId: String?
+    )
 
     @Query("UPDATE ProductEntity SET iconFileName = :iconId WHERE id = :productId")
-    abstract suspend fun updateProductIcon(productId: String, iconId: String?)
+    abstract suspend fun updateProductIcon(
+        productId: String,
+        iconId: String?
+    )
 
     @Query("DELETE FROM ProductEntity WHERE id = :productId")
     abstract suspend fun deleteProductById(productId: String)
@@ -163,7 +167,7 @@ abstract class ProductDao {
         """
             DELETE FROM ProductEntity
             WHERE id in (:ids)
-        """,
+        """
     )
     abstract suspend fun deleteProductsByIds(ids: List<String>)
 }

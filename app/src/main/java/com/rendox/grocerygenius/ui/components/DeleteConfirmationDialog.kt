@@ -14,7 +14,7 @@ fun DeleteConfirmationDialog(
     modifier: Modifier = Modifier,
     bodyText: String,
     onConfirm: () -> Unit,
-    onDismissRequest: () -> Unit,
+    onDismissRequest: () -> Unit
 ) {
     AlertDialog(
         modifier = modifier,
@@ -34,6 +34,6 @@ fun DeleteConfirmationDialog(
             TextButton(onClick = onDismissRequest) {
                 Text(text = stringResource(android.R.string.cancel))
             }
-        },
+        }
     )
 }

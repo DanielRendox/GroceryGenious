@@ -19,7 +19,7 @@ fun TonalDataInput(
     onClick: () -> Unit,
     indication: Indication? = LocalIndication.current,
     dropDownMenu: @Composable (() -> Unit)? = null,
-    content: @Composable () -> Unit,
+    content: @Composable () -> Unit
 ) {
     Box(
         modifier = modifier
@@ -28,11 +28,10 @@ fun TonalDataInput(
             .clickable(
                 onClick = onClick,
                 indication = indication,
-                interactionSource = remember { MutableInteractionSource() },
-            ),
+                interactionSource = remember { MutableInteractionSource() }
+            )
     ) {
         content()
         dropDownMenu?.let { it() }
     }
 }
-

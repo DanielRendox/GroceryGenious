@@ -37,12 +37,13 @@ fun SearchField(
     leadingIcon: @Composable (() -> Unit)? = null,
     clearSearchInputButtonIsShown: Boolean,
     onClearSearchInputClicked: () -> Unit,
-    keyboardActions: KeyboardActions = KeyboardActions.Default,
+    keyboardActions: KeyboardActions = KeyboardActions.Default
 ) {
     var searchQueryTextFieldValue by remember {
         mutableStateOf(
             TextFieldValue(
-                text = searchQuery, selection = when {
+                text = searchQuery,
+                selection = when {
                     searchQuery.isEmpty() -> TextRange.Zero
                     else -> TextRange(searchQuery.length, searchQuery.length)
                 }
@@ -75,7 +76,7 @@ fun SearchField(
         clearSearchInputButtonIsShown = clearSearchInputButtonIsShown,
         onClearSearchInputClicked = onClearSearchInputClicked,
         keyboardActions = keyboardActions,
-        leadingIcon = leadingIcon,
+        leadingIcon = leadingIcon
     )
 }
 
@@ -88,7 +89,7 @@ fun SearchField(
     leadingIcon: @Composable (() -> Unit)? = null,
     clearSearchInputButtonIsShown: Boolean,
     onClearSearchInputClicked: () -> Unit,
-    keyboardActions: KeyboardActions = KeyboardActions.Default,
+    keyboardActions: KeyboardActions = KeyboardActions.Default
 ) {
     TextField(
         modifier = modifier,
@@ -99,12 +100,12 @@ fun SearchField(
         colors = TextFieldDefaults.colors().copy(
             disabledIndicatorColor = Color.Transparent,
             focusedIndicatorColor = Color.Transparent,
-            unfocusedIndicatorColor = Color.Transparent,
+            unfocusedIndicatorColor = Color.Transparent
         ),
         singleLine = true,
         keyboardOptions = KeyboardOptions(
             capitalization = KeyboardCapitalization.Sentences,
-            imeAction = ImeAction.Done,
+            imeAction = ImeAction.Done
         ),
         keyboardActions = keyboardActions,
         trailingIcon = {
@@ -114,12 +115,12 @@ fun SearchField(
                 IconButton(onClick = onClearSearchInputClicked) {
                     Icon(
                         imageVector = Icons.Default.Clear,
-                        contentDescription = contentDescription,
+                        contentDescription = contentDescription
                     )
                 }
             }
         },
-        leadingIcon = leadingIcon,
+        leadingIcon = leadingIcon
     )
 }
 
@@ -133,7 +134,7 @@ private fun SearchFieldPreview() {
                 onSearchQueryChanged = {},
                 clearSearchInputButtonIsShown = true,
                 onClearSearchInputClicked = {},
-                placeholder = { Text("Search") },
+                placeholder = { Text("Search") }
             )
         }
     }

@@ -8,25 +8,21 @@ import com.rendox.grocerygenius.ui.GroceryGeniusTransition
 
 const val SETTINGS_ROUTE = "settings_route"
 
-fun NavController.navigateToSettings(
-    navOptions: (NavOptionsBuilder.() -> Unit) = {},
-) {
+fun NavController.navigateToSettings(navOptions: (NavOptionsBuilder.() -> Unit) = {}) {
     this.navigate(
         route = SETTINGS_ROUTE,
-        builder = navOptions,
+        builder = navOptions
     )
 }
 
-fun NavGraphBuilder.settingsScreen(
-    navigateBack: () -> Unit,
-) {
+fun NavGraphBuilder.settingsScreen(navigateBack: () -> Unit) {
     composable(
         route = SETTINGS_ROUTE,
         enterTransition = { GroceryGeniusTransition.SlideInVertically },
-        exitTransition = { GroceryGeniusTransition.SlideOutVertically },
+        exitTransition = { GroceryGeniusTransition.SlideOutVertically }
     ) {
         SettingsRoute(
-            navigateBack = navigateBack,
+            navigateBack = navigateBack
         )
     }
 }

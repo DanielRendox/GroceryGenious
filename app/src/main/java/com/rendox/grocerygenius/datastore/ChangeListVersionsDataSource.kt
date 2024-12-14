@@ -6,20 +6,20 @@ import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.core.edit
 import androidx.datastore.preferences.core.intPreferencesKey
 import com.rendox.grocerygenius.model.ChangeListVersions
-import kotlinx.coroutines.flow.firstOrNull
-import kotlinx.coroutines.flow.map
 import java.io.IOException
 import javax.inject.Inject
+import kotlinx.coroutines.flow.firstOrNull
+import kotlinx.coroutines.flow.map
 
 class ChangeListVersionsDataSource @Inject constructor(
-    private val dataStore: DataStore<Preferences>,
+    private val dataStore: DataStore<Preferences>
 ) {
     suspend fun getChangeListVersions() = dataStore.data
         .map {
             ChangeListVersions(
                 iconVersion = it[ICON_VERSION] ?: -1,
                 categoryVersion = it[CATEGORY_VERSION] ?: -1,
-                productVersion = it[PRODUCT_VERSION] ?: -1,
+                productVersion = it[PRODUCT_VERSION] ?: -1
             )
         }
         .firstOrNull() ?: ChangeListVersions()
@@ -31,8 +31,8 @@ class ChangeListVersionsDataSource @Inject constructor(
                     ChangeListVersions(
                         iconVersion = currentPreferences[ICON_VERSION] ?: -1,
                         categoryVersion = currentPreferences[CATEGORY_VERSION] ?: -1,
-                        productVersion = currentPreferences[PRODUCT_VERSION] ?: -1,
-                    ),
+                        productVersion = currentPreferences[PRODUCT_VERSION] ?: -1
+                    )
                 )
 
                 currentPreferences[ICON_VERSION] = updatedChangeListVersions.iconVersion

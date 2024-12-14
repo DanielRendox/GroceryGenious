@@ -33,11 +33,9 @@ import kotlin.math.roundToInt
  * @param itemsAvailable the amount of items in the list.
  */
 @Composable
-fun LazyListState.rememberDraggableScroller(
-    itemsAvailable: Int,
-): (Float) -> Unit = rememberDraggableScroller(
+fun LazyListState.rememberDraggableScroller(itemsAvailable: Int): (Float) -> Unit = rememberDraggableScroller(
     itemsAvailable = itemsAvailable,
-    scroll = ::scrollToItem,
+    scroll = ::scrollToItem
 )
 
 /**
@@ -45,11 +43,9 @@ fun LazyListState.rememberDraggableScroller(
  * @param itemsAvailable the amount of items in the grid.
  */
 @Composable
-fun LazyGridState.rememberDraggableScroller(
-    itemsAvailable: Int,
-): (Float) -> Unit = rememberDraggableScroller(
+fun LazyGridState.rememberDraggableScroller(itemsAvailable: Int): (Float) -> Unit = rememberDraggableScroller(
     itemsAvailable = itemsAvailable,
-    scroll = ::scrollToItem,
+    scroll = ::scrollToItem
 )
 
 /**
@@ -58,11 +54,9 @@ fun LazyGridState.rememberDraggableScroller(
  * @param itemsAvailable the amount of items in the staggered grid.
  */
 @Composable
-fun LazyStaggeredGridState.rememberDraggableScroller(
-    itemsAvailable: Int,
-): (Float) -> Unit = rememberDraggableScroller(
+fun LazyStaggeredGridState.rememberDraggableScroller(itemsAvailable: Int): (Float) -> Unit = rememberDraggableScroller(
     itemsAvailable = itemsAvailable,
-    scroll = ::scrollToItem,
+    scroll = ::scrollToItem
 )
 
 /**
@@ -73,7 +67,7 @@ fun LazyStaggeredGridState.rememberDraggableScroller(
 @Composable
 private inline fun rememberDraggableScroller(
     itemsAvailable: Int,
-    crossinline scroll: suspend (index: Int) -> Unit,
+    crossinline scroll: suspend (index: Int) -> Unit
 ): (Float) -> Unit {
     var percentage by remember { mutableFloatStateOf(Float.NaN) }
     val itemCount by rememberUpdatedState(itemsAvailable)

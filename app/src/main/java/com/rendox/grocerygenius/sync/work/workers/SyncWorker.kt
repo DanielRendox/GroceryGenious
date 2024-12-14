@@ -51,11 +51,10 @@ class SyncWorker @AssistedInject constructor(
     private val productRepository: ProductRepository,
     private val iconRepository: IconRepository,
     @Dispatcher(GroceryGeniusDispatchers.IO) private val ioDispatcher: CoroutineDispatcher,
-    private val changeListVersionsDataSource: ChangeListVersionsDataSource,
+    private val changeListVersionsDataSource: ChangeListVersionsDataSource
 ) : CoroutineWorker(appContext, workerParams), Synchronizer {
 
-    override suspend fun getForegroundInfo(): ForegroundInfo =
-        appContext.syncForegroundInfo()
+    override suspend fun getForegroundInfo(): ForegroundInfo = appContext.syncForegroundInfo()
 
     override suspend fun doWork(): Result = withContext(ioDispatcher) {
         // sync all repositories one by one because the data is interdependent through foreign keys
@@ -63,7 +62,7 @@ class SyncWorker @AssistedInject constructor(
         val syncedSuccessfully = listOf(
             iconRepository,
             categoryRepository,
-            productRepository,
+            productRepository
         ).all { it.sync() }
         if (syncedSuccessfully) Result.success() else Result.retry()
     }
@@ -71,10 +70,8 @@ class SyncWorker @AssistedInject constructor(
     override suspend fun getChangeListVersions(): ChangeListVersions =
         changeListVersionsDataSource.getChangeListVersions()
 
-    override suspend fun updateChangeListVersions(
-        update: ChangeListVersions.() -> ChangeListVersions
-    ) = changeListVersionsDataSource.updateChangeListVersion(update)
-
+    override suspend fun updateChangeListVersions(update: ChangeListVersions.() -> ChangeListVersions) =
+        changeListVersionsDataSource.updateChangeListVersion(update)
 
     companion object {
         /**

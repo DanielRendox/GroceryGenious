@@ -17,16 +17,16 @@ fun GroceryCompact(
     modifier: Modifier = Modifier,
     title: String,
     backgroundColor: Color = Color.Unspecified,
-    icon: @Composable () -> Unit,
+    icon: @Composable () -> Unit
 ) {
     Surface(
         modifier = modifier,
         shape = CornerRoundingDefault,
-        color = backgroundColor,
+        color = backgroundColor
     ) {
         Row(
             modifier = modifier.padding(horizontal = 12.dp),
-            verticalAlignment = Alignment.CenterVertically,
+            verticalAlignment = Alignment.CenterVertically
         ) {
             icon()
             Text(

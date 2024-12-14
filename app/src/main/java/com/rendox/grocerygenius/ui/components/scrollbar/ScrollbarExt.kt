@@ -27,9 +27,9 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.snapshotFlow
+import kotlin.math.min
 import kotlinx.coroutines.flow.distinctUntilChanged
 import kotlinx.coroutines.flow.filterNotNull
-import kotlin.math.min
 
 /**
  * Calculates a [ScrollbarState] driven by the changes in a [LazyListState].
@@ -40,7 +40,7 @@ import kotlin.math.min
 @Composable
 fun LazyListState.scrollbarState(
     itemsAvailable: Int,
-    itemIndex: (LazyListItemInfo) -> Int = LazyListItemInfo::index,
+    itemIndex: (LazyListItemInfo) -> Int = LazyListItemInfo::index
 ): ScrollbarState {
     val state = remember { ScrollbarState() }
     LaunchedEffect(this, itemsAvailable) {
@@ -56,9 +56,9 @@ fun LazyListState.scrollbarState(
                     itemSize = { it.size },
                     offset = { it.offset },
                     nextItemOnMainAxis = { first -> visibleItemsInfo.find { it != first } },
-                    itemIndex = itemIndex,
+                    itemIndex = itemIndex
                 ),
-                b = itemsAvailable.toFloat(),
+                b = itemsAvailable.toFloat()
             )
             if (firstIndex.isNaN()) return@snapshotFlow null
 
@@ -67,24 +67,24 @@ fun LazyListState.scrollbarState(
                     itemSize = itemInfo.size,
                     itemStartOffset = itemInfo.offset,
                     viewportStartOffset = layoutInfo.viewportStartOffset,
-                    viewportEndOffset = layoutInfo.viewportEndOffset,
+                    viewportEndOffset = layoutInfo.viewportEndOffset
                 )
             }
 
             val thumbTravelPercent = min(
                 a = firstIndex / itemsAvailable,
-                b = 1f,
+                b = 1f
             )
             val thumbSizePercent = min(
                 a = itemsVisible / itemsAvailable,
-                b = 1f,
+                b = 1f
             )
             scrollbarStateValue(
                 thumbSizePercent = thumbSizePercent,
                 thumbMovedPercent = when {
                     layoutInfo.reverseLayout -> 1f - thumbTravelPercent
                     else -> thumbTravelPercent
-                },
+                }
             )
         }
             .filterNotNull()
@@ -103,7 +103,7 @@ fun LazyListState.scrollbarState(
 @Composable
 fun LazyGridState.scrollbarState(
     itemsAvailable: Int,
-    itemIndex: (LazyGridItemInfo) -> Int = LazyGridItemInfo::index,
+    itemIndex: (LazyGridItemInfo) -> Int = LazyGridItemInfo::index
 ): ScrollbarState {
     val state = remember { ScrollbarState() }
     LaunchedEffect(this, itemsAvailable) {
@@ -129,9 +129,9 @@ fun LazyGridState.scrollbarState(
                             }
                         }
                     },
-                    itemIndex = itemIndex,
+                    itemIndex = itemIndex
                 ),
-                b = itemsAvailable.toFloat(),
+                b = itemsAvailable.toFloat()
             )
             if (firstIndex.isNaN()) return@snapshotFlow null
 
@@ -140,24 +140,24 @@ fun LazyGridState.scrollbarState(
                     itemSize = layoutInfo.orientation.valueOf(itemInfo.size),
                     itemStartOffset = layoutInfo.orientation.valueOf(itemInfo.offset),
                     viewportStartOffset = layoutInfo.viewportStartOffset,
-                    viewportEndOffset = layoutInfo.viewportEndOffset,
+                    viewportEndOffset = layoutInfo.viewportEndOffset
                 )
             }
 
             val thumbTravelPercent = min(
                 a = firstIndex / itemsAvailable,
-                b = 1f,
+                b = 1f
             )
             val thumbSizePercent = min(
                 a = itemsVisible / itemsAvailable,
-                b = 1f,
+                b = 1f
             )
             scrollbarStateValue(
                 thumbSizePercent = thumbSizePercent,
                 thumbMovedPercent = when {
                     layoutInfo.reverseLayout -> 1f - thumbTravelPercent
                     else -> thumbTravelPercent
-                },
+                }
             )
         }
             .filterNotNull()
@@ -177,7 +177,7 @@ fun LazyGridState.scrollbarState(
 @Composable
 fun LazyStaggeredGridState.scrollbarState(
     itemsAvailable: Int,
-    itemIndex: (LazyStaggeredGridItemInfo) -> Int = LazyStaggeredGridItemInfo::index,
+    itemIndex: (LazyStaggeredGridItemInfo) -> Int = LazyStaggeredGridItemInfo::index
 ): ScrollbarState {
     val state = remember { ScrollbarState() }
     LaunchedEffect(this, itemsAvailable) {
@@ -195,9 +195,9 @@ fun LazyStaggeredGridState.scrollbarState(
                     nextItemOnMainAxis = { first ->
                         visibleItemsInfo.find { it != first && it.lane == first.lane }
                     },
-                    itemIndex = itemIndex,
+                    itemIndex = itemIndex
                 ),
-                b = itemsAvailable.toFloat(),
+                b = itemsAvailable.toFloat()
             )
             if (firstIndex.isNaN()) return@snapshotFlow null
 
@@ -206,21 +206,21 @@ fun LazyStaggeredGridState.scrollbarState(
                     itemSize = layoutInfo.orientation.valueOf(itemInfo.size),
                     itemStartOffset = layoutInfo.orientation.valueOf(itemInfo.offset),
                     viewportStartOffset = layoutInfo.viewportStartOffset,
-                    viewportEndOffset = layoutInfo.viewportEndOffset,
+                    viewportEndOffset = layoutInfo.viewportEndOffset
                 )
             }
 
             val thumbTravelPercent = min(
                 a = firstIndex / itemsAvailable,
-                b = 1f,
+                b = 1f
             )
             val thumbSizePercent = min(
                 a = itemsVisible / itemsAvailable,
-                b = 1f,
+                b = 1f
             )
             scrollbarStateValue(
                 thumbSizePercent = thumbSizePercent,
-                thumbMovedPercent = thumbTravelPercent,
+                thumbMovedPercent = thumbTravelPercent
             )
         }
             .filterNotNull()

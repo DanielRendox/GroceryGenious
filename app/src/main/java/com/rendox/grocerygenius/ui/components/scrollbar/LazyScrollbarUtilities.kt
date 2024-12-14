@@ -38,7 +38,7 @@ internal inline fun <LazyState : ScrollableState, LazyStateItem> LazyState.inter
     crossinline itemSize: LazyState.(LazyStateItem) -> Int,
     crossinline offset: LazyState.(LazyStateItem) -> Int,
     crossinline nextItemOnMainAxis: LazyState.(LazyStateItem) -> LazyStateItem?,
-    crossinline itemIndex: (LazyStateItem) -> Int,
+    crossinline itemIndex: (LazyStateItem) -> Int
 ): Float {
     if (visibleItems.isEmpty()) return 0f
 
@@ -71,7 +71,7 @@ internal fun itemVisibilityPercentage(
     itemSize: Int,
     itemStartOffset: Int,
     viewportStartOffset: Int,
-    viewportEndOffset: Int,
+    viewportEndOffset: Int
 ): Float {
     if (itemSize == 0) return 0f
     val itemEnd = itemStartOffset + itemSize

@@ -3,22 +3,22 @@ package com.rendox.grocerygenius
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.rendox.grocerygenius.data.checkFirstTimeSync
-import com.rendox.grocerygenius.data.user_preferences.UserPreferencesRepository
+import com.rendox.grocerygenius.data.userpreferences.UserPreferencesRepository
 import com.rendox.grocerygenius.datastore.ChangeListVersionsDataSource
-import com.rendox.grocerygenius.feature.dashboard_screen.GROCERY_LISTS_DASHBOARD_ROUTE
-import com.rendox.grocerygenius.feature.grocery_list.GROCERY_LIST_CATEGORY_NESTED_NAV_ROUTE_WITH_ARGS
+import com.rendox.grocerygenius.feature.dashboardscreen.GROCERY_LISTS_DASHBOARD_ROUTE
+import com.rendox.grocerygenius.feature.grocerylist.GROCERY_LIST_CATEGORY_NESTED_NAV_ROUTE_WITH_ARGS
 import com.rendox.grocerygenius.feature.onboarding.ONBOARDING_ROUTE
 import dagger.hilt.android.lifecycle.HiltViewModel
+import javax.inject.Inject
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
-import javax.inject.Inject
 
 @HiltViewModel
 class MainActivityViewModel @Inject constructor(
     userPreferencesRepository: UserPreferencesRepository,
-    changeListVersionsDataSource: ChangeListVersionsDataSource,
+    changeListVersionsDataSource: ChangeListVersionsDataSource
 ) : ViewModel() {
 
     val uiStateFlow = MutableStateFlow<MainActivityUiState?>(null)
@@ -33,7 +33,7 @@ class MainActivityViewModel @Inject constructor(
             val dataHasNotBeenPopulated = listOf(
                 changeListVersions.iconVersion,
                 changeListVersions.categoryVersion,
-                changeListVersions.productVersion,
+                changeListVersions.productVersion
             ).any { checkFirstTimeSync(localVersion = it) }
 
             val startDestinationRoute = when {
@@ -45,7 +45,7 @@ class MainActivityViewModel @Inject constructor(
             uiStateFlow.update {
                 MainActivityUiState(
                     startDestinationRoute = startDestinationRoute,
-                    defaultListId = defaultListId,
+                    defaultListId = defaultListId
                 )
             }
             userPreferencesFlow.collectLatest { userPreferences ->
@@ -53,7 +53,7 @@ class MainActivityViewModel @Inject constructor(
                     uiState?.copy(
                         darkThemeConfig = userPreferences.darkThemeConfig,
                         useSystemAccentColor = userPreferences.useSystemAccentColor,
-                        selectedTheme = userPreferences.selectedTheme,
+                        selectedTheme = userPreferences.selectedTheme
                     )
                 }
             }

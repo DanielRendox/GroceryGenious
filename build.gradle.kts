@@ -6,4 +6,5 @@ plugins {
     alias(libs.plugins.roomPlugin) apply false
     alias(libs.plugins.androidTest) apply false
     alias(libs.plugins.baselineprofile) apply false
+    alias(libs.plugins.ktlint) apply false
 }

@@ -81,10 +81,10 @@ import com.rendox.grocerygenius.ui.components.CustomIconSetting
 import com.rendox.grocerygenius.ui.components.DropDownMenuToggleIcon
 import com.rendox.grocerygenius.ui.components.LazyDropdownMenu
 import com.rendox.grocerygenius.ui.components.TonalDataInput
-import com.rendox.grocerygenius.ui.components.collapsing_toolbar.CollapsingToolbar
-import com.rendox.grocerygenius.ui.components.collapsing_toolbar.CollapsingToolbarScaffoldScrollableState
-import com.rendox.grocerygenius.ui.components.collapsing_toolbar.scroll_behavior.CollapsingToolbarNestedScrollConnection
-import com.rendox.grocerygenius.ui.components.collapsing_toolbar.scroll_behavior.rememberExitUntilCollapsedToolbarState
+import com.rendox.grocerygenius.ui.components.collapsingtoolbar.CollapsingToolbar
+import com.rendox.grocerygenius.ui.components.collapsingtoolbar.CollapsingToolbarScaffoldScrollableState
+import com.rendox.grocerygenius.ui.components.collapsingtoolbar.scrollbehavior.CollapsingToolbarNestedScrollConnection
+import com.rendox.grocerygenius.ui.components.collapsingtoolbar.scrollbehavior.rememberExitUntilCollapsedToolbarState
 import com.rendox.grocerygenius.ui.helpers.ObserveUiEvent
 import com.rendox.grocerygenius.ui.helpers.UiEvent
 import com.rendox.grocerygenius.ui.theme.GroceryGeniusTheme
@@ -96,16 +96,17 @@ import kotlinx.coroutines.launch
 @Composable
 fun SettingsRoute(
     viewModel: SettingsScreenViewModel = hiltViewModel(),
-    navigateBack: () -> Unit = {},
+    navigateBack: () -> Unit = {}
 ) {
     val uiState by viewModel.uiStateFlow.collectAsStateWithLifecycle()
-    val showDynamicColorNotSupportedMessage by viewModel.showDynamicColorNotSupportedMessage.collectAsStateWithLifecycle()
+    val showDynamicColorNotSupportedMessage by viewModel.showDynamicColorNotSupportedMessage
+        .collectAsStateWithLifecycle()
     SettingsScreen(
         modifier = Modifier.fillMaxSize(),
         uiState = uiState,
         showDynamicColorNotSupportedMessage = showDynamicColorNotSupportedMessage,
         onIntent = viewModel::onIntent,
-        navigateBack = navigateBack,
+        navigateBack = navigateBack
     )
 }
 
@@ -115,7 +116,7 @@ private fun SettingsScreen(
     uiState: SettingsScreenState,
     showDynamicColorNotSupportedMessage: UiEvent<Unit>?,
     onIntent: (SettingsScreenIntent) -> Unit,
-    navigateBack: () -> Unit,
+    navigateBack: () -> Unit
 ) {
     var isThemeDropdownExpanded by remember { mutableStateOf(false) }
     var isDefaultListDropdownExpanded by remember { mutableStateOf(false) }
@@ -140,7 +141,7 @@ private fun SettingsScreen(
         CollapsingToolbarNestedScrollConnection(
             toolbarState = toolbarState,
             scrollState = scrollState,
-            coroutineScope = coroutineScope,
+            coroutineScope = coroutineScope
         )
     }
 
@@ -173,7 +174,7 @@ private fun SettingsScreen(
                         text = stringResource(R.string.settings),
                         style = titleStyle.copy(textMotion = TextMotion.Animated),
                         maxLines = 1,
-                        overflow = TextOverflow.Ellipsis,
+                        overflow = TextOverflow.Ellipsis
                     )
                 },
                 expandedTitleFontSize = titleStyle.fontSize,
@@ -182,17 +183,17 @@ private fun SettingsScreen(
                     IconButton(onClick = navigateBack) {
                         Icon(
                             imageVector = Icons.AutoMirrored.Default.ArrowBack,
-                            contentDescription = stringResource(R.string.back),
+                            contentDescription = stringResource(R.string.back)
                         )
                     }
-                },
+                }
             )
 
             if (!uiState.isLoading) {
                 LazyColumn(
                     modifier = Modifier.fillMaxSize(),
                     state = lazyListState,
-                    contentPadding = PaddingValues(bottom = 16.dp),
+                    contentPadding = PaddingValues(bottom = 16.dp)
                 ) {
                     item {
                         SettingsTitle(
@@ -228,7 +229,7 @@ private fun SettingsScreen(
                                         start = 40.dp,
                                         end = 16.dp,
                                         top = 8.dp,
-                                        bottom = 8.dp,
+                                        bottom = 8.dp
                                     ),
                                 useDarkTheme = when (uiState.userPreferences.darkThemeConfig) {
                                     DarkThemeConfig.FOLLOW_SYSTEM -> isSystemInDarkTheme()
@@ -238,7 +239,7 @@ private fun SettingsScreen(
                                 selectedTheme = uiState.userPreferences.selectedTheme,
                                 onSchemeSelected = {
                                     onIntent(SettingsScreenIntent.ChangeColorScheme(it))
-                                },
+                                }
                             )
                         }
                     }
@@ -312,7 +313,7 @@ private fun SettingsScreen(
 @Composable
 fun SettingsTitle(
     modifier: Modifier = Modifier,
-    title: String,
+    title: String
 ) {
     Text(
         modifier = modifier,
@@ -336,7 +337,7 @@ fun DarkThemeConfigSetting(
         icon = {
             Icon(
                 painterResource(R.drawable.day_night),
-                contentDescription = null,
+                contentDescription = null
             )
         },
         trailingComponent = {
@@ -368,7 +369,7 @@ fun DarkThemeConfigSetting(
             ) {
                 Row(
                     modifier = Modifier.padding(vertical = 6.dp, horizontal = 12.dp),
-                    verticalAlignment = Alignment.CenterVertically,
+                    verticalAlignment = Alignment.CenterVertically
                 ) {
                     Text(
                         modifier = Modifier.widthIn(min = 56.dp, max = 136.dp),
@@ -376,7 +377,7 @@ fun DarkThemeConfigSetting(
                         style = MaterialTheme.typography.labelMedium,
                         maxLines = 1,
                         overflow = TextOverflow.Ellipsis,
-                        textAlign = TextAlign.Center,
+                        textAlign = TextAlign.Center
                     )
                     DropDownMenuToggleIcon(expanded = isThemeDropdownExpanded)
                 }
@@ -399,13 +400,13 @@ private fun SystemAccentColorSetting(
         icon = {
             Icon(
                 painterResource(R.drawable.baseline_palette_24),
-                contentDescription = null,
+                contentDescription = null
             )
         },
         trailingComponent = {
             Switch(
                 checked = useSystemAccentColor,
-                onCheckedChange = onUseSystemAccentColorChanged,
+                onCheckedChange = onUseSystemAccentColorChanged
             )
         }
     )
@@ -420,7 +421,7 @@ fun ColorSchemePicker(
 ) {
     Row(
         modifier = modifier,
-        horizontalArrangement = SpaceEvenly,
+        horizontalArrangement = SpaceEvenly
     ) {
         for (scheme in GroceryGeniusColorScheme.entries) {
             val colors = scheme.deriveColorScheme(useDarkTheme)
@@ -430,13 +431,13 @@ fun ColorSchemePicker(
                     .clip(CircleShape)
                     .background(color = colors.primaryContainer)
                     .clickable { onSchemeSelected(scheme) },
-                contentAlignment = Alignment.Center,
+                contentAlignment = Alignment.Center
             ) {
                 if (scheme == selectedTheme) {
                     Icon(
                         imageVector = Icons.Default.Done,
                         contentDescription = null,
-                        tint = colors.onPrimaryContainer,
+                        tint = colors.onPrimaryContainer
                     )
                 }
             }
@@ -458,7 +459,7 @@ private fun OpenLastViewedListSetting(
         icon = {
             Icon(
                 painterResource(id = R.drawable.baseline_history_24),
-                contentDescription = null,
+                contentDescription = null
             )
         },
         trailingComponent = {
@@ -485,7 +486,7 @@ fun DefaultListSetting(
         icon = {
             Icon(
                 imageVector = Icons.Default.Favorite,
-                contentDescription = null,
+                contentDescription = null
             )
         },
         trailingComponent = {
@@ -538,7 +539,7 @@ fun DefaultListSetting(
             ) {
                 Row(
                     modifier = Modifier.padding(vertical = 6.dp, horizontal = 12.dp),
-                    verticalAlignment = Alignment.CenterVertically,
+                    verticalAlignment = Alignment.CenterVertically
                 ) {
                     Text(
                         modifier = Modifier.widthIn(min = 56.dp, max = 136.dp),
@@ -550,7 +551,7 @@ fun DefaultListSetting(
                         style = MaterialTheme.typography.labelMedium,
                         maxLines = 1,
                         overflow = TextOverflow.Ellipsis,
-                        textAlign = TextAlign.Center,
+                        textAlign = TextAlign.Center
                     )
                     DropDownMenuToggleIcon(expanded = isDefaultListDropdownExpanded)
                 }
@@ -565,7 +566,7 @@ private fun CategoriesOrderSetting(
     modifier: Modifier = Modifier,
     categories: List<Category>,
     updateCategories: (List<Category>) -> Unit,
-    onResetCategoriesOrder: () -> Unit,
+    onResetCategoriesOrder: () -> Unit
 ) {
     var bottomSheetIsVisible by remember { mutableStateOf(false) }
     val bottomSheetState = rememberModalBottomSheetState(skipPartiallyExpanded = true)
@@ -585,7 +586,7 @@ private fun CategoriesOrderSetting(
         icon = {
             Icon(
                 painterResource(id = R.drawable.baseline_swap_vert_24),
-                contentDescription = null,
+                contentDescription = null
             )
         },
         trailingComponent = {
@@ -596,7 +597,7 @@ private fun CategoriesOrderSetting(
                         .padding(10.dp),
                     text = stringResource(R.string.reset),
                     style = MaterialTheme.typography.labelMedium,
-                    textAlign = TextAlign.Center,
+                    textAlign = TextAlign.Center
                 )
             }
         }
@@ -607,13 +608,13 @@ private fun CategoriesOrderSetting(
             onDismissRequest = { hideBottomSheet() },
             sheetState = bottomSheetState,
             dragHandle = { BottomSheetDragHandle() },
-            windowInsets = WindowInsets(left = 0, top = 0, right = 0, bottom = 0),
+            windowInsets = WindowInsets(left = 0, top = 0, right = 0, bottom = 0)
         ) {
             Column(modifier = Modifier.fillMaxWidth()) {
                 Text(
                     modifier = Modifier.padding(horizontal = 16.dp, vertical = 8.dp),
                     text = stringResource(R.string.settings_reorder_categories_description),
-                    style = MaterialTheme.typography.labelLarge,
+                    style = MaterialTheme.typography.labelLarge
                 )
                 AndroidView(
                     modifier = Modifier
@@ -623,13 +624,13 @@ private fun CategoriesOrderSetting(
                         RecyclerView(context).apply {
                             layoutParams = ViewGroup.LayoutParams(
                                 ViewGroup.LayoutParams.MATCH_PARENT,
-                                ViewGroup.LayoutParams.WRAP_CONTENT,
+                                ViewGroup.LayoutParams.WRAP_CONTENT
                             )
                             layoutManager = LinearLayoutManager(context)
                             this.adapter = CategoriesRecyclerViewAdapter(
                                 recyclerView = this,
                                 categories = categories,
-                                updateLists = updateCategories,
+                                updateLists = updateCategories
                             )
                         }
                     }
@@ -640,9 +641,7 @@ private fun CategoriesOrderSetting(
 }
 
 @Composable
-private fun GitHubLink(
-    modifier: Modifier = Modifier
-) {
+private fun GitHubLink(modifier: Modifier = Modifier) {
     val uriHandler = LocalUriHandler.current
     CustomIconSetting(
         modifier = modifier
@@ -653,16 +652,14 @@ private fun GitHubLink(
         icon = {
             Icon(
                 painter = painterResource(R.drawable.github_mark),
-                contentDescription = null,
+                contentDescription = null
             )
-        },
+        }
     )
 }
 
 @Composable
-private fun EmailLink(
-    modifier: Modifier = Modifier
-) {
+private fun EmailLink(modifier: Modifier = Modifier) {
     val context = LocalContext.current
     val title = stringResource(R.string.email_link_title)
     val developerEmail = "daniel.rendox@gmail.com"
@@ -681,29 +678,32 @@ private fun EmailLink(
         icon = {
             Icon(
                 painterResource(R.drawable.mail),
-                contentDescription = null,
+                contentDescription = null
             )
-        },
+        }
     )
 }
 
+private const val FREEPIK_ATTRIBUTION_LINK = "https://www.freepik.com/free-vector/" +
+    "tiny-family-grocery-bag-with-healthy-food-parents-kids-fresh-vegetables-flat-illustration_12291304.htm"
+
 @Composable
-private fun FreepikAttribution(
-    modifier: Modifier = Modifier
-) {
+private fun FreepikAttribution(modifier: Modifier = Modifier) {
     val uriHandler = LocalUriHandler.current
     CustomIconSetting(
         modifier = modifier
             .padding(top = 16.dp)
-            .clickable { uriHandler.openUri("https://www.freepik.com/free-vector/tiny-family-grocery-bag-with-healthy-food-parents-kids-fresh-vegetables-flat-illustration_12291304.htm") },
+            .clickable {
+                uriHandler.openUri(FREEPIK_ATTRIBUTION_LINK)
+            },
         title = stringResource(R.string.settings_image_by_freepik_title),
         description = stringResource(R.string.settings_image_by_freepik_description),
         icon = {
             Icon(
                 painterResource(R.drawable.image_icon),
-                contentDescription = null,
+                contentDescription = null
             )
-        },
+        }
     )
 }
 
@@ -718,14 +718,14 @@ fun PreviewSettingsScreen() {
                         userPreferences = UserPreferences(
                             useSystemAccentColor = false,
                             openLastViewedList = false,
-                            selectedTheme = GroceryGeniusColorScheme.YellowColorScheme,
+                            selectedTheme = GroceryGeniusColorScheme.YellowColorScheme
                         ),
-                        isLoading = false,
+                        isLoading = false
                     )
                 },
                 onIntent = {},
                 navigateBack = {},
-                showDynamicColorNotSupportedMessage = null,
+                showDynamicColorNotSupportedMessage = null
             )
         }
     }

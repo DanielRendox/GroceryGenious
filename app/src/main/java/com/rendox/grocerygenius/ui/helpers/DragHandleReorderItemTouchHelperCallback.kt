@@ -2,13 +2,14 @@ package com.rendox.grocerygenius.ui.helpers
 
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.RecyclerView
-import com.rendox.grocerygenius.feature.dashboard_screen.recyclerview.GroceryListAdderItemViewHolder
+import com.rendox.grocerygenius.feature.dashboardscreen.recyclerview.GroceryListAdderItemViewHolder
 
 class DragHandleReorderItemTouchHelperCallback(
     private val onItemMove: (fromPosition: Int, toPosition: Int) -> Unit,
-    private val onClearView: () -> Unit,
+    private val onClearView: () -> Unit
 ) : ItemTouchHelper.SimpleCallback(
-    ItemTouchHelper.UP or ItemTouchHelper.DOWN, 0
+    ItemTouchHelper.UP or ItemTouchHelper.DOWN,
+    0
 ) {
     override fun isLongPressDragEnabled() = false
 
@@ -35,11 +36,16 @@ class DragHandleReorderItemTouchHelperCallback(
         return true
     }
 
-    override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
-
+    override fun onSwiped(
+        viewHolder: RecyclerView.ViewHolder,
+        direction: Int
+    ) {
     }
 
-    override fun clearView(recyclerView: RecyclerView, viewHolder: RecyclerView.ViewHolder) {
+    override fun clearView(
+        recyclerView: RecyclerView,
+        viewHolder: RecyclerView.ViewHolder
+    ) {
         onClearView()
         super.clearView(recyclerView, viewHolder)
     }

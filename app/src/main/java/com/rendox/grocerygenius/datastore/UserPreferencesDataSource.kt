@@ -6,12 +6,12 @@ import androidx.datastore.preferences.core.booleanPreferencesKey
 import androidx.datastore.preferences.core.edit
 import androidx.datastore.preferences.core.intPreferencesKey
 import androidx.datastore.preferences.core.stringPreferencesKey
-import com.rendox.grocerygenius.model.DarkThemeConfig
 import com.rendox.grocerygenius.model.DEFAULT_USER_PREFERENCES
+import com.rendox.grocerygenius.model.DarkThemeConfig
 import com.rendox.grocerygenius.model.GroceryGeniusColorScheme
 import com.rendox.grocerygenius.model.UserPreferences
-import kotlinx.coroutines.flow.map
 import javax.inject.Inject
+import kotlinx.coroutines.flow.map
 
 class UserPreferencesDataSource @Inject constructor(
     private val dataStore: DataStore<Preferences>

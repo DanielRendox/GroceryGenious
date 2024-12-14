@@ -23,7 +23,7 @@ import com.rendox.grocerygenius.model.Category
 
 class CategoryViewHolder(
     private val composeView: ComposeView,
-    private val onDrag: (RecyclerView.ViewHolder) -> Unit,
+    private val onDrag: (RecyclerView.ViewHolder) -> Unit
 ) : RecyclerView.ViewHolder(composeView) {
 
     fun bind(category: Category) {
@@ -33,7 +33,7 @@ class CategoryViewHolder(
                     .fillMaxWidth()
                     .padding(horizontal = 8.dp),
                 category = category,
-                onDrag = { onDrag(this) },
+                onDrag = { onDrag(this) }
             )
         }
     }
@@ -43,36 +43,36 @@ class CategoryViewHolder(
 private fun CategoryItem(
     modifier: Modifier = Modifier,
     category: Category,
-    onDrag: () -> Unit,
+    onDrag: () -> Unit
 ) {
     Row(
         modifier = modifier,
-        verticalAlignment = Alignment.CenterVertically,
+        verticalAlignment = Alignment.CenterVertically
     ) {
         Text(
             modifier = Modifier
                 .padding(
                     horizontal = 8.dp,
-                    vertical = 12.dp,
+                    vertical = 12.dp
                 )
                 .weight(1f),
             text = category.name,
             maxLines = 1,
-            overflow = TextOverflow.Ellipsis,
+            overflow = TextOverflow.Ellipsis
         )
         Box(
             modifier = Modifier
                 .draggable(
                     state = rememberDraggableState { onDrag() },
                     startDragImmediately = true,
-                    orientation = Orientation.Vertical,
+                    orientation = Orientation.Vertical
                 ),
-            contentAlignment = Alignment.Center,
+            contentAlignment = Alignment.Center
         ) {
             Icon(
                 modifier = Modifier.padding(8.dp),
                 painter = painterResource(id = R.drawable.baseline_drag_handle_24),
-                contentDescription = stringResource(id = R.string.drag_handle),
+                contentDescription = stringResource(id = R.string.drag_handle)
             )
         }
     }

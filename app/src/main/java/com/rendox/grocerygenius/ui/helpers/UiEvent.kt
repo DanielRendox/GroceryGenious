@@ -10,8 +10,8 @@ interface UiEvent<T> {
 
 @Composable
 fun <T> ObserveUiEvent(
-    event : UiEvent<T>?,
-    onEvent: suspend (T) -> Unit,
+    event: UiEvent<T>?,
+    onEvent: suspend (T) -> Unit
 ) {
     LaunchedEffect(event) {
         if (event != null) {

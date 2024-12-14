@@ -5,7 +5,7 @@ import androidx.room.ForeignKey
 import androidx.room.Index
 import androidx.room.PrimaryKey
 import com.rendox.grocerygenius.database.category.CategoryEntity
-import com.rendox.grocerygenius.database.grocery_icon.IconEntity
+import com.rendox.grocerygenius.database.groceryicon.IconEntity
 
 @Entity(
     foreignKeys = [
@@ -14,19 +14,19 @@ import com.rendox.grocerygenius.database.grocery_icon.IconEntity
             parentColumns = ["uniqueFileName"],
             childColumns = ["iconFileName"],
             onDelete = ForeignKey.SET_NULL,
-            onUpdate = ForeignKey.CASCADE,
+            onUpdate = ForeignKey.CASCADE
         ),
         ForeignKey(
             entity = CategoryEntity::class,
             parentColumns = ["id"],
             childColumns = ["categoryId"],
             onDelete = ForeignKey.SET_NULL,
-            onUpdate = ForeignKey.CASCADE,
-        ),
+            onUpdate = ForeignKey.CASCADE
+        )
     ],
     indices = [
         Index(value = ["iconFileName"]),
-        Index(value = ["categoryId"]),
+        Index(value = ["categoryId"])
     ]
 )
 data class ProductEntity(
@@ -34,5 +34,5 @@ data class ProductEntity(
     val name: String,
     val isDefault: Boolean,
     val iconFileName: String?,
-    val categoryId: String?,
+    val categoryId: String?
 )

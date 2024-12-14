@@ -10,17 +10,17 @@ import androidx.compose.ui.graphics.Color
 @Immutable
 data class ExtendedColors(
     val redAccent: Color,
-    val onRedAccent: Color,
+    val onRedAccent: Color
 )
 
 val LightExtendedColors = ExtendedColors(
     redAccent = Color(0xFFDD5B4B),
-    onRedAccent = Color(0xFFFFFFFF),
+    onRedAccent = Color(0xFFFFFFFF)
 )
 
 val DarkExtendedColors = ExtendedColors(
     redAccent = Color(0xFFFF988D),
-    onRedAccent = Color(0xFF490003),
+    onRedAccent = Color(0xFF490003)
 )
 
 val LocalExtendedColors = compositionLocalOf { LightExtendedColors }

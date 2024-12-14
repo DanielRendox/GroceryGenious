@@ -13,7 +13,7 @@ fun CombinedGrocery.asExternalModel() = Grocery(
     icon = icon,
     category = category,
     purchasedLastModified = purchasedLastModified,
-    productIsDefault = productIsDefault,
+    productIsDefault = productIsDefault
 )
 
 val CombinedGrocery.icon
@@ -21,7 +21,7 @@ val CombinedGrocery.icon
         iconId != null && iconFilePath != null -> IconReference(
             uniqueFileName = iconId,
             filePath = iconFilePath,
-            name = this.name,
+            name = this.name
         )
 
         else -> null
@@ -29,12 +29,12 @@ val CombinedGrocery.icon
 
 val CombinedGrocery.category
     get() = when {
-        categoryId != null
-                && categoryName != null
-                && categorySortingPriority != null -> Category(
+        categoryId != null &&
+            categoryName != null &&
+            categorySortingPriority != null -> Category(
             id = categoryId,
             name = categoryName,
-            sortingPriority = categorySortingPriority,
+            sortingPriority = categorySortingPriority
         )
 
         else -> null

@@ -8,5 +8,5 @@ data class ProductNetwork(
     val name: String,
     val iconId: String?,
     val categoryId: String?,
-    val isDefault: Boolean,
+    val isDefault: Boolean
 )

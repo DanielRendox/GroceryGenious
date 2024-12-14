@@ -3,7 +3,7 @@ package com.rendox.grocerygenius.database.grocery
 import androidx.room.Entity
 import androidx.room.ForeignKey
 import androidx.room.Index
-import com.rendox.grocerygenius.database.grocery_list.GroceryListEntity
+import com.rendox.grocerygenius.database.grocerylist.GroceryListEntity
 import com.rendox.grocerygenius.database.product.ProductEntity
 
 @Entity(
@@ -13,20 +13,20 @@ import com.rendox.grocerygenius.database.product.ProductEntity
             parentColumns = ["id"],
             childColumns = ["productId"],
             onDelete = ForeignKey.CASCADE,
-            onUpdate = ForeignKey.CASCADE,
+            onUpdate = ForeignKey.CASCADE
         ),
         ForeignKey(
             entity = GroceryListEntity::class,
             parentColumns = ["id"],
             childColumns = ["groceryListId"],
             onDelete = ForeignKey.CASCADE,
-            onUpdate = ForeignKey.CASCADE,
-        ),
+            onUpdate = ForeignKey.CASCADE
+        )
     ],
     primaryKeys = ["productId", "groceryListId"],
     indices = [
         Index(value = ["productId"]),
-        Index(value = ["groceryListId"]),
+        Index(value = ["groceryListId"])
     ]
 )
 data class GroceryEntity(
@@ -34,5 +34,5 @@ data class GroceryEntity(
     val groceryListId: String,
     val description: String?,
     val purchased: Boolean,
-    val purchasedLastModified: Long,
+    val purchasedLastModified: Long
 )

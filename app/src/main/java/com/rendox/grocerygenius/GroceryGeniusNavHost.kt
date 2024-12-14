@@ -5,15 +5,15 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.rememberNavController
-import com.rendox.grocerygenius.feature.dashboard_screen.GROCERY_LISTS_DASHBOARD_ROUTE
-import com.rendox.grocerygenius.feature.dashboard_screen.groceryListsDashboardScreen
-import com.rendox.grocerygenius.feature.dashboard_screen.navigateToGroceryListsDashboard
-import com.rendox.grocerygenius.feature.grocery_list.GROCERY_LIST_CATEGORY_NESTED_NAV_ROUTE_WITH_ARGS
-import com.rendox.grocerygenius.feature.grocery_list.GROCERY_LIST_ROUTE
-import com.rendox.grocerygenius.feature.grocery_list.groceryListNestedNavigation
-import com.rendox.grocerygenius.feature.grocery_list.navigateToGroceryList
-import com.rendox.grocerygenius.feature.icon_picker_screen.iconPickerScreen
-import com.rendox.grocerygenius.feature.icon_picker_screen.navigateToIconPicker
+import com.rendox.grocerygenius.feature.dashboardscreen.GROCERY_LISTS_DASHBOARD_ROUTE
+import com.rendox.grocerygenius.feature.dashboardscreen.groceryListsDashboardScreen
+import com.rendox.grocerygenius.feature.dashboardscreen.navigateToGroceryListsDashboard
+import com.rendox.grocerygenius.feature.grocerylist.GROCERY_LIST_CATEGORY_NESTED_NAV_ROUTE_WITH_ARGS
+import com.rendox.grocerygenius.feature.grocerylist.GROCERY_LIST_ROUTE
+import com.rendox.grocerygenius.feature.grocerylist.groceryListNestedNavigation
+import com.rendox.grocerygenius.feature.grocerylist.navigateToGroceryList
+import com.rendox.grocerygenius.feature.iconpicker.iconPickerScreen
+import com.rendox.grocerygenius.feature.iconpicker.navigateToIconPicker
 import com.rendox.grocerygenius.feature.onboarding.ONBOARDING_ROUTE
 import com.rendox.grocerygenius.feature.onboarding.onboardingScreen
 import com.rendox.grocerygenius.feature.settings.navigateToSettings
@@ -23,13 +23,13 @@ import com.rendox.grocerygenius.feature.settings.settingsScreen
 fun GroceryGeniusNavHost(
     modifier: Modifier = Modifier,
     startDestination: String = GROCERY_LISTS_DASHBOARD_ROUTE,
-    defaultGroceryListId: String? = null,
+    defaultGroceryListId: String? = null
 ) {
     val navController = rememberNavController()
     NavHost(
         modifier = modifier.fillMaxSize(),
         navController = navController,
-        startDestination = startDestination,
+        startDestination = startDestination
     ) {
         groceryListsDashboardScreen(
             navigateToGroceryListScreen = { groceryListId ->
@@ -41,7 +41,7 @@ fun GroceryGeniusNavHost(
                 if (navController.currentDestination?.route == GROCERY_LISTS_DASHBOARD_ROUTE) {
                     navController.navigateToSettings()
                 }
-            },
+            }
         )
         groceryListNestedNavigation(
             navController = navController,
@@ -62,15 +62,15 @@ fun GroceryGeniusNavHost(
             navigateToIconPicker = { editProductId, groceryListId ->
                 navController.navigateToIconPicker(
                     editProductId = editProductId,
-                    groceryListId = groceryListId,
+                    groceryListId = groceryListId
                 )
-            },
+            }
         )
         settingsScreen(
-            navigateBack = { navController.popBackStack() },
+            navigateBack = { navController.popBackStack() }
         )
         iconPickerScreen(
-            navigateBack = { navController.popBackStack() },
+            navigateBack = { navController.popBackStack() }
         )
         onboardingScreen(
             closeOnboarding = {
@@ -79,7 +79,7 @@ fun GroceryGeniusNavHost(
                         popUpTo(ONBOARDING_ROUTE) { inclusive = true }
                     }
                 }
-            },
+            }
         )
     }
 }

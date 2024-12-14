@@ -17,6 +17,7 @@ hilt = "2.51"
 junit = "1.1.5"
 junitBom = "5.10.2"
 kotlin = "1.9.23"
+ktlint = "12.1.2"
 material = "1.12.0"
 moshi = "1.15.1"
 okhttp = "4.12.0"
@@ -83,6 +84,7 @@ androidx-profileinstaller = { group = "androidx.profileinstaller", name = "profi
 androidApplication = { id = "com.android.application", version.ref = "agp" }
 hiltPlugin = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
 jetbrainsKotlin = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+ktlint = { id = "org.jlleitschuh.gradle.ktlint", version.ref = "ktlint" }
 roomPlugin = { id = "androidx.room", version.ref = "room" }
 androidTest = { id = "com.android.test", version.ref = "agp" }
 baselineprofile = { id = "androidx.baselineprofile", version.ref = "baselineprofile" }

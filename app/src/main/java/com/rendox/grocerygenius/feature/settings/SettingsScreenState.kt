@@ -9,5 +9,5 @@ data class SettingsScreenState(
     val userPreferences: UserPreferences = DEFAULT_USER_PREFERENCES,
     val groceryLists: List<GroceryList> = emptyList(),
     val categories: List<Category> = emptyList(),
-    val isLoading: Boolean = true,
+    val isLoading: Boolean = true
 )

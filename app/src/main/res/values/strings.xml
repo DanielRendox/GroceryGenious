@@ -51,6 +51,8 @@
     <string name="settings_image_by_freepik_title">Image by pch.vector on Freepik</string>
     <string name="settings_image_by_freepik_description">The image displayed on grocery list screen was created by pch.vector</string>
     <string name="settings_language">App Language</string>
+    <string name="settings_language_picker_dialog_title">Choose a Language</string>
+    <string name="settings_system_language">System</string>
     <!-- IconPickerScreen -->
     <string name="icon_picker_screen_title">Choose icon</string>
     <string name="icon_picker_search_field_placeholder">Search an icon</string>

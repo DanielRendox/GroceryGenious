@@ -23,8 +23,10 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.layout.widthIn
 import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material.icons.filled.Done
@@ -36,6 +38,7 @@ import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.ModalBottomSheet
+import androidx.compose.material3.RadioButton
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.SnackbarHost
 import androidx.compose.material3.SnackbarHostState
@@ -58,6 +61,7 @@ import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.platform.LocalUriHandler
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextMotion
 import androidx.compose.ui.text.style.TextOverflow
@@ -92,6 +96,7 @@ import com.rendox.grocerygenius.ui.theme.GroceryGeniusTheme
 import com.rendox.grocerygenius.ui.theme.TopAppBarMediumHeight
 import com.rendox.grocerygenius.ui.theme.TopAppBarSmallHeight
 import com.rendox.grocerygenius.ui.theme.deriveColorScheme
+import java.util.*
 import kotlinx.coroutines.launch
 
 @Composable
@@ -253,6 +258,8 @@ private fun SettingsScreen(
                     item {
                         LanguageSetting(
                             supportedLanguages = uiState.supportedLanguages,
+                            onLanguageClick = { println("SettingsScreen selectedLanguage is $it") },
+                            selectedLanguageCode = null,
                         )
                     }
                     item {
@@ -646,15 +653,27 @@ private fun CategoriesOrderSetting(
     }
 }
 
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 private fun LanguageSetting(
     modifier: Modifier = Modifier,
     supportedLanguages: List<AppLanguage>,
+    selectedLanguageCode: String?,
+    onLanguageClick: (AppLanguage?) -> Unit,
 ) {
+    var bottomSheetIsVisible by remember { mutableStateOf(false) }
+    val bottomSheetState = rememberModalBottomSheetState(skipPartiallyExpanded = true)
+    val coroutineScope = rememberCoroutineScope()
+    val hideBottomSheet = {
+        coroutineScope
+            .launch { bottomSheetState.hide() }
+            .invokeOnCompletion { bottomSheetIsVisible = false }
+    }
+
     CustomIconSetting(
         modifier = modifier
             .padding(top = 16.dp)
-            .clickable { println("LanguageSetting clicked; supportedLanguages = $supportedLanguages") },
+            .clickable { bottomSheetIsVisible = true },
         title = stringResource(R.string.settings_language),
         icon = {
             Icon(
@@ -663,6 +682,120 @@ private fun LanguageSetting(
             )
         }
     )
+
+    if (bottomSheetIsVisible) {
+        ModalBottomSheet(
+            onDismissRequest = { hideBottomSheet() },
+            sheetState = bottomSheetState,
+            dragHandle = { BottomSheetDragHandle() },
+            windowInsets = WindowInsets(left = 0, top = 0, right = 0, bottom = 0)
+        ) {
+            ListOfLanguages(
+                modifier = Modifier.fillMaxWidth(),
+                supportedLanguages = supportedLanguages,
+                selectedLanguageCode = selectedLanguageCode,
+                onLanguageClick = onLanguageClick
+            )
+        }
+    }
+}
+
+@Composable
+private fun ListOfLanguages(
+    modifier: Modifier = Modifier,
+    supportedLanguages: List<AppLanguage>,
+    selectedLanguageCode: String?,
+    onLanguageClick: (AppLanguage?) -> Unit,
+) {
+    LazyColumn(
+        modifier = modifier,
+        contentPadding = PaddingValues(bottom = 22.dp),
+    ) {
+        item {
+            Text(
+                modifier = Modifier.padding(top = 16.dp, bottom = 16.dp, start = 16.dp),
+                text = stringResource(R.string.settings_language_picker_dialog_title),
+                style = MaterialTheme.typography.titleLarge.copy(fontWeight = FontWeight.W400),
+            )
+        }
+        item {
+            LanguageItem(
+                isSelected = selectedLanguageCode == null,
+                onLanguageClick = { onLanguageClick(null) },
+                displayName = stringResource(R.string.settings_system_language),
+            )
+        }
+        items(
+            // limit the number of items to 13 as the UI currently cannot accommodate more
+            // this code should be changed if the number of supported languages reaches 13 and more
+            items = supportedLanguages .take(13),
+            key = { it.languageCode }
+        ) { language ->
+            // Display the language name in its native form
+            // (e.g., "Español" for Spanish, "Українська" for Ukrainian)
+            val locale = Locale(language.languageCode)
+            val nativeLanguageName = locale.getDisplayLanguage(locale)
+            LanguageItem(
+                isSelected = language.languageCode == selectedLanguageCode,
+                onLanguageClick = { onLanguageClick(language) },
+                displayName = nativeLanguageName,
+            )
+        }
+    }
+}
+
+@Composable
+private fun LanguageItem(
+    modifier: Modifier = Modifier,
+    isSelected: Boolean,
+    onLanguageClick: () -> Unit,
+    displayName: String,
+) {
+    Row(
+        modifier = modifier
+            .fillMaxWidth()
+            .padding(horizontal = 16.dp)
+            .clip(shape = RoundedCornerShape(8.dp))
+            .then(
+                if (isSelected) {
+                    Modifier.background(color = MaterialTheme.colorScheme.secondaryContainer)
+                } else {
+                    Modifier
+                }
+            )
+            .clickable(onClick = onLanguageClick),
+        verticalAlignment = Alignment.CenterVertically,
+    ) {
+        RadioButton(selected = isSelected, onClick = onLanguageClick)
+        Text(text = displayName)
+    }
+}
+
+val SAMPLE_LANGUAGE_LIST = listOf(
+    AppLanguage(languageCode = "en", partiallySupported = false),  // English
+    AppLanguage(languageCode = "es", partiallySupported = false),  // Spanish
+    AppLanguage(languageCode = "fr", partiallySupported = false),  // French
+    AppLanguage(languageCode = "de", partiallySupported = false),  // German
+    AppLanguage(languageCode = "it", partiallySupported = true),   // Italian (partially supported)
+    AppLanguage(languageCode = "ja", partiallySupported = false),  // Japanese
+    AppLanguage(languageCode = "zh", partiallySupported = true),   // Chinese (partially supported)
+    AppLanguage(languageCode = "ar", partiallySupported = false),   // Arabic
+
+)
+
+@Preview
+@Composable
+private fun ListOfLanguagesPreview() {
+    GroceryGeniusTheme {
+        Surface {
+            ListOfLanguages(
+                modifier = Modifier.fillMaxSize(),
+                supportedLanguages = SAMPLE_LANGUAGE_LIST,
+                onLanguageClick = {},
+                selectedLanguageCode = null,
+            )
+        }
+    }
 }
 
 @Composable

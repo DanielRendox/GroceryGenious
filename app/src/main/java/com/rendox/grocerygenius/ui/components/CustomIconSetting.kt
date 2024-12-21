@@ -6,6 +6,7 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.sizeIn
 import androidx.compose.foundation.layout.width
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Lock
@@ -28,39 +29,38 @@ fun CustomIconSetting(
     icon: @Composable (() -> Unit)? = null,
     trailingComponent: @Composable (() -> Unit)? = null
 ) {
-    Column(modifier = modifier) {
-        Row(
-            modifier = Modifier
-                .padding(start = 16.dp, end = 16.dp)
-                .fillMaxWidth(),
-            verticalAlignment = Alignment.CenterVertically
-        ) {
-            if (icon != null) {
-                Box(
-                    modifier = Modifier
-                        .padding(end = 16.dp)
-                        .size(24.dp)
-                ) {
-                    icon()
-                }
-            }
-            Column(
+    Row(
+        modifier = modifier
+            .sizeIn(minHeight = 36.dp)
+            .padding(start = 16.dp, end = 16.dp)
+            .fillMaxWidth(),
+        verticalAlignment = Alignment.CenterVertically
+    ) {
+        if (icon != null) {
+            Box(
                 modifier = Modifier
-                    .weight(1f)
                     .padding(end = 16.dp)
+                    .size(24.dp)
             ) {
-                Text(text = title)
-                description?.let {
-                    Text(
-                        modifier = Modifier.padding(top = 4.dp),
-                        text = it,
-                        style = MaterialTheme.typography.bodySmall,
-                        color = MaterialTheme.colorScheme.onSurfaceVariant
-                    )
-                }
+                icon()
             }
-            trailingComponent?.let { it() }
         }
+        Column(
+            modifier = Modifier
+                .weight(1f)
+                .padding(end = 16.dp)
+        ) {
+            Text(text = title)
+            description?.let {
+                Text(
+                    modifier = Modifier.padding(top = 4.dp),
+                    text = it,
+                    style = MaterialTheme.typography.bodySmall,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant
+                )
+            }
+        }
+        trailingComponent?.let { it() }
     }
 }
 
@@ -69,7 +69,9 @@ fun CustomIconSetting(
 private fun CustomIconSettingPreview() {
     Surface {
         CustomIconSetting(
-            modifier = Modifier.width(350.dp).padding(vertical = 16.dp),
+            modifier = Modifier
+                .width(350.dp)
+                .padding(vertical = 16.dp),
             title = "Enhanced security",
             description = "Enable this setting to protect your account",
             icon = {

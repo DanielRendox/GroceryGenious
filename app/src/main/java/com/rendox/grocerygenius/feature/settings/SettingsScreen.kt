@@ -650,7 +650,7 @@ private fun CategoriesOrderSetting(
 private fun LanguageSetting(
     modifier: Modifier = Modifier,
     supportedLanguages: List<AppLanguage>,
-    ) {
+) {
     CustomIconSetting(
         modifier = modifier
             .padding(top = 16.dp)

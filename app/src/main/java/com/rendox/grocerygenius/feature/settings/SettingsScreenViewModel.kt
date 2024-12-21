@@ -9,6 +9,7 @@ import com.rendox.grocerygenius.model.AppLanguage
 import com.rendox.grocerygenius.ui.helpers.UiEvent
 import com.rendox.grocerygenius.ui.theme.dynamicColorIsSupported
 import dagger.hilt.android.lifecycle.HiltViewModel
+import java.util.Locale
 import javax.inject.Inject
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
@@ -17,6 +18,17 @@ import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
+
+private val sampleLanguageList = listOf(
+    AppLanguage(languageCode = "en", partiallySupported = false),  // English
+    AppLanguage(languageCode = "es", partiallySupported = false),  // Spanish
+    AppLanguage(languageCode = "fr", partiallySupported = false),  // French
+    AppLanguage(languageCode = "de", partiallySupported = false),  // German
+    AppLanguage(languageCode = "it", partiallySupported = true),   // Italian (partially supported)
+    AppLanguage(languageCode = "ja", partiallySupported = false),  // Japanese
+    AppLanguage(languageCode = "zh", partiallySupported = true),   // Chinese (partially supported)
+    AppLanguage(languageCode = "ar", partiallySupported = false)   // Arabic
+)
 
 @HiltViewModel
 class SettingsScreenViewModel @Inject constructor(
@@ -39,16 +51,9 @@ class SettingsScreenViewModel @Inject constructor(
                     categories = categoryRepository.getAllCategories()
                         .map { categories -> categories.sortedBy { it.sortingPriority } }
                         .first(),
-                    supportedLanguages = listOf(
-                        AppLanguage(languageCode = "en", partiallySupported = false),  // English
-                        AppLanguage(languageCode = "es", partiallySupported = false),  // Spanish
-                        AppLanguage(languageCode = "fr", partiallySupported = false),  // French
-                        AppLanguage(languageCode = "de", partiallySupported = false),  // German
-                        AppLanguage(languageCode = "it", partiallySupported = true),   // Italian (partially supported)
-                        AppLanguage(languageCode = "ja", partiallySupported = false),  // Japanese
-                        AppLanguage(languageCode = "zh", partiallySupported = true),   // Chinese (partially supported)
-                        AppLanguage(languageCode = "ar", partiallySupported = false)   // Arabic
-                    )
+                    supportedLanguages = sampleLanguageList.sortedBy {
+                        Locale(it.languageCode).getDisplayLanguage(Locale.ENGLISH)
+                    }
                 )
             }
             userPreferencesRepository.userPreferencesFlow.collectLatest { userPreferences ->

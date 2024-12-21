@@ -5,6 +5,7 @@ import androidx.lifecycle.viewModelScope
 import com.rendox.grocerygenius.data.category.CategoryRepository
 import com.rendox.grocerygenius.data.grocerylist.GroceryListRepository
 import com.rendox.grocerygenius.data.userpreferences.UserPreferencesRepository
+import com.rendox.grocerygenius.model.AppLanguage
 import com.rendox.grocerygenius.ui.helpers.UiEvent
 import com.rendox.grocerygenius.ui.theme.dynamicColorIsSupported
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -37,7 +38,17 @@ class SettingsScreenViewModel @Inject constructor(
                     groceryLists = groceryListRepository.getAllGroceryLists().first(),
                     categories = categoryRepository.getAllCategories()
                         .map { categories -> categories.sortedBy { it.sortingPriority } }
-                        .first()
+                        .first(),
+                    supportedLanguages = listOf(
+                        AppLanguage(languageCode = "en", partiallySupported = false),  // English
+                        AppLanguage(languageCode = "es", partiallySupported = false),  // Spanish
+                        AppLanguage(languageCode = "fr", partiallySupported = false),  // French
+                        AppLanguage(languageCode = "de", partiallySupported = false),  // German
+                        AppLanguage(languageCode = "it", partiallySupported = true),   // Italian (partially supported)
+                        AppLanguage(languageCode = "ja", partiallySupported = false),  // Japanese
+                        AppLanguage(languageCode = "zh", partiallySupported = true),   // Chinese (partially supported)
+                        AppLanguage(languageCode = "ar", partiallySupported = false)   // Arabic
+                    )
                 )
             }
             userPreferencesRepository.userPreferencesFlow.collectLatest { userPreferences ->

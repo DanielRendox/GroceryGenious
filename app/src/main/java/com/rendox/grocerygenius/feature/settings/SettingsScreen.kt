@@ -71,6 +71,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.rendox.grocerygenius.R
 import com.rendox.grocerygenius.feature.settings.categories.recyclerview.CategoriesRecyclerViewAdapter
+import com.rendox.grocerygenius.model.AppLanguage
 import com.rendox.grocerygenius.model.Category
 import com.rendox.grocerygenius.model.DarkThemeConfig
 import com.rendox.grocerygenius.model.GroceryGeniusColorScheme
@@ -247,6 +248,11 @@ private fun SettingsScreen(
                         SettingsTitle(
                             modifier = Modifier.padding(start = 16.dp, top = 16.dp),
                             title = stringResource(R.string.settings_preferences)
+                        )
+                    }
+                    item {
+                        LanguageSetting(
+                            supportedLanguages = uiState.supportedLanguages,
                         )
                     }
                     item {
@@ -638,6 +644,25 @@ private fun CategoriesOrderSetting(
             }
         }
     }
+}
+
+@Composable
+private fun LanguageSetting(
+    modifier: Modifier = Modifier,
+    supportedLanguages: List<AppLanguage>,
+    ) {
+    CustomIconSetting(
+        modifier = modifier
+            .padding(top = 16.dp)
+            .clickable { println("LanguageSetting clicked; supportedLanguages = $supportedLanguages") },
+        title = stringResource(R.string.settings_language),
+        icon = {
+            Icon(
+                painter = painterResource(R.drawable.baseline_g_translate_24),
+                contentDescription = null,
+            )
+        }
+    )
 }
 
 @Composable

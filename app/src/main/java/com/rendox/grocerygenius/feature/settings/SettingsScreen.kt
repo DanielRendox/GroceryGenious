@@ -780,7 +780,6 @@ val SAMPLE_LANGUAGE_LIST = listOf(
     AppLanguage(languageCode = "ja", partiallySupported = false),  // Japanese
     AppLanguage(languageCode = "zh", partiallySupported = true),   // Chinese (partially supported)
     AppLanguage(languageCode = "ar", partiallySupported = false),   // Arabic
-
 )
 
 @Preview

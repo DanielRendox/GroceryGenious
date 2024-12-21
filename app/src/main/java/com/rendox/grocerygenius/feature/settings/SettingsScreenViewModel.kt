@@ -4,6 +4,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.rendox.grocerygenius.data.category.CategoryRepository
 import com.rendox.grocerygenius.data.grocerylist.GroceryListRepository
+import com.rendox.grocerygenius.data.language.LanguageRepositoryImpl
 import com.rendox.grocerygenius.data.userpreferences.UserPreferencesRepository
 import com.rendox.grocerygenius.ui.helpers.UiEvent
 import com.rendox.grocerygenius.ui.theme.dynamicColorIsSupported
@@ -22,7 +23,8 @@ import kotlinx.coroutines.launch
 class SettingsScreenViewModel @Inject constructor(
     private val userPreferencesRepository: UserPreferencesRepository,
     groceryListRepository: GroceryListRepository,
-    private val categoryRepository: CategoryRepository
+    private val categoryRepository: CategoryRepository,
+    private val languageRepository: LanguageRepositoryImpl,
 ) : ViewModel() {
 
     private val _uiStateFlow = MutableStateFlow(SettingsScreenState())
@@ -39,7 +41,7 @@ class SettingsScreenViewModel @Inject constructor(
                     categories = categoryRepository.getAllCategories()
                         .map { categories -> categories.sortedBy { it.sortingPriority } }
                         .first(),
-                    supportedLanguages = SAMPLE_LANGUAGE_LIST.sortedBy {
+                    supportedLanguages = languageRepository.getSupportedLanguages().sortedBy {
                         Locale(it.languageCode).getDisplayLanguage(Locale.ENGLISH)
                     }
                 )

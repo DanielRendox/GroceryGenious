@@ -1,6 +1,7 @@
 package com.rendox.grocerygenius.network
 
 import com.rendox.grocerygenius.network.model.CategoryNetwork
+import com.rendox.grocerygenius.network.model.LanguageNetwork
 import com.rendox.grocerygenius.network.model.NetworkChangeList
 import com.rendox.grocerygenius.network.model.ProductNetwork
 import okhttp3.ResponseBody
@@ -31,4 +32,7 @@ interface GitHubApi {
 
     @GET("product/default_products_change_list.json")
     suspend fun getProductsChangeList(): List<NetworkChangeList>
+
+    @GET("languages_supported.json")
+    suspend fun getSupportedLanguages(): List<LanguageNetwork>
 }

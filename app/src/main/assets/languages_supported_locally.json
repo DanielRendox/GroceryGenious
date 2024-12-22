@@ -1,0 +1,38 @@
+[
+  {
+    "languageCode": "ar",
+    "partiallySupported": true
+  },
+  {
+    "languageCode": "fr",
+    "partiallySupported": false
+  },
+  {
+    "languageCode": "de",
+    "partiallySupported": false
+  },
+  {
+    "languageCode": "br",
+    "partiallySupported": false
+  },
+  {
+    "languageCode": "ru",
+    "partiallySupported": false
+  },
+  {
+    "languageCode": "es",
+    "partiallySupported": true
+  },
+  {
+    "languageCode": "se",
+    "partiallySupported": true
+  },
+  {
+    "languageCode": "tr",
+    "partiallySupported": true
+  },
+  {
+    "languageCode": "uk",
+    "partiallySupported": false
+  }
+]

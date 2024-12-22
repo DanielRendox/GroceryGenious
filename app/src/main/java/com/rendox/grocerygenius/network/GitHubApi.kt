@@ -33,6 +33,6 @@ interface GitHubApi {
     @GET("product/default_products_change_list.json")
     suspend fun getProductsChangeList(): List<NetworkChangeList>
 
-    @GET("languages_supported.json")
+    @GET("languages_supported_locally.json")
     suspend fun getSupportedLanguages(): List<LanguageNetwork>
 }

@@ -738,7 +738,7 @@ private fun ListOfLanguages(
             LanguageItem(
                 isSelected = language.languageCode == selectedLanguageCode,
                 onLanguageClick = { onLanguageClick(language) },
-                displayName = nativeLanguageName,
+                displayName = nativeLanguageName.replaceFirstChar { it.titlecase() },
             )
         }
     }
@@ -771,7 +771,7 @@ private fun LanguageItem(
     }
 }
 
-val SAMPLE_LANGUAGE_LIST = listOf(
+private val SAMPLE_LANGUAGE_LIST = listOf(
     AppLanguage(languageCode = "en", partiallySupported = false),  // English
     AppLanguage(languageCode = "es", partiallySupported = false),  // Spanish
     AppLanguage(languageCode = "fr", partiallySupported = false),  // French

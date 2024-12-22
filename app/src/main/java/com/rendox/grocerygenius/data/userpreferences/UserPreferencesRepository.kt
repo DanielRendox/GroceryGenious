@@ -1,5 +1,6 @@
 package com.rendox.grocerygenius.data.userpreferences
 
+import com.rendox.grocerygenius.model.AppLanguage
 import com.rendox.grocerygenius.model.DarkThemeConfig
 import com.rendox.grocerygenius.model.GroceryGeniusColorScheme
 import com.rendox.grocerygenius.model.UserPreferences
@@ -15,4 +16,5 @@ interface UserPreferencesRepository {
     suspend fun updateOpenLastViewedList(openLastViewedList: Boolean)
     suspend fun updateSelectedTheme(selectedTheme: GroceryGeniusColorScheme)
     suspend fun getGroceryListIdToOpenOnStartup(): String?
+    suspend fun updateLanguagePreference(language: AppLanguage?)
 }

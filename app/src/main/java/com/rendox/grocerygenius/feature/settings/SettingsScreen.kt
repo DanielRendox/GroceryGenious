@@ -258,8 +258,8 @@ private fun SettingsScreen(
                     item {
                         LanguageSetting(
                             supportedLanguages = uiState.supportedLanguages,
-                            onLanguageClick = { println("SettingsScreen selectedLanguage is $it") },
-                            selectedLanguageCode = null,
+                            onLanguageClick = { onIntent(SettingsScreenIntent.ChangeAppLanguage(it)) },
+                            selectedLanguageCode = uiState.userPreferences.languagePreference,
                         )
                     }
                     item {

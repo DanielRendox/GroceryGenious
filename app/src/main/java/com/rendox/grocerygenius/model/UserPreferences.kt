@@ -6,7 +6,8 @@ data class UserPreferences(
     val darkThemeConfig: DarkThemeConfig = DEFAULT_USER_PREFERENCES.darkThemeConfig,
     val useSystemAccentColor: Boolean = DEFAULT_USER_PREFERENCES.useSystemAccentColor,
     val openLastViewedList: Boolean = DEFAULT_USER_PREFERENCES.openLastViewedList,
-    val selectedTheme: GroceryGeniusColorScheme = DEFAULT_USER_PREFERENCES.selectedTheme
+    val selectedTheme: GroceryGeniusColorScheme = DEFAULT_USER_PREFERENCES.selectedTheme,
+    val languagePreference: String? = DEFAULT_USER_PREFERENCES.languagePreference,
 )
 
 val DEFAULT_USER_PREFERENCES = UserPreferences(
@@ -15,5 +16,6 @@ val DEFAULT_USER_PREFERENCES = UserPreferences(
     darkThemeConfig = DarkThemeConfig.FOLLOW_SYSTEM,
     useSystemAccentColor = true,
     openLastViewedList = true,
-    selectedTheme = GroceryGeniusColorScheme.CyanColorScheme
+    selectedTheme = GroceryGeniusColorScheme.CyanColorScheme,
+    languagePreference = null,
 )

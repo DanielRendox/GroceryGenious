@@ -108,6 +108,10 @@ class SettingsScreenViewModel @Inject constructor(
                 _uiStateFlow.update { it.copy(categories = newCategories) }
                 categoryRepository.updateCategories(newCategories)
             }
+
+            is SettingsScreenIntent.ChangeAppLanguage -> {
+                userPreferencesRepository.updateLanguagePreference(intent.language)
+            }
         }
     }
 }

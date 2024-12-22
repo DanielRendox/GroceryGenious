@@ -2,6 +2,7 @@ package com.rendox.grocerygenius.data.userpreferences
 
 import com.rendox.grocerygenius.data.grocerylist.GroceryListRepository
 import com.rendox.grocerygenius.datastore.UserPreferencesDataSource
+import com.rendox.grocerygenius.model.AppLanguage
 import com.rendox.grocerygenius.model.DarkThemeConfig
 import com.rendox.grocerygenius.model.GroceryGeniusColorScheme
 import com.rendox.grocerygenius.model.UserPreferences
@@ -65,5 +66,9 @@ class UserPreferencesRepositoryImpl @Inject constructor(
             // to ensure that the list with this id exists
             groceryListRepository.getGroceryListById(listId).first()?.id
         }
+    }
+
+    override suspend fun updateLanguagePreference(language: AppLanguage?) {
+        userPreferencesDataSource.updateLanguagePreference(language?.languageCode)
     }
 }
